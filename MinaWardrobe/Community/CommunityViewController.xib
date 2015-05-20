@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommunityViewController">
+            <connections>
+                <outlet property="footview" destination="yOf-o7-sXa" id="mDY-2o-FDt"/>
+                <outlet property="tableview" destination="uQi-ts-qrs" id="u1g-xa-SaM"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yOf-o7-sXa">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" red="0.99223668799999998" green="1" blue="0.44040580670000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="YsW-wc-sHa"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="YsW-wc-sHa"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="YsW-wc-sHa"/>
+                        </mask>
+                    </variation>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="uQi-ts-qrs">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="yOf-o7-sXa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3Zo-VQ-Ior"/>
+                <constraint firstItem="uQi-ts-qrs" firstAttribute="top" secondItem="yOf-o7-sXa" secondAttribute="bottom" id="H8c-L1-mNh"/>
+                <constraint firstAttribute="trailing" secondItem="uQi-ts-qrs" secondAttribute="trailing" id="JM4-7C-1mf"/>
+                <constraint firstAttribute="bottom" secondItem="uQi-ts-qrs" secondAttribute="bottom" id="QKT-cA-swB"/>
+                <constraint firstItem="yOf-o7-sXa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Y3I-zl-xsz"/>
+                <constraint firstItem="uQi-ts-qrs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="cAq-HY-sMW"/>
+                <constraint firstItem="uQi-ts-qrs" firstAttribute="top" secondItem="yOf-o7-sXa" secondAttribute="bottom" id="iWs-CN-7gx"/>
+                <constraint firstAttribute="trailing" secondItem="yOf-o7-sXa" secondAttribute="trailing" id="ko6-ND-Ctq"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="yOf-o7-sXa"/>
+                    <exclude reference="uQi-ts-qrs"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="H8c-L1-mNh"/>
+                    <exclude reference="JM4-7C-1mf"/>
+                    <exclude reference="QKT-cA-swB"/>
+                    <exclude reference="cAq-HY-sMW"/>
+                    <exclude reference="iWs-CN-7gx"/>
+                    <exclude reference="3Zo-VQ-Ior"/>
+                    <exclude reference="Y3I-zl-xsz"/>
+                    <exclude reference="ko6-ND-Ctq"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="yOf-o7-sXa"/>
+                    <include reference="uQi-ts-qrs"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="H8c-L1-mNh"/>
+                    <include reference="JM4-7C-1mf"/>
+                    <include reference="QKT-cA-swB"/>
+                    <include reference="cAq-HY-sMW"/>
+                    <include reference="iWs-CN-7gx"/>
+                    <include reference="3Zo-VQ-Ior"/>
+                    <include reference="Y3I-zl-xsz"/>
+                    <include reference="ko6-ND-Ctq"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="333" y="306"/>
+        </view>
+    </objects>
+</document>
