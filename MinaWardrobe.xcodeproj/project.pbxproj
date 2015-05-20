@@ -12,8 +12,6 @@
 		18639C271B04493C00072AF3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18639C261B04493C00072AF3 /* Images.xcassets */; };
 		18639C2A1B04493C00072AF3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18639C281B04493C00072AF3 /* LaunchScreen.xib */; };
 		18639C361B04493C00072AF3 /* MinaWardrobeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18639C351B04493C00072AF3 /* MinaWardrobeTests.m */; };
-		18639C4B1B044BB500072AF3 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18639C491B044BB500072AF3 /* MainViewController.m */; };
-		18639C4C1B044BB500072AF3 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18639C4A1B044BB500072AF3 /* MainViewController.xib */; };
 		18639C501B044BBF00072AF3 /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18639C4E1B044BBF00072AF3 /* StoreViewController.m */; };
 		18639C511B044BBF00072AF3 /* StoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18639C4F1B044BBF00072AF3 /* StoreViewController.xib */; };
 		18639C551B044BCB00072AF3 /* CommunityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18639C531B044BCB00072AF3 /* CommunityViewController.m */; };
@@ -68,6 +66,12 @@
 		18639D0C1B0467D500072AF3 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 18639D031B0467D500072AF3 /* UIScrollView+MJRefresh.m */; };
 		18639D0D1B0467D500072AF3 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 18639D051B0467D500072AF3 /* UIView+MJExtension.m */; };
 		18639D101B0467E900072AF3 /* NBWaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 18639D0F1B0467E900072AF3 /* NBWaterFlowLayout.m */; };
+		187F9B571B0C72CB002CC82C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187F9B501B0C72CB002CC82C /* MainViewController.m */; };
+		187F9B581B0C72CB002CC82C /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187F9B511B0C72CB002CC82C /* MainViewController.xib */; };
+		187F9B591B0C72CB002CC82C /* MainCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 187F9B531B0C72CB002CC82C /* MainCollectionViewCell.m */; };
+		187F9B5A1B0C72CB002CC82C /* MainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187F9B541B0C72CB002CC82C /* MainCollectionViewCell.xib */; };
+		187F9B5B1B0C72CB002CC82C /* MainModle.m in Sources */ = {isa = PBXBuildFile; fileRef = 187F9B561B0C72CB002CC82C /* MainModle.m */; };
+		187F9B5E1B0C7342002CC82C /* NSDictionary+Null.m in Sources */ = {isa = PBXBuildFile; fileRef = 187F9B5D1B0C7342002CC82C /* NSDictionary+Null.m */; };
 		DD6E8DA11B049EE600D222B4 /* SJasihttp.m in Sources */ = {isa = PBXBuildFile; fileRef = DD6E8DA01B049EE600D222B4 /* SJasihttp.m */; };
 		DD91D5B61B0B053C00C3C137 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DD91D5B31B0B053C00C3C137 /* SVProgressHUD.bundle */; };
 		DD91D5B71B0B053C00C3C137 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DD91D5B51B0B053C00C3C137 /* SVProgressHUD.m */; };
@@ -84,7 +88,6 @@
 		DD94BBC51B0C626800739E44 /* 衣柜.png in Resources */ = {isa = PBXBuildFile; fileRef = DD94BBBD1B0C626800739E44 /* 衣柜.png */; };
 		DD94BBC61B0C626800739E44 /* 衣柜2.png in Resources */ = {isa = PBXBuildFile; fileRef = DD94BBBE1B0C626800739E44 /* 衣柜2.png */; };
 		DDD820241B09C9CF00CDC191 /* SQmainlist.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD820231B09C9CF00CDC191 /* SQmainlist.m */; };
-		DDD820281B09D25000CDC191 /* NSDictionary+Null.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD820271B09D25000CDC191 /* NSDictionary+Null.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,9 +111,6 @@
 		18639C2F1B04493C00072AF3 /* MinaWardrobeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinaWardrobeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18639C341B04493C00072AF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18639C351B04493C00072AF3 /* MinaWardrobeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MinaWardrobeTests.m; sourceTree = "<group>"; };
-		18639C481B044BB500072AF3 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		18639C491B044BB500072AF3 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		18639C4A1B044BB500072AF3 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		18639C4D1B044BBF00072AF3 /* StoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreViewController.h; sourceTree = "<group>"; };
 		18639C4E1B044BBF00072AF3 /* StoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreViewController.m; sourceTree = "<group>"; };
 		18639C4F1B044BBF00072AF3 /* StoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoreViewController.xib; sourceTree = "<group>"; };
@@ -218,6 +218,16 @@
 		18639D051B0467D500072AF3 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		18639D0E1B0467E900072AF3 /* NBWaterFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBWaterFlowLayout.h; sourceTree = "<group>"; };
 		18639D0F1B0467E900072AF3 /* NBWaterFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBWaterFlowLayout.m; sourceTree = "<group>"; };
+		187F9B4F1B0C72CB002CC82C /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		187F9B501B0C72CB002CC82C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		187F9B511B0C72CB002CC82C /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		187F9B521B0C72CB002CC82C /* MainCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainCollectionViewCell.h; sourceTree = "<group>"; };
+		187F9B531B0C72CB002CC82C /* MainCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainCollectionViewCell.m; sourceTree = "<group>"; };
+		187F9B541B0C72CB002CC82C /* MainCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainCollectionViewCell.xib; sourceTree = "<group>"; };
+		187F9B551B0C72CB002CC82C /* MainModle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainModle.h; sourceTree = "<group>"; };
+		187F9B561B0C72CB002CC82C /* MainModle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainModle.m; sourceTree = "<group>"; };
+		187F9B5C1B0C7342002CC82C /* NSDictionary+Null.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Null.h"; sourceTree = "<group>"; };
+		187F9B5D1B0C7342002CC82C /* NSDictionary+Null.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Null.m"; sourceTree = "<group>"; };
 		DD6E8D9F1B049EE600D222B4 /* SJasihttp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJasihttp.h; sourceTree = "<group>"; };
 		DD6E8DA01B049EE600D222B4 /* SJasihttp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJasihttp.m; sourceTree = "<group>"; };
 		DD91D5B31B0B053C00C3C137 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
@@ -240,8 +250,6 @@
 		DDD820221B09C9CF00CDC191 /* SQmainlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQmainlist.h; sourceTree = "<group>"; };
 		DDD820231B09C9CF00CDC191 /* SQmainlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQmainlist.m; sourceTree = "<group>"; };
 		DDD820251B09CBFD00CDC191 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		DDD820261B09D25000CDC191 /* NSDictionary+Null.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+Null.h"; path = "../../Desktop/AMY 的文件/AMY/AMY/NSDictionary+Null.h"; sourceTree = "<group>"; };
-		DDD820271B09D25000CDC191 /* NSDictionary+Null.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+Null.m"; path = "../../Desktop/AMY 的文件/AMY/AMY/NSDictionary+Null.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,7 +306,7 @@
 				18639C1D1B04493C00072AF3 /* AppDelegate.h */,
 				18639C1E1B04493C00072AF3 /* AppDelegate.m */,
 				18639C5C1B044DC100072AF3 /* Third */,
-				18639C451B044B9600072AF3 /* Main */,
+				187F9B4E1B0C72BE002CC82C /* Main */,
 				18639C471B044B9600072AF3 /* Store */,
 				18639C441B044B9600072AF3 /* Community */,
 				18639C461B044B9600072AF3 /* MySetting */,
@@ -350,16 +358,6 @@
 				DD91D5C01B0B3D8F00C3C137 /* CommunityTableViewCell.xib */,
 			);
 			path = Community;
-			sourceTree = "<group>";
-		};
-		18639C451B044B9600072AF3 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				18639C481B044BB500072AF3 /* MainViewController.h */,
-				18639C491B044BB500072AF3 /* MainViewController.m */,
-				18639C4A1B044BB500072AF3 /* MainViewController.xib */,
-			);
-			path = Main;
 			sourceTree = "<group>";
 		};
 		18639C461B044B9600072AF3 /* MySetting */ = {
@@ -515,6 +513,21 @@
 			path = MJRefresh;
 			sourceTree = "<group>";
 		};
+		187F9B4E1B0C72BE002CC82C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				187F9B4F1B0C72CB002CC82C /* MainViewController.h */,
+				187F9B501B0C72CB002CC82C /* MainViewController.m */,
+				187F9B511B0C72CB002CC82C /* MainViewController.xib */,
+				187F9B521B0C72CB002CC82C /* MainCollectionViewCell.h */,
+				187F9B531B0C72CB002CC82C /* MainCollectionViewCell.m */,
+				187F9B541B0C72CB002CC82C /* MainCollectionViewCell.xib */,
+				187F9B551B0C72CB002CC82C /* MainModle.h */,
+				187F9B561B0C72CB002CC82C /* MainModle.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		DD91D5B21B0B053C00C3C137 /* SVProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -561,8 +574,8 @@
 		DDD820291B09D25A00CDC191 /* 帮助文件 */ = {
 			isa = PBXGroup;
 			children = (
-				DDD820261B09D25000CDC191 /* NSDictionary+Null.h */,
-				DDD820271B09D25000CDC191 /* NSDictionary+Null.m */,
+				187F9B5C1B0C7342002CC82C /* NSDictionary+Null.h */,
+				187F9B5D1B0C7342002CC82C /* NSDictionary+Null.m */,
 				DD6E8D9F1B049EE600D222B4 /* SJasihttp.h */,
 				DD6E8DA01B049EE600D222B4 /* SJasihttp.m */,
 			);
@@ -656,13 +669,14 @@
 				DD94BBC21B0C626800739E44 /* 我的2.png in Resources */,
 				18639C561B044BCB00072AF3 /* CommunityViewController.xib in Resources */,
 				DD91D5C21B0B3D8F00C3C137 /* CommunityTableViewCell.xib in Resources */,
+				187F9B5A1B0C72CB002CC82C /* MainCollectionViewCell.xib in Resources */,
 				18639C511B044BBF00072AF3 /* StoreViewController.xib in Resources */,
 				18639C2A1B04493C00072AF3 /* LaunchScreen.xib in Resources */,
 				DD91D5BD1B0B080600C3C137 /* DLViewController.xib in Resources */,
 				DD94BBC61B0C626800739E44 /* 衣柜2.png in Resources */,
-				18639C4C1B044BB500072AF3 /* MainViewController.xib in Resources */,
 				DD91D5B61B0B053C00C3C137 /* SVProgressHUD.bundle in Resources */,
 				18639D061B0467D500072AF3 /* MJRefresh.bundle in Resources */,
+				187F9B581B0C72CB002CC82C /* MainViewController.xib in Resources */,
 				DD94BBC11B0C626800739E44 /* 我的.png in Resources */,
 				DD94BBC01B0C626800739E44 /* 商城2.png in Resources */,
 				18639C5B1B044BDA00072AF3 /* MySeetingViewController.xib in Resources */,
@@ -697,12 +711,15 @@
 				18639D0D1B0467D500072AF3 /* UIView+MJExtension.m in Sources */,
 				18639CC71B044F2800072AF3 /* SDWebImageDownloader.m in Sources */,
 				18639D0B1B0467D500072AF3 /* UIScrollView+MJExtension.m in Sources */,
+				187F9B571B0C72CB002CC82C /* MainViewController.m in Sources */,
 				18639C741B044E7B00072AF3 /* AFNetworkReachabilityManager.m in Sources */,
 				18639D091B0467D500072AF3 /* MJRefreshFooterView.m in Sources */,
 				18639CC51B044F2800072AF3 /* SDWebImageCompat.m in Sources */,
 				18639C971B044F1B00072AF3 /* ASIDataDecompressor.m in Sources */,
 				18639C1F1B04493C00072AF3 /* AppDelegate.m in Sources */,
+				187F9B5E1B0C7342002CC82C /* NSDictionary+Null.m in Sources */,
 				18639C761B044E7B00072AF3 /* AFURLConnectionOperation.m in Sources */,
+				187F9B5B1B0C72CB002CC82C /* MainModle.m in Sources */,
 				18639CD11B044F2800072AF3 /* UIView+WebCacheOperation.m in Sources */,
 				18639C731B044E7B00072AF3 /* AFHTTPSessionManager.m in Sources */,
 				18639D0C1B0467D500072AF3 /* UIScrollView+MJRefresh.m in Sources */,
@@ -719,7 +736,6 @@
 				18639C551B044BCB00072AF3 /* CommunityViewController.m in Sources */,
 				DD91D5C11B0B3D8F00C3C137 /* CommunityTableViewCell.m in Sources */,
 				18639C9B1B044F1B00072AF3 /* ASIHTTPRequest.m in Sources */,
-				18639C4B1B044BB500072AF3 /* MainViewController.m in Sources */,
 				18639C981B044F1B00072AF3 /* ASIDownloadCache.m in Sources */,
 				18639CC31B044F2800072AF3 /* NSData+ImageContentType.m in Sources */,
 				18639C961B044F1B00072AF3 /* ASIDataCompressor.m in Sources */,
@@ -730,7 +746,7 @@
 				18639D101B0467E900072AF3 /* NBWaterFlowLayout.m in Sources */,
 				18639C9C1B044F1B00072AF3 /* ASIInputStream.m in Sources */,
 				18639C751B044E7B00072AF3 /* AFSecurityPolicy.m in Sources */,
-				DDD820281B09D25000CDC191 /* NSDictionary+Null.m in Sources */,
+				187F9B591B0C72CB002CC82C /* MainCollectionViewCell.m in Sources */,
 				DD91D5BC1B0B080600C3C137 /* DLViewController.m in Sources */,
 				18639C781B044E7B00072AF3 /* AFURLResponseSerialization.m in Sources */,
 				18639CCA1B044F2800072AF3 /* SDWebImagePrefetcher.m in Sources */,
