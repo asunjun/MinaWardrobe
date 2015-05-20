@@ -20,6 +20,9 @@
     UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(200, 200, 100, 40)];
     lab.text = @"主页";
     [self.view addSubview:lab];
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.view addSubview:button];
 }
 
 - (void)didReceiveMemoryWarning {
