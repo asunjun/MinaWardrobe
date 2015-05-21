@@ -7,12 +7,20 @@
 //
 
 #import "SQmainlist.h"
-
+#import "NSDictionary+Null.h"
 @implementation SQmainlist
 - (id)initWithDic:(NSDictionary*)dic
 {
     self = [super init];
     if (self) {
+        self.fabutime=[dic notNullobjectForKey:@"add_time"];
+        NSDictionary *dic1=[dic notNullobjectForKey:@"user_info"];
+        self.fabuname=[dic1 notNullobjectForKey:@"user_name"];
+        self.fabutouxiang=[dic1 notNullobjectForKey:@"avatar_file"];
+        
+        self.fabupinglun=[dic notNullobjectForKey:@"comment_count"];
+        self.shouchanshu=[dic notNullobjectForKey:@"votes"];
+      
       
     }
     return self;

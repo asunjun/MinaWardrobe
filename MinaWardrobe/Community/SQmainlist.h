@@ -11,13 +11,13 @@
 @interface SQmainlist : NSObject
 @property(copy,nonatomic)NSString *fabutime;//发布时间
 
-//@property(copy,nonatomic)NSString *fabutime;
+@property(copy,nonatomic)NSString *fabuname;
 //
-//@property(copy,nonatomic)NSString *fabutime;
+@property(copy,nonatomic)NSString *fabutouxiang;
 //
-//@property(copy,nonatomic)NSString *fabutime;
+@property(copy,nonatomic)NSString *shouchanshu;
 //
-//@property(copy,nonatomic)NSString *fabutime;
+@property(copy,nonatomic)NSString *fabupinglun;
 //
 //@property(copy,nonatomic)NSString *fabutime;
 - (id)initWithDic:(NSDictionary*)dic;

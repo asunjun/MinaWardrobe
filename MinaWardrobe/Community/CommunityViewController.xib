@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommunityViewController">
             <connections>
-                <outlet property="footview" destination="yOf-o7-sXa" id="mDY-2o-FDt"/>
+                <outlet property="footview" destination="yOf-o7-sXa" id="gfO-JG-KS1"/>
                 <outlet property="tableview" destination="uQi-ts-qrs" id="u1g-xa-SaM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -37,6 +37,10 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="uQi-ts-qrs">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Nre-nc-tSt"/>
+                        <outlet property="delegate" destination="-1" id="8Y7-q6-hsG"/>
+                    </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -49,6 +53,7 @@
                 <constraint firstItem="uQi-ts-qrs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="cAq-HY-sMW"/>
                 <constraint firstItem="uQi-ts-qrs" firstAttribute="top" secondItem="yOf-o7-sXa" secondAttribute="bottom" id="iWs-CN-7gx"/>
                 <constraint firstAttribute="trailing" secondItem="yOf-o7-sXa" secondAttribute="trailing" id="ko6-ND-Ctq"/>
+                <constraint firstItem="uQi-ts-qrs" firstAttribute="top" secondItem="yOf-o7-sXa" secondAttribute="bottom" id="nZB-gB-G3s"/>
             </constraints>
             <variation key="default">
                 <mask key="subviews">
@@ -56,14 +61,15 @@
                     <exclude reference="uQi-ts-qrs"/>
                 </mask>
                 <mask key="constraints">
+                    <exclude reference="3Zo-VQ-Ior"/>
+                    <exclude reference="Y3I-zl-xsz"/>
+                    <exclude reference="ko6-ND-Ctq"/>
                     <exclude reference="H8c-L1-mNh"/>
                     <exclude reference="JM4-7C-1mf"/>
                     <exclude reference="QKT-cA-swB"/>
                     <exclude reference="cAq-HY-sMW"/>
                     <exclude reference="iWs-CN-7gx"/>
-                    <exclude reference="3Zo-VQ-Ior"/>
-                    <exclude reference="Y3I-zl-xsz"/>
-                    <exclude reference="ko6-ND-Ctq"/>
+                    <exclude reference="nZB-gB-G3s"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
@@ -72,14 +78,15 @@
                     <include reference="uQi-ts-qrs"/>
                 </mask>
                 <mask key="constraints">
+                    <include reference="3Zo-VQ-Ior"/>
+                    <include reference="Y3I-zl-xsz"/>
+                    <include reference="ko6-ND-Ctq"/>
                     <include reference="H8c-L1-mNh"/>
                     <include reference="JM4-7C-1mf"/>
                     <include reference="QKT-cA-swB"/>
                     <include reference="cAq-HY-sMW"/>
                     <include reference="iWs-CN-7gx"/>
-                    <include reference="3Zo-VQ-Ior"/>
-                    <include reference="Y3I-zl-xsz"/>
-                    <include reference="ko6-ND-Ctq"/>
+                    <include reference="nZB-gB-G3s"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="333" y="306"/>

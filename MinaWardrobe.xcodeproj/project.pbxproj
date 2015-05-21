@@ -87,6 +87,7 @@
 		DD94BBC41B0C626800739E44 /* 社区2.png in Resources */ = {isa = PBXBuildFile; fileRef = DD94BBBC1B0C626800739E44 /* 社区2.png */; };
 		DD94BBC51B0C626800739E44 /* 衣柜.png in Resources */ = {isa = PBXBuildFile; fileRef = DD94BBBD1B0C626800739E44 /* 衣柜.png */; };
 		DD94BBC61B0C626800739E44 /* 衣柜2.png in Resources */ = {isa = PBXBuildFile; fileRef = DD94BBBE1B0C626800739E44 /* 衣柜2.png */; };
+		DDD4791D1B0DC73F00B15144 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD4791C1B0DC73F00B15144 /* UIViewExt.m */; };
 		DDD820241B09C9CF00CDC191 /* SQmainlist.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD820231B09C9CF00CDC191 /* SQmainlist.m */; };
 /* End PBXBuildFile section */
 
@@ -247,6 +248,8 @@
 		DD94BBBC1B0C626800739E44 /* 社区2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "社区2.png"; sourceTree = "<group>"; };
 		DD94BBBD1B0C626800739E44 /* 衣柜.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "衣柜.png"; sourceTree = "<group>"; };
 		DD94BBBE1B0C626800739E44 /* 衣柜2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "衣柜2.png"; sourceTree = "<group>"; };
+		DDD4791B1B0DC73F00B15144 /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
+		DDD4791C1B0DC73F00B15144 /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
 		DDD820221B09C9CF00CDC191 /* SQmainlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQmainlist.h; sourceTree = "<group>"; };
 		DDD820231B09C9CF00CDC191 /* SQmainlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQmainlist.m; sourceTree = "<group>"; };
 		DDD820251B09CBFD00CDC191 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -347,6 +350,8 @@
 		18639C441B044B9600072AF3 /* Community */ = {
 			isa = PBXGroup;
 			children = (
+				DDD4791B1B0DC73F00B15144 /* UIViewExt.h */,
+				DDD4791C1B0DC73F00B15144 /* UIViewExt.m */,
 				DD91D5B81B0B076E00C3C137 /* 登陆 */,
 				18639C521B044BCB00072AF3 /* CommunityViewController.h */,
 				18639C531B044BCB00072AF3 /* CommunityViewController.m */,
@@ -726,6 +731,7 @@
 				18639C771B044E7B00072AF3 /* AFURLRequestSerialization.m in Sources */,
 				18639CD01B044F2800072AF3 /* UIImageView+WebCache.m in Sources */,
 				18639CCE1B044F2800072AF3 /* UIImage+WebP.m in Sources */,
+				DDD4791D1B0DC73F00B15144 /* UIViewExt.m in Sources */,
 				18639CC41B044F2800072AF3 /* SDImageCache.m in Sources */,
 				18639C9F1B044F1B00072AF3 /* Reachability.m in Sources */,
 				18639CCD1B044F2800072AF3 /* UIImage+MultiFormat.m in Sources */,

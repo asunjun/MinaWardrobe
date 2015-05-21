@@ -9,7 +9,22 @@
 #import <UIKit/UIKit.h>
 
 @interface CommunityTableViewCell : UITableViewCell
-@property(strong,nonatomic)NSString *title;
+@property(strong,nonatomic)UILabel *title;
+
+@property(strong,nonatomic)UILabel *message;
+
+@property(strong,nonatomic)UIImageView *img1;
+
+@property(strong,nonatomic)UIImageView *img2;
+
+@property(strong,nonatomic)UIImageView *img3;
+
+@property(strong,nonatomic)UILabel *shoucang;
+
+@property(strong,nonatomic)UILabel *pinglun;
+
+
+
 
 
 @end
