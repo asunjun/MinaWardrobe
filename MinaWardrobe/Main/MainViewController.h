@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "MainModle.h"
 #import "MainCollectionViewCell.h"
+#import "TaoKeWebViewController.h"
 
 #import "AFHTTPRequestOperationManager.h"
 #import "UIImageView+WebCache.h"
+#import "MJRefresh.h"
 
 @interface MainViewController : UIViewController<UIScrollViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 

@@ -15,6 +15,7 @@
     [self initImage];
     [self initLabel];
     [self initCollect];
+    [self initShare];
 }
 
 - (void)initImage {
@@ -48,6 +49,22 @@
     self.collectButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.collectButton.frame = CGRectMake(5, self.tImage.frame.size.height + 5 + self.tName.frame.size.height + 10, 31, 15);
     [self.contentView addSubview:self.collectButton];
+}
+
+- (void)initShare {
+    self.shareImage = [[UIImageView alloc] init];
+    self.shareImage.backgroundColor = [UIColor blueColor];
+    self.shareImage.frame = CGRectMake(40, self.tImage.frame.size.height + 5 + self.tName.frame.size.height + 10, 15, 15);
+    [self.contentView addSubview:self.shareImage];
+    
+    self.shareLabel = [[UILabel alloc] init];
+    self.shareLabel.backgroundColor = [UIColor greenColor];
+    self.shareLabel.frame = CGRectMake(56, self.tImage.frame.size.height + 5 + self.tName.frame.size.height + 10, 15, 15);
+    [self.contentView addSubview:self.shareLabel];
+    
+    self.shareButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.shareButton.frame = CGRectMake(56, self.tImage.frame.size.height + 5 + self.tName.frame.size.height + 10, 31, 15);
+    [self.contentView addSubview:self.shareButton];
 }
 
 @end

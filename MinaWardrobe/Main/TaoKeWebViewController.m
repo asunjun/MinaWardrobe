@@ -1,30 +1,25 @@
 //
-//  MySeetingViewController.m
+//  TaoKeWebViewController.m
 //  MinaWardrobe
 //
-//  Created by apple on 15/5/14.
+//  Created by apple on 15/5/21.
 //  Copyright (c) 2015年 wenxing. All rights reserved.
 //
 
-#import "MySeetingViewController.h"
-#import "DLViewController.h"
+#import "TaoKeWebViewController.h"
 
-@interface MySeetingViewController ()
+@interface TaoKeWebViewController ()
 
 @end
 
-@implementation MySeetingViewController
+@implementation TaoKeWebViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(200, 200, 100, 40)];
-    lab.text = @"我的";
-    [self.view addSubview:lab];
-}
-- (IBAction)loginButton:(id)sender {
-    DLViewController *loginVC = [[DLViewController alloc] init];
-    [self.navigationController pushViewController:loginVC animated:YES];
+    self.navigationController.navigationBar.translucent = NO;
+    self.taokeWeb.delegate = self;
+    [self.taokeWeb loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.comeURL]]];
 }
 
 - (void)didReceiveMemoryWarning {

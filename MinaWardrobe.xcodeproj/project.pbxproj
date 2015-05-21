@@ -72,6 +72,8 @@
 		187F9B5A1B0C72CB002CC82C /* MainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187F9B541B0C72CB002CC82C /* MainCollectionViewCell.xib */; };
 		187F9B5B1B0C72CB002CC82C /* MainModle.m in Sources */ = {isa = PBXBuildFile; fileRef = 187F9B561B0C72CB002CC82C /* MainModle.m */; };
 		187F9B5E1B0C7342002CC82C /* NSDictionary+Null.m in Sources */ = {isa = PBXBuildFile; fileRef = 187F9B5D1B0C7342002CC82C /* NSDictionary+Null.m */; };
+		18B464A81B0D99EC004E8637 /* TaoKeWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B464A61B0D99EC004E8637 /* TaoKeWebViewController.m */; };
+		18B464A91B0D99EC004E8637 /* TaoKeWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B464A71B0D99EC004E8637 /* TaoKeWebViewController.xib */; };
 		DD6E8DA11B049EE600D222B4 /* SJasihttp.m in Sources */ = {isa = PBXBuildFile; fileRef = DD6E8DA01B049EE600D222B4 /* SJasihttp.m */; };
 		DD91D5B61B0B053C00C3C137 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DD91D5B31B0B053C00C3C137 /* SVProgressHUD.bundle */; };
 		DD91D5B71B0B053C00C3C137 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DD91D5B51B0B053C00C3C137 /* SVProgressHUD.m */; };
@@ -228,6 +230,9 @@
 		187F9B561B0C72CB002CC82C /* MainModle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainModle.m; sourceTree = "<group>"; };
 		187F9B5C1B0C7342002CC82C /* NSDictionary+Null.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Null.h"; sourceTree = "<group>"; };
 		187F9B5D1B0C7342002CC82C /* NSDictionary+Null.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Null.m"; sourceTree = "<group>"; };
+		18B464A51B0D99EC004E8637 /* TaoKeWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaoKeWebViewController.h; sourceTree = "<group>"; };
+		18B464A61B0D99EC004E8637 /* TaoKeWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaoKeWebViewController.m; sourceTree = "<group>"; };
+		18B464A71B0D99EC004E8637 /* TaoKeWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaoKeWebViewController.xib; sourceTree = "<group>"; };
 		DD6E8D9F1B049EE600D222B4 /* SJasihttp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJasihttp.h; sourceTree = "<group>"; };
 		DD6E8DA01B049EE600D222B4 /* SJasihttp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJasihttp.m; sourceTree = "<group>"; };
 		DD91D5B31B0B053C00C3C137 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
@@ -524,6 +529,9 @@
 				187F9B541B0C72CB002CC82C /* MainCollectionViewCell.xib */,
 				187F9B551B0C72CB002CC82C /* MainModle.h */,
 				187F9B561B0C72CB002CC82C /* MainModle.m */,
+				18B464A51B0D99EC004E8637 /* TaoKeWebViewController.h */,
+				18B464A61B0D99EC004E8637 /* TaoKeWebViewController.m */,
+				18B464A71B0D99EC004E8637 /* TaoKeWebViewController.xib */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -670,6 +678,7 @@
 				18639C561B044BCB00072AF3 /* CommunityViewController.xib in Resources */,
 				DD91D5C21B0B3D8F00C3C137 /* CommunityTableViewCell.xib in Resources */,
 				187F9B5A1B0C72CB002CC82C /* MainCollectionViewCell.xib in Resources */,
+				18B464A91B0D99EC004E8637 /* TaoKeWebViewController.xib in Resources */,
 				18639C511B044BBF00072AF3 /* StoreViewController.xib in Resources */,
 				18639C2A1B04493C00072AF3 /* LaunchScreen.xib in Resources */,
 				DD91D5BD1B0B080600C3C137 /* DLViewController.xib in Resources */,
@@ -746,6 +755,7 @@
 				18639D101B0467E900072AF3 /* NBWaterFlowLayout.m in Sources */,
 				18639C9C1B044F1B00072AF3 /* ASIInputStream.m in Sources */,
 				18639C751B044E7B00072AF3 /* AFSecurityPolicy.m in Sources */,
+				18B464A81B0D99EC004E8637 /* TaoKeWebViewController.m in Sources */,
 				187F9B591B0C72CB002CC82C /* MainCollectionViewCell.m in Sources */,
 				DD91D5BC1B0B080600C3C137 /* DLViewController.m in Sources */,
 				18639C781B044E7B00072AF3 /* AFURLResponseSerialization.m in Sources */,
