@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		186020471B15AA8200470D8D /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186020451B15AA8200470D8D /* RegisterViewController.m */; };
+		186020481B15AA8200470D8D /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186020461B15AA8200470D8D /* RegisterViewController.xib */; };
 		18639C1C1B04493C00072AF3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18639C1B1B04493C00072AF3 /* main.m */; };
 		18639C1F1B04493C00072AF3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18639C1E1B04493C00072AF3 /* AppDelegate.m */; };
 		18639C271B04493C00072AF3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18639C261B04493C00072AF3 /* Images.xcassets */; };
@@ -112,6 +114,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		186020441B15AA8200470D8D /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		186020451B15AA8200470D8D /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		186020461B15AA8200470D8D /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		18639C161B04493C00072AF3 /* MinaWardrobe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinaWardrobe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18639C1A1B04493C00072AF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18639C1B1B04493C00072AF3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -613,6 +618,9 @@
 				DD91D5B91B0B080600C3C137 /* DLViewController.h */,
 				DD91D5BA1B0B080600C3C137 /* DLViewController.m */,
 				DD91D5BB1B0B080600C3C137 /* DLViewController.xib */,
+				186020441B15AA8200470D8D /* RegisterViewController.h */,
+				186020451B15AA8200470D8D /* RegisterViewController.m */,
+				186020461B15AA8200470D8D /* RegisterViewController.xib */,
 			);
 			name = "登陆";
 			sourceTree = "<group>";
@@ -716,6 +724,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD46EB8F1B12FC04004D01FF /* 衣柜2.png in Resources */,
+				186020481B15AA8200470D8D /* RegisterViewController.xib in Resources */,
 				DD46EB8E1B12FC04004D01FF /* 衣柜.png in Resources */,
 				18639C561B044BCB00072AF3 /* CommunityViewController.xib in Resources */,
 				DD91D5C21B0B3D8F00C3C137 /* CommunityTableViewCell.xib in Resources */,
@@ -760,6 +769,7 @@
 				18639C791B044E7B00072AF3 /* AFURLSessionManager.m in Sources */,
 				18639CCB1B044F2800072AF3 /* UIButton+WebCache.m in Sources */,
 				18639D0A1B0467D500072AF3 /* MJRefreshHeaderView.m in Sources */,
+				186020471B15AA8200470D8D /* RegisterViewController.m in Sources */,
 				18639CC91B044F2800072AF3 /* SDWebImageManager.m in Sources */,
 				18639C951B044F1B00072AF3 /* ASIAuthenticationDialog.m in Sources */,
 				18639C5A1B044BDA00072AF3 /* MySeetingViewController.m in Sources */,
