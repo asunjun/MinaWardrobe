@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RegisterViewController.h"
 
-@interface DLViewController : UIViewController
+@interface DLViewController : UIViewController<ASIHTTPRequestDelegate>
 
 /*
 //底层

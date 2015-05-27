@@ -18,6 +18,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationController.navigationBar.translucent = NO;
+    [self.navigationController setNavigationBarHidden:NO];
+    self.navigationItem.title = @"详情";
+    
+    [self initWebView];
+}
+
+- (void)initWebView {
     self.taokeWeb.delegate = self;
     [self.taokeWeb loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.comeURL]]];
 }

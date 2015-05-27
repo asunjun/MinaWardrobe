@@ -23,6 +23,10 @@
     [self initFrame];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:YES];
+}
+
 - (void)initSth {
     self.baseScrollView = [[UIScrollView alloc] init];
     self.baseScrollView.backgroundColor = [UIColor yellowColor];
@@ -30,6 +34,7 @@
     [self.view addSubview:self.baseScrollView];
     self.baseImageView = [[UIImageView alloc] init];
     self.baseImageView.backgroundColor = [UIColor greenColor];
+    self.baseImageView.userInteractionEnabled = YES;
     [self.baseScrollView addSubview:self.baseImageView];
     
     self.logoImage = [[UIImageView alloc] init];
@@ -55,14 +60,17 @@
     self.loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.loginButton.backgroundColor = [UIColor redColor];
     [self.loginButton setTitle:@"登陆" forState:UIControlStateNormal];
+    [self.loginButton addTarget:self action:@selector(loginButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.baseImageView addSubview:self.loginButton];
     self.forgetButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.forgetButton.backgroundColor = [UIColor redColor];
     [self.forgetButton setTitle:@"忘记密码？" forState:UIControlStateNormal];
+    [self.forgetButton addTarget:self action:@selector(forgetPasswdAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.baseImageView addSubview:self.forgetButton];
     self.registerButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.registerButton.backgroundColor = [UIColor redColor];
     [self.registerButton setTitle:@"没有账号？点击快速注册" forState:UIControlStateNormal];
+    [self.registerButton addTarget:self action:@selector(registerUserNameAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.baseImageView addSubview:self.registerButton];
 }
 
@@ -80,6 +88,45 @@
     self.loginButton.frame = CGRectMake(50, HEIGHT / 7 + 240, WIDTH - 100, 30);
     self.forgetButton.frame = CGRectMake(50, HEIGHT / 7 + 300, WIDTH - 100, 30);
     self.registerButton.frame = CGRectMake(50, HEIGHT / 7 + 340, WIDTH - 100, 30);
+}
+
+#pragma mark - 按钮们
+- (void)loginButtonAction:(UIButton *)sender {
+    [self sendLogin];
+}
+
+- (void)forgetPasswdAction:(UIButton *)sender {
+    
+}
+
+- (void)registerUserNameAction:(UIButton *)sender {
+    RegisterViewController *regVC = [[RegisterViewController alloc] init];
+    [self.navigationController pushViewController:regVC animated:YES];
+}
+
+- (void)sendLogin {
+    NSURL *url = [NSURL URLWithString:@"http://sq.mina.cn/index.php/account/ajax/login_process/"];
+    //ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+    ASIFormDataRequest *request=[ASIFormDataRequest requestWithURL:url];
+    [request setPostValue:self.userNameText.text forKey:@"user_name"];
+    [request setPostValue:self.passwdText.text   forKey:@"password"];
+    [request setUseCookiePersistence:YES];
+    [request setDelegate:self];
+    [request startAsynchronous];
+}
+
+-(void)requestFinished:(ASIHTTPRequest *)request{
+    NSString *st1=[request responseString];
+    NSData *data = [st1 dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    NSLog(@"%@", dict);
+    
+    if ([[dict objectForKey:@"errno"] intValue] == 1) {
+        NSLog(@"登陆成功");
+    } else {
+        NSLog(@"失败");
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
