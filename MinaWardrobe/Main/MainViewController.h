@@ -14,6 +14,7 @@
 #import "AFHTTPRequestOperationManager.h"
 #import "UIImageView+WebCache.h"
 #import "MJRefresh.h"
+#import "MJRefreshConst.h"
 
 @interface MainViewController : UIViewController<UIScrollViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -23,8 +24,11 @@
 @property (nonatomic, strong) UICollectionView *hCollection;
 @property (nonatomic, strong) UICollectionView *nCollection;
 
-@property (nonatomic, strong) NSMutableArray *datasource;//请求到的数据
-@property (nonatomic, strong) NSMutableArray *datasource1;//请求到的数据
+@property (nonatomic, strong) NSMutableArray *hData;//请求到的数据
+@property (nonatomic, strong) NSMutableArray *nData;//请求到的数据
+
+@property (nonatomic, strong) NSMutableArray *hbData;
+@property (nonatomic, strong) NSMutableArray *nbData;
 
 @property (nonatomic, strong) NSArray *btnsArr;
 
