@@ -13,6 +13,9 @@
 {
     self = [super init];
     if (self) {
+        self.fabutitle=[dic notNullobjectForKey:@"title"];
+         self.idzhi=[dic notNullobjectForKey:@"id"];
+        
         self.fabutime=[dic notNullobjectForKey:@"add_time"];
         NSDictionary *dic1=[dic notNullobjectForKey:@"user_info"];
         self.fabuname=[dic1 notNullobjectForKey:@"user_name"];
@@ -20,7 +23,8 @@
         
         self.fabupinglun=[dic notNullobjectForKey:@"comment_count"];
         self.shouchanshu=[dic notNullobjectForKey:@"votes"];
-      
+        self.imageurl=[dic notNullobjectForKey:@"images"];
+        
       
     }
     return self;

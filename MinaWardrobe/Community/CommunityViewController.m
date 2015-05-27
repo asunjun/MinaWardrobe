@@ -12,6 +12,8 @@
 #import "SVProgressHUD.h"
 #import "CommunityTableViewCell.h"
 #import "SQmainlist.h"
+#import "UIScrollView+MJRefresh.h"
+#import "ComNRViewController.h"
 @interface CommunityViewController ()<UITableViewDataSource,UITableViewDelegate>{
     NSMutableArray *_dataSource;
     SQmainlist *list;
@@ -28,7 +30,17 @@
     
     _dataSource=[[NSMutableArray alloc]init];
     
-//    [_tableView addLegendHeaderWithRefreshingBlock:^{
+    
+    
+//    [self.tableview addHeaderWithCallback:^{
+//        [self requstdata];
+//        
+//        
+//        
+//    } dateKey:@""];
+//    
+    
+//    [self.tableview addLegendHeaderWithRefreshingBlock:^{
 //        _beginNo = 1;
 //        [self requestData];
 //    }];
@@ -58,23 +70,31 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
+    //return 10;
     
     return _dataSource.count;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    static NSString *CellIdentifier = @"CommunityTableViewCell";
+   static NSString *CellIdentifier = @"CommunityTableViewCell";
     CommunityTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    NSLog(@"%@",list.fabutime);
-    NSLog(@"%@",list.fabuname);
+  //   CommunityTableViewCell *cell=[tableView cellForRowAtIndexPath:indexPath];
     
-    
-    
-    if(indexPath.row==0||indexPath.row==1){
-        cell.img1.image=[UIImage imageNamed:@"firstBg5"];
+    if (cell==nil) {
+        cell=[[[NSBundle mainBundle]loadNibNamed:@"CommunityTableViewCell" owner:self options:nil] lastObject];
     }
-    cell.title.text=list.fabuname;
     
+   
+    cell.selectionStyle=UITableViewCellSelectionStyleNone;
+    
+    [cell configCellByTradeModel:_dataSource[indexPath.row]];
+//    if(indexPath.row==0||indexPath.row==1){
+//        cell.img1.image=[UIImage imageNamed:@"商城.png"];
+//         cell.img2.image=[UIImage imageNamed:@"商城.png"];
+//         cell.img3.image=[UIImage imageNamed:@"商城.png"];
+//    }
+//    cell.title.text=@"cdwcvcfvfdudscjkaslchdiwcudwhbcviuodwhcojwowijcdioscoidsjchoiduhcvuifehbgiuewhcjiowjcopwjdilckhudiouchbdiubhcuihceo";
+//    cell.img4.image=[UIImage imageNamed:@"商城.png"];
     
     return cell;
     
@@ -85,51 +105,54 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+    SQmainlist *trade = _dataSource[indexPath.row];
+    ComNRViewController *NR=[[ComNRViewController alloc]initWith:trade.idzhi];
+    [self.navigationController pushViewController:NR animated:YES];
+    
+    
+}
+
+
+-(NSArray *)con:(SQmainlist *)ma{
+    
+    
+    return ma.imageurl;
+    
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     
-    
-    
-    CGSize size = [[_dataSource objectAtIndex:indexPath.row] sizeWithFont:[UIFont systemFontOfSize:16.0f] constrainedToSize:CGSizeMake(290, 20000)];
-    CGFloat height = size.height;
+//    
+//    CGSize size = [tt sizeWithFont:[UIFont systemFontOfSize:16.0f] constrainedToSize:CGSizeMake(290, 20000)];
+//    CGFloat height = size.height;
+     CGFloat height = [list.fabuname boundingRectWithSize:CGSizeMake(145, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:35]} context:nil].size.height;
     
     if (height<30) //评论年内容的高度
     {
         height = 30;
     }else{
-        height += 10;
+        height =60;
     }
     
-    // NSIndexPath *indexPath = [NSIndexPath indexPathForRow:indexPath.row inSection:0];
+  
+    NSArray *a1=[self con:_dataSource[indexPath.row]];
     
-    if(indexPath.row==0||indexPath.row==1){
-        height+=105;
+ 
+    if (a1==nil) {
+        // height+=20;
+    }else{
+       height+=80;
+        
     }
     
-    height+=10; //加上“评论人”和“时间”Label的高度；
+    height+=35;
+    
+    //加上“评论人”和“时间”Label的高度；
     
     return height;
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 - (void)didReceiveMemoryWarning {
@@ -146,7 +169,7 @@
     
     NSString *st1=[request responseString];
     
-  //  NSLog(@"%@",st1);
+    NSLog(@"%@",st1);
     
     
     

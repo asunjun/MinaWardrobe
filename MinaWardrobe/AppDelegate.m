@@ -32,29 +32,38 @@
 - (void)mainInit {
     UITabBarController *tabarController = [[UITabBarController alloc]init];
     self.window.rootViewController = tabarController;
-   tabarController.tabBar.selectedImageTintColor = globalColor;
+    tabarController.tabBar.barTintColor=globalBackgroundColor;
+//    
+//    tabarController.tabBar.selectedImageTintColor = globalColor;
     //四个tab选项，衣橱，商城，社区，我的，
-    
-    
-    
-    MainViewController *mainVC = [[MainViewController alloc] init];
-    mainVC.tabBarItem.image = [UIImage imageNamed:@"衣柜.png"];
-    mainVC.tabBarItem.selectedImage = [UIImage imageNamed:@"衣柜2.png"];
+     MainViewController *mainVC = [[MainViewController alloc] init];
+    mainVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"衣柜2.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];;
+    mainVC.tabBarItem.image = [[UIImage imageNamed:@"衣柜.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    mainVC.tabBarItem.title = @"衣橱";
     
     
      StoreViewController *storeVC = [[StoreViewController alloc] init];
-    storeVC.tabBarItem.image = [UIImage imageNamed:@"商城.png"];
-    storeVC.tabBarItem.selectedImage = [UIImage imageNamed:@"商城2.png"];
+    
+    storeVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"商城2.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];;
+    storeVC.tabBarItem.image = [[UIImage imageNamed:@"商城.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+
+//    storeVC.tabBarItem.image = [UIImage imageNamed:@"商城.png"];
+//    storeVC.tabBarItem.selectedImage = [UIImage imageNamed:@"商城2.png"];
+    storeVC.tabBarItem.title = @"商城";
    
     
      CommunityViewController *commVC = [[CommunityViewController alloc] init];
-    commVC.tabBarItem.image = [UIImage imageNamed:@"社区.png"];
-    commVC.tabBarItem.selectedImage = [UIImage imageNamed:@"社区2.png"];
+    commVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"社区2.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];;
+    commVC.tabBarItem.image = [[UIImage imageNamed:@"社区.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    commVC.tabBarItem.title = @"社区";
   
     
     MySeetingViewController *myVC = [[MySeetingViewController alloc] init];
-    myVC.tabBarItem.image = [UIImage imageNamed:@"我的.png"];
-    myVC.tabBarItem.selectedImage = [UIImage imageNamed:@"我的2.png"];
+    myVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"我的2.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];;
+    myVC.tabBarItem.image = [[UIImage imageNamed:@"我的.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//    myVC.tabBarItem.image = [UIImage imageNamed:@"我的.png"];
+//    myVC.tabBarItem.selectedImage = [UIImage imageNamed:@"我的2.png"];
+    myVC.tabBarItem.title = @"我的";
    
     
     tabarController.viewControllers = @[[[UINavigationController alloc]initWithRootViewController:mainVC],[[UINavigationController alloc]initWithRootViewController:storeVC],[[UINavigationController alloc]initWithRootViewController:commVC],[[UINavigationController alloc]initWithRootViewController:myVC]];

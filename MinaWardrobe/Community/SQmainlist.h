@@ -9,9 +9,15 @@
 #import <Foundation/Foundation.h>
 
 @interface SQmainlist : NSObject
+@property(copy,nonatomic)NSString *idzhi;
+
+@property(copy,nonatomic)NSString *fabutitle;
+
 @property(copy,nonatomic)NSString *fabutime;//发布时间
 
 @property(copy,nonatomic)NSString *fabuname;
+
+@property(copy,nonatomic)NSArray *imageurl;
 //
 @property(copy,nonatomic)NSString *fabutouxiang;
 //

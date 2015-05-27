@@ -20,6 +20,8 @@
     // Do any additional setup after loading the view from its nib.
     UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(200, 200, 100, 40)];
     lab.text = @"我的";
+    lab.backgroundColor=globalColor;
+    
     [self.view addSubview:lab];
 }
 - (IBAction)loginButton:(id)sender {
