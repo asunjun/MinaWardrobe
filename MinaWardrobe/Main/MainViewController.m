@@ -14,8 +14,8 @@
 
 @implementation MainViewController
 
-static int aa;
-static int bb;
+static int aa;//数据分段
+static int bb;//同上
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,6 +31,7 @@ static int bb;
     [self.navigationController setNavigationBarHidden:YES];
 }
 
+#pragma mark - 各种alloc init
 - (void)initArray {
     self.hData = [[NSMutableArray alloc] init];
     self.nData = [[NSMutableArray alloc] init];
@@ -69,7 +70,7 @@ static int bb;
 - (void)inithCollectionView {
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     self.hCollection = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT - 119) collectionViewLayout:layout];
-//    self.nCollection = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT - 119)];
+    //    self.nCollection = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT - 119)];
     self.hCollection.backgroundColor = [UIColor clearColor];
     self.hCollection.delegate = self;
     self.hCollection.dataSource = self;
@@ -94,7 +95,7 @@ static int bb;
     self.navigationController.navigationBarHidden = YES;
     [self.baseScrollView addSubview:self.nCollection];
     
-//    [self nCollectionRequest];
+    //    [self nCollectionRequest];
 }
 
 #pragma mark - 网络请求
@@ -103,13 +104,13 @@ static int bb;
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     //    manager.responseSerializer = [AFJSONResponseSerializer serializer];
     [manager GET:@"http://share.mina.com.cn/getShareGoodsJson.php?action=cate&id=2" parameters:nil success:^(AFHTTPRequestOperation *operation, NSMutableArray *responseObject) {
-//        for (NSDictionary *dict in responseObject) {
-//            MainModle *model = [[MainModle alloc] initWithDictionary:dict];
-//            [self.hData addObject:model];
-//            [self.hCollection reloadData];
-//            [self.hCollection headerEndRefreshing];
-//            NSLog(@"%@", dict);
-//        }
+        //        for (NSDictionary *dict in responseObject) {
+        //            MainModle *model = [[MainModle alloc] initWithDictionary:dict];
+        //            [self.hData addObject:model];
+        //            [self.hCollection reloadData];
+        //            [self.hCollection headerEndRefreshing];
+        //            NSLog(@"%@", dict);
+        //        }
         self.hbData = [[NSMutableArray alloc] initWithArray:responseObject];
         aa = 10;
         for (int i = 0; i < aa; i++) {
@@ -129,12 +130,12 @@ static int bb;
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     //    manager.responseSerializer = [AFJSONResponseSerializer serializer];
     [manager GET:@"http://share.mina.com.cn/getShareGoodsJson.php?action=cate&id=2" parameters:nil success:^(AFHTTPRequestOperation *operation, NSMutableArray *responseObject) {
-//        for (NSDictionary *dict in responseObject) {
-//            MainModle *model = [[MainModle alloc] initWithDictionary:dict];
-//            [self.nData addObject:model];
-//            [self.nCollection reloadData];
-//            [self.nCollection headerEndRefreshing];
-//        }
+        //        for (NSDictionary *dict in responseObject) {
+        //            MainModle *model = [[MainModle alloc] initWithDictionary:dict];
+        //            [self.nData addObject:model];
+        //            [self.nCollection reloadData];
+        //            [self.nCollection headerEndRefreshing];
+        //        }
         
         self.nbData = [[NSMutableArray alloc] initWithArray:responseObject];
         bb = 10;
@@ -175,15 +176,15 @@ static int bb;
         return cell;
     }
     if (collectionView.tag == 222) {
-            MainCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-            MainModle *model = [self.nData objectAtIndex:indexPath.row];
-            cell.backgroundColor = [UIColor whiteColor];
-            cell.tName.text = model.imageName;
-            [cell.tImage sd_setImageWithURL:[NSURL URLWithString:model.imageURL]];
-            cell.collectLabel.text = model.collectNumber;
-            [cell.collectButton addTarget:self action:@selector(handleCollectButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-            [cell.shareButton addTarget:self action:@selector(handleShareButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-            return cell;
+        MainCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+        MainModle *model = [self.nData objectAtIndex:indexPath.row];
+        cell.backgroundColor = [UIColor whiteColor];
+        cell.tName.text = model.imageName;
+        [cell.tImage sd_setImageWithURL:[NSURL URLWithString:model.imageURL]];
+        cell.collectLabel.text = model.collectNumber;
+        [cell.collectButton addTarget:self action:@selector(handleCollectButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.shareButton addTarget:self action:@selector(handleShareButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+        return cell;
     }
     return nil;
 }
@@ -248,15 +249,12 @@ static int bb;
     float x = scrollView.contentOffset.x;
     if (scrollView.tag == 555) {
         CGFloat offset_x = scrollView.contentOffset.x / WIDTH;
-//        NSLog(@"%f",offset_x);
+        //        NSLog(@"%f",offset_x);
         self.lineLab.frame = CGRectMake(53 + ((WIDTH - 45) / self.btnsArr.count * offset_x), self.lineLab.frame.origin.y, self.lineLab.bounds.size.width, self.lineLab.bounds.size.height);
     }
     if (x > WIDTH - 1) {
-//        NSLog(@"%f", x);
-//        [self initnCollectionView];
         if (!_nCollection) {
             [self initnCollectionView];
-//            [self nCollectionRequest];
             [self setupRefresh];
         }
     }
@@ -278,8 +276,8 @@ static int bb;
 //}
 
 - (void)handleNaviButtonAction:(UIButton *)sender {
-//    NSLog(@"%ld", sender.tag);
-//    [self changeButton:sender];
+        [self changeButton:sender];
+    NSLog(@"%ld", sender.tag);
     [UIView animateWithDuration:0.3 animations:^{
         UIScrollView *scrollView = (UIScrollView *)[self.view viewWithTag:555];
         scrollView.contentOffset = CGPointMake((sender.tag - 100) * self.view.bounds.size.width, 0);
@@ -288,7 +286,7 @@ static int bb;
         if ([self.lineLab.subviews[i] isKindOfClass:[UIButton class]]) {
             UIButton *button = (UIButton *)self.lineLab.subviews[i];
             if (button.tag != sender.tag) {
-//                [self reductionButton:button];
+                //                [self reductionButton:button];
             }
         }
     }
@@ -382,10 +380,10 @@ static int bb;
             [self.hData addObject:model];
         }
         [self.hCollection reloadData];
-
+        
         
         // 2.2秒后刷新表格UI(此处直接用,不用修改)
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             // 刷新表格
             [self.hCollection reloadData];
             
@@ -403,7 +401,7 @@ static int bb;
         [self.nCollection reloadData];
         
         // 2.2秒后刷新表格UI(此处直接用,不用修改)
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             // 刷新表格
             [self.nCollection reloadData];
             
@@ -419,13 +417,13 @@ static int bb;
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

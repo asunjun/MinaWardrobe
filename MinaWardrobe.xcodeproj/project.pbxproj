@@ -68,6 +68,12 @@
 		18639D0C1B0467D500072AF3 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 18639D031B0467D500072AF3 /* UIScrollView+MJRefresh.m */; };
 		18639D0D1B0467D500072AF3 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 18639D051B0467D500072AF3 /* UIView+MJExtension.m */; };
 		18639D101B0467E900072AF3 /* NBWaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 18639D0F1B0467E900072AF3 /* NBWaterFlowLayout.m */; };
+		186ACF351B16BDAD00E77570 /* PostingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186ACF331B16BDAD00E77570 /* PostingViewController.m */; };
+		186ACF361B16BDAD00E77570 /* PostingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186ACF341B16BDAD00E77570 /* PostingViewController.xib */; };
+		186ACF3A1B16C8D900E77570 /* PostingTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 186ACF381B16C8D800E77570 /* PostingTextTableViewCell.m */; };
+		186ACF3B1B16C8D900E77570 /* PostingTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186ACF391B16C8D800E77570 /* PostingTextTableViewCell.xib */; };
+		186ACF3F1B16EFDD00E77570 /* PostingMapTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 186ACF3D1B16EFDD00E77570 /* PostingMapTableViewCell.m */; };
+		186ACF401B16EFDD00E77570 /* PostingMapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186ACF3E1B16EFDD00E77570 /* PostingMapTableViewCell.xib */; };
 		187F9B571B0C72CB002CC82C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187F9B501B0C72CB002CC82C /* MainViewController.m */; };
 		187F9B581B0C72CB002CC82C /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187F9B511B0C72CB002CC82C /* MainViewController.xib */; };
 		187F9B591B0C72CB002CC82C /* MainCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 187F9B531B0C72CB002CC82C /* MainCollectionViewCell.m */; };
@@ -234,6 +240,15 @@
 		18639D051B0467D500072AF3 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		18639D0E1B0467E900072AF3 /* NBWaterFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBWaterFlowLayout.h; sourceTree = "<group>"; };
 		18639D0F1B0467E900072AF3 /* NBWaterFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBWaterFlowLayout.m; sourceTree = "<group>"; };
+		186ACF321B16BDAD00E77570 /* PostingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostingViewController.h; sourceTree = "<group>"; };
+		186ACF331B16BDAD00E77570 /* PostingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostingViewController.m; sourceTree = "<group>"; };
+		186ACF341B16BDAD00E77570 /* PostingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostingViewController.xib; sourceTree = "<group>"; };
+		186ACF371B16C8D800E77570 /* PostingTextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostingTextTableViewCell.h; sourceTree = "<group>"; };
+		186ACF381B16C8D800E77570 /* PostingTextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostingTextTableViewCell.m; sourceTree = "<group>"; };
+		186ACF391B16C8D800E77570 /* PostingTextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostingTextTableViewCell.xib; sourceTree = "<group>"; };
+		186ACF3C1B16EFDD00E77570 /* PostingMapTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostingMapTableViewCell.h; sourceTree = "<group>"; };
+		186ACF3D1B16EFDD00E77570 /* PostingMapTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostingMapTableViewCell.m; sourceTree = "<group>"; };
+		186ACF3E1B16EFDD00E77570 /* PostingMapTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostingMapTableViewCell.xib; sourceTree = "<group>"; };
 		187F9B4F1B0C72CB002CC82C /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		187F9B501B0C72CB002CC82C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		187F9B511B0C72CB002CC82C /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
@@ -393,6 +408,15 @@
 				DD91D5BE1B0B3D8F00C3C137 /* CommunityTableViewCell.h */,
 				DD91D5BF1B0B3D8F00C3C137 /* CommunityTableViewCell.m */,
 				DD91D5C01B0B3D8F00C3C137 /* CommunityTableViewCell.xib */,
+				186ACF321B16BDAD00E77570 /* PostingViewController.h */,
+				186ACF331B16BDAD00E77570 /* PostingViewController.m */,
+				186ACF341B16BDAD00E77570 /* PostingViewController.xib */,
+				186ACF371B16C8D800E77570 /* PostingTextTableViewCell.h */,
+				186ACF381B16C8D800E77570 /* PostingTextTableViewCell.m */,
+				186ACF391B16C8D800E77570 /* PostingTextTableViewCell.xib */,
+				186ACF3C1B16EFDD00E77570 /* PostingMapTableViewCell.h */,
+				186ACF3D1B16EFDD00E77570 /* PostingMapTableViewCell.m */,
+				186ACF3E1B16EFDD00E77570 /* PostingMapTableViewCell.xib */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -724,6 +748,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD46EB8F1B12FC04004D01FF /* 衣柜2.png in Resources */,
+				186ACF401B16EFDD00E77570 /* PostingMapTableViewCell.xib in Resources */,
 				186020481B15AA8200470D8D /* RegisterViewController.xib in Resources */,
 				DD46EB8E1B12FC04004D01FF /* 衣柜.png in Resources */,
 				18639C561B044BCB00072AF3 /* CommunityViewController.xib in Resources */,
@@ -732,10 +757,12 @@
 				DD46EB8C1B12FC04004D01FF /* 社区.png in Resources */,
 				187F9B5A1B0C72CB002CC82C /* MainCollectionViewCell.xib in Resources */,
 				DD46EB891B12FC04004D01FF /* 商城2.png in Resources */,
+				186ACF3B1B16C8D900E77570 /* PostingTextTableViewCell.xib in Resources */,
 				18B464A91B0D99EC004E8637 /* TaoKeWebViewController.xib in Resources */,
 				18639C511B044BBF00072AF3 /* StoreViewController.xib in Resources */,
 				18639C2A1B04493C00072AF3 /* LaunchScreen.xib in Resources */,
 				DD91D5BD1B0B080600C3C137 /* DLViewController.xib in Resources */,
+				186ACF361B16BDAD00E77570 /* PostingViewController.xib in Resources */,
 				DD91D5B61B0B053C00C3C137 /* SVProgressHUD.bundle in Resources */,
 				18639D061B0467D500072AF3 /* MJRefresh.bundle in Resources */,
 				187F9B581B0C72CB002CC82C /* MainViewController.xib in Resources */,
@@ -786,6 +813,7 @@
 				18639D091B0467D500072AF3 /* MJRefreshFooterView.m in Sources */,
 				18639CC51B044F2800072AF3 /* SDWebImageCompat.m in Sources */,
 				18639C971B044F1B00072AF3 /* ASIDataDecompressor.m in Sources */,
+				186ACF351B16BDAD00E77570 /* PostingViewController.m in Sources */,
 				18639C1F1B04493C00072AF3 /* AppDelegate.m in Sources */,
 				187F9B5E1B0C7342002CC82C /* NSDictionary+Null.m in Sources */,
 				18639C761B044E7B00072AF3 /* AFURLConnectionOperation.m in Sources */,
@@ -814,6 +842,7 @@
 				18639C991B044F1B00072AF3 /* ASIFormDataRequest.m in Sources */,
 				18639CC61B044F2800072AF3 /* SDWebImageDecoder.m in Sources */,
 				18639C721B044E7B00072AF3 /* AFHTTPRequestOperationManager.m in Sources */,
+				186ACF3A1B16C8D900E77570 /* PostingTextTableViewCell.m in Sources */,
 				DD5AE0DB1B14608000FAD355 /* ComTwoNRTableViewCell.m in Sources */,
 				18639D101B0467E900072AF3 /* NBWaterFlowLayout.m in Sources */,
 				18639C9C1B044F1B00072AF3 /* ASIInputStream.m in Sources */,
@@ -824,6 +853,7 @@
 				18639C781B044E7B00072AF3 /* AFURLResponseSerialization.m in Sources */,
 				18639CCA1B044F2800072AF3 /* SDWebImagePrefetcher.m in Sources */,
 				18639D081B0467D500072AF3 /* MJRefreshConst.m in Sources */,
+				186ACF3F1B16EFDD00E77570 /* PostingMapTableViewCell.m in Sources */,
 				18639CC21B044F2800072AF3 /* MKAnnotationView+WebCache.m in Sources */,
 				18639CCC1B044F2800072AF3 /* UIImage+GIF.m in Sources */,
 				DD46EB941B13121D004D01FF /* ComNRViewController.m in Sources */,

@@ -7,7 +7,9 @@
 //
 
 #import "MySeetingViewController.h"
+
 #import "DLViewController.h"
+#import "PostingViewController.h"
 
 @interface MySeetingViewController ()
 
@@ -27,6 +29,13 @@
 - (IBAction)loginButton:(id)sender {
     DLViewController *loginVC = [[DLViewController alloc] init];
     [self.navigationController pushViewController:loginVC animated:YES];
+}
+- (IBAction)postingButton:(id)sender {
+    PostingViewController *postVC = [[PostingViewController alloc] init];
+//    [self.navigationController pushViewController:postVC animated:YES];
+    [self presentViewController:postVC animated:YES completion:^{
+//        postVC.modalPresentationStyle = UIModalPresentationPopover;
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
