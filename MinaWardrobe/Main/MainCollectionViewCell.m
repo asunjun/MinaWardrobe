@@ -16,6 +16,8 @@
     [self initLabel];
     [self initCollect];
     [self initShare];
+    
+    self.contentView.backgroundColor = [UIColor lightGrayColor];
 }
 
 - (void)initImage {

@@ -27,18 +27,33 @@
                         <action selector="loginButton:" destination="-1" eventType="touchUpInside" id="n0o-I9-8yP"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnR-Oo-9jV">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <state key="normal" title="发帖">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="177" y="260" width="30" height="30"/>
+                    </variation>
+                    <connections>
+                        <action selector="postingButton:" destination="-1" eventType="touchUpInside" id="2Wu-0f-sKs"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <variation key="default">
                 <mask key="subviews">
                     <exclude reference="4DT-gB-z5c"/>
+                    <exclude reference="dnR-Oo-9jV"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
                 <mask key="subviews">
                     <include reference="4DT-gB-z5c"/>
+                    <include reference="dnR-Oo-9jV"/>
                 </mask>
             </variation>
+            <point key="canvasLocation" x="-307" y="40"/>
         </view>
     </objects>
 </document>
