@@ -14,51 +14,108 @@
 #import "SQmainlist.h"
 #import "UIScrollView+MJRefresh.h"
 #import "ComNRViewController.h"
+#import "UIImageView+WebCache.h"
+
 @interface CommunityViewController ()<UITableViewDataSource,UITableViewDelegate>{
     NSMutableArray *_dataSource;
     SQmainlist *list;
+    NSInteger _beginNo;
     
 }
 @end
 
 @implementation CommunityViewController
 
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:YES];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];     // Do any additional setup after loading the view from its nib.
+    [self.tableview setFrame:CGRectMake(0, 50, WIDTH, HEIGHT)];
     
     [self.tableview registerNib:[UINib nibWithNibName:@"CommunityTableViewCell" bundle:nil] forCellReuseIdentifier:@"CommunityTableViewCell"];
     
     _dataSource=[[NSMutableArray alloc]init];
     
-    
-    
-//    [self.tableview addHeaderWithCallback:^{
-//        [self requstdata];
-//        
-//        
-//        
-//    } dateKey:@""];
-//    
-    
-//    [self.tableview addLegendHeaderWithRefreshingBlock:^{
-//        _beginNo = 1;
-//        [self requestData];
-//    }];
-//    //上拉加载更多
-//    [_tableView addLegendFooterWithRefreshingBlock:^{
-//        _beginNo = _beginNo + 10;
-//        [self requestData];
-//    }];
-  
-    [self requstdata];
+    //添加刷新和下拉加载
+     _beginNo = 1;
+    [self setupRefresh];
+
     
     
     
 }
+- (void)setupRefresh
+{
+   
+        // 1.下拉刷新(进入刷新状态就会调用self的headerRereshing)
+        [self.tableview addHeaderWithTarget:self action:@selector(headerRereshing)];
+        [self.tableview headerBeginRefreshing];
+        
+        // 2.上拉加载更多(进入刷新状态就会调用self的footerRereshing)
+        [self.tableview addFooterWithTarget:self action:@selector(footerRereshing)];
+        
+        // 设置文字(也可以不设置,默认的文字在MJRefreshConst中修改)
+        self.tableview.headerPullToRefreshText = @"✨下拉刷新✨";
+        self.tableview.headerReleaseToRefreshText = @"✨放手刷新✨";
+        self.tableview.headerRefreshingText = @"✨正在刷新✨";
+        
+        self.tableview.footerPullToRefreshText = @"✨上拉加载更多数据✨";
+        self.tableview.footerReleaseToRefreshText = @"✨放手加载更多数据✨";
+        self.tableview.footerRefreshingText = @"✨正在加载中✨";
+    }
+
+
+
+
+- (void)headerRereshing
+{
+    _beginNo = 1;
+   
+     [_dataSource removeAllObjects];
+        //添加数据
+        [self requstdata];
+     [self.tableview reloadData];
+        //2秒后刷新表格UI(此处直接用,不用修改)
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            // 刷新表格
+            
+            [self.tableview reloadData];
+            
+            // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
+            
+        });
+    }
+
+- (void)footerRereshing
+{
+   _beginNo = _beginNo + 1;
+        [self requstdata];
+    
+        [self.tableview reloadData];
+        
+        
+        // 2.2秒后刷新表格UI(此处直接用,不用修改)
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            // 刷新表格
+            [self.tableview reloadData];
+            
+            // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
+            [self.tableview footerEndRefreshing];
+        });
+    }
+
+
 //请求
 -(void)requstdata{
     [SVProgressHUD show];
-      NSURL *url = [NSURL URLWithString:@"http://sq.mina.cn/"];
+    
+    NSString *asiurl=[NSString stringWithFormat:@"http://sq.mina.cn/?/sort_type-new__day-0__is_recommend-0__page-%ld",_beginNo];
+    
+    
+      NSURL *url = [NSURL URLWithString:asiurl];
   
     ASIFormDataRequest *request=[ASIFormDataRequest requestWithURL:url];
     [request setUserAgent:@"Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML,                                                                                                                                                                                                                                                                                                                                                           Gecko) Chrome/41.0.2272.101 Safari/537.36"];
@@ -83,18 +140,42 @@
     if (cell==nil) {
         cell=[[[NSBundle mainBundle]loadNibNamed:@"CommunityTableViewCell" owner:self options:nil] lastObject];
     }
-    
-   
+     
     cell.selectionStyle=UITableViewCellSelectionStyleNone;
+//    cell.img1=nil;
+//    cell.img2=nil;
+//    cell.img3=nil;
+        SQmainlist *trade = _dataSource[indexPath.row];
+        for (int i=0; i<trade.imageurl.count; i++) {
+        NSString *imageurls=[trade.imageurl objectAtIndex:i];
+        
+        switch (i) {
+            case 0:
+              
+               
+                [cell.img1 sd_setImageWithURL:[NSURL URLWithString:imageurls]];
+                break;
+            case 1:
+               
+                [cell.img2 sd_setImageWithURL:[NSURL URLWithString:imageurls]];
+                
+                
+                break;
+            case 2:
+                [cell.img3 sd_setImageWithURL:[NSURL URLWithString:imageurls]];
+                
+                break;
+                
+            default:
+                
+                break;
+        }
+        
+        
+    }
+
     
     [cell configCellByTradeModel:_dataSource[indexPath.row]];
-//    if(indexPath.row==0||indexPath.row==1){
-//        cell.img1.image=[UIImage imageNamed:@"商城.png"];
-//         cell.img2.image=[UIImage imageNamed:@"商城.png"];
-//         cell.img3.image=[UIImage imageNamed:@"商城.png"];
-//    }
-//    cell.title.text=@"cdwcvcfvfdudscjkaslchdiwcudwhbcviuodwhcojwowijcdioscoidsjchoiduhcvuifehbgiuewhcjiowjcopwjdilckhudiouchbdiubhcuihceo";
-//    cell.img4.image=[UIImage imageNamed:@"商城.png"];
     
     return cell;
     
@@ -107,6 +188,9 @@
     
     SQmainlist *trade = _dataSource[indexPath.row];
     ComNRViewController *NR=[[ComNRViewController alloc]initWith:trade.idzhi];
+    
+    
+    NR.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:NR animated:YES];
     
     
@@ -180,6 +264,11 @@
     NSMutableArray *a1=[[NSMutableArray alloc]initWithObjects:[arrayWord objectAtIndex:0], nil];
   
     NSString *a2=[a1 objectAtIndex:0];
+    if ([a2 isEqualToString:@"false"]) {
+        return;
+        
+    }
+    
        NSArray *arr = [NSJSONSerialization JSONObjectWithData:[a2 dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingAllowFragments error:nil];
     NSLog(@"%@",arr);
     
@@ -193,6 +282,7 @@
     }
     
     [self.tableview reloadData];
+    [self.tableview headerEndRefreshing];
     
     
     

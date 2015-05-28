@@ -93,6 +93,9 @@
 		DD5AE0DB1B14608000FAD355 /* ComTwoNRTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5AE0D91B14608000FAD355 /* ComTwoNRTableViewCell.m */; };
 		DD5AE0DC1B14608000FAD355 /* ComTwoNRTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD5AE0DA1B14608000FAD355 /* ComTwoNRTableViewCell.xib */; };
 		DD6E8DA11B049EE600D222B4 /* SJasihttp.m in Sources */ = {isa = PBXBuildFile; fileRef = DD6E8DA01B049EE600D222B4 /* SJasihttp.m */; };
+		DD856AE91B16B88900429554 /* ComtrueTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD856AE71B16B88900429554 /* ComtrueTableViewCell.m */; };
+		DD856AEA1B16B88900429554 /* ComtrueTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD856AE81B16B88900429554 /* ComtrueTableViewCell.xib */; };
+		DD856AED1B16BABF00429554 /* YFInputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DD856AEC1B16BABF00429554 /* YFInputBar.m */; };
 		DD91D5B61B0B053C00C3C137 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DD91D5B31B0B053C00C3C137 /* SVProgressHUD.bundle */; };
 		DD91D5B71B0B053C00C3C137 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DD91D5B51B0B053C00C3C137 /* SVProgressHUD.m */; };
 		DD91D5BC1B0B080600C3C137 /* DLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD91D5BA1B0B080600C3C137 /* DLViewController.m */; };
@@ -269,6 +272,11 @@
 		DD5AE0DA1B14608000FAD355 /* ComTwoNRTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComTwoNRTableViewCell.xib; sourceTree = "<group>"; };
 		DD6E8D9F1B049EE600D222B4 /* SJasihttp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJasihttp.h; sourceTree = "<group>"; };
 		DD6E8DA01B049EE600D222B4 /* SJasihttp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJasihttp.m; sourceTree = "<group>"; };
+		DD856AE61B16B88900429554 /* ComtrueTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComtrueTableViewCell.h; sourceTree = "<group>"; };
+		DD856AE71B16B88900429554 /* ComtrueTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComtrueTableViewCell.m; sourceTree = "<group>"; };
+		DD856AE81B16B88900429554 /* ComtrueTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComtrueTableViewCell.xib; sourceTree = "<group>"; };
+		DD856AEB1B16BABF00429554 /* YFInputBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFInputBar.h; sourceTree = "<group>"; };
+		DD856AEC1B16BABF00429554 /* YFInputBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFInputBar.m; sourceTree = "<group>"; };
 		DD91D5B31B0B053C00C3C137 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		DD91D5B41B0B053C00C3C137 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		DD91D5B51B0B053C00C3C137 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
@@ -587,6 +595,8 @@
 		DD46EB901B1311D5004D01FF /* 内容 */ = {
 			isa = PBXGroup;
 			children = (
+				DD856AEB1B16BABF00429554 /* YFInputBar.h */,
+				DD856AEC1B16BABF00429554 /* YFInputBar.m */,
 				DD46EB911B13121D004D01FF /* ComNRViewController.h */,
 				DD46EB921B13121D004D01FF /* ComNRViewController.m */,
 				DD46EB931B13121D004D01FF /* ComNRViewController.xib */,
@@ -598,6 +608,9 @@
 				DD5AE0D81B14608000FAD355 /* ComTwoNRTableViewCell.h */,
 				DD5AE0D91B14608000FAD355 /* ComTwoNRTableViewCell.m */,
 				DD5AE0DA1B14608000FAD355 /* ComTwoNRTableViewCell.xib */,
+				DD856AE61B16B88900429554 /* ComtrueTableViewCell.h */,
+				DD856AE71B16B88900429554 /* ComtrueTableViewCell.m */,
+				DD856AE81B16B88900429554 /* ComtrueTableViewCell.xib */,
 			);
 			name = "内容";
 			sourceTree = "<group>";
@@ -728,6 +741,7 @@
 				DD46EB8E1B12FC04004D01FF /* 衣柜.png in Resources */,
 				18639C561B044BCB00072AF3 /* CommunityViewController.xib in Resources */,
 				DD91D5C21B0B3D8F00C3C137 /* CommunityTableViewCell.xib in Resources */,
+				DD856AEA1B16B88900429554 /* ComtrueTableViewCell.xib in Resources */,
 				DD46EB8B1B12FC04004D01FF /* 我的2.png in Resources */,
 				DD46EB8C1B12FC04004D01FF /* 社区.png in Resources */,
 				187F9B5A1B0C72CB002CC82C /* MainCollectionViewCell.xib in Resources */,
@@ -784,12 +798,14 @@
 				18639C741B044E7B00072AF3 /* AFNetworkReachabilityManager.m in Sources */,
 				DD46EB981B131432004D01FF /* ComNRModel.m in Sources */,
 				18639D091B0467D500072AF3 /* MJRefreshFooterView.m in Sources */,
+				DD856AE91B16B88900429554 /* ComtrueTableViewCell.m in Sources */,
 				18639CC51B044F2800072AF3 /* SDWebImageCompat.m in Sources */,
 				18639C971B044F1B00072AF3 /* ASIDataDecompressor.m in Sources */,
 				18639C1F1B04493C00072AF3 /* AppDelegate.m in Sources */,
 				187F9B5E1B0C7342002CC82C /* NSDictionary+Null.m in Sources */,
 				18639C761B044E7B00072AF3 /* AFURLConnectionOperation.m in Sources */,
 				187F9B5B1B0C72CB002CC82C /* MainModle.m in Sources */,
+				DD856AED1B16BABF00429554 /* YFInputBar.m in Sources */,
 				18639CD11B044F2800072AF3 /* UIView+WebCacheOperation.m in Sources */,
 				18639C731B044E7B00072AF3 /* AFHTTPSessionManager.m in Sources */,
 				18639D0C1B0467D500072AF3 /* UIScrollView+MJRefresh.m in Sources */,

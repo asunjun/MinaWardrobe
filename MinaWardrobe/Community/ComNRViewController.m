@@ -13,7 +13,9 @@
 #import "ComNRModel.h"
 #import "ASIFormDataRequest.h"
 #import "ComTwoNRTableViewCell.h"
-@interface ComNRViewController ()<UITableViewDataSource,UITableViewDelegate>{
+#import "ComtrueTableViewCell.h"
+#import "YFInputBar.h"
+@interface ComNRViewController ()<UITableViewDataSource,UITableViewDelegate,YFInputBarDelegate>{
   
     ComNRModel *shuju;
     NSMutableArray *_datasoure;
@@ -41,20 +43,46 @@
     
 }
 - (void)viewDidLoad {
+    [self.navigationController setNavigationBarHidden:NO];
     [super viewDidLoad];
+    self.table.frame=CGRectMake(0, 0, WIDTH, HEIGHT);
+    
         [self.table registerNib:[UINib nibWithNibName:@"ComNRTableViewCell" bundle:nil] forCellReuseIdentifier:@"ComNRTableViewCell"];
       [self.table registerNib:[UINib nibWithNibName:@"ComTwoNRTableViewCell" bundle:nil] forCellReuseIdentifier:@"ComTwoNRTableViewCell"];
+    [self.table registerNib:[UINib nibWithNibName:@"ComtrueTableViewCell" bundle:nil] forCellReuseIdentifier:@"ComtrueTableViewCell"];
     _datasoure=[[NSMutableArray alloc]init];
     
     self.navigationController.navigationBar.translucent = NO;
     
+    YFInputBar *inputBar = [[YFInputBar alloc]initWithFrame:CGRectMake(0,CGRectGetMaxY([UIScreen mainScreen].bounds)-108, 320, 44)];
     
+    inputBar.backgroundColor = [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1];
+    
+    
+    inputBar.delegate = self;
+    inputBar.clearInputWhenSend = YES;
+    inputBar.resignFirstResponderWhenSend = YES;
+   
+    [self.view addSubview:inputBar];
     
     
      [self requstdata];
 
     // Do any additional setup after loading the view from its nib.
 }
+
+-(void)inputBar:(YFInputBar *)inputBar sendBtnPress:(UIButton *)sendBtn withInputString:(NSString *)str
+{
+    NSLog(@"%@",str);
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.view.subviews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [((UIView*)obj) resignFirstResponder];
+    }];
+}
+
 -(void)requstdata{
     [SVProgressHUD show];
     NSString *URLNR=[NSString stringWithFormat:@"http://sq.mina.cn/index.php/article/%@",_tradeid];
@@ -119,12 +147,20 @@
         if (cell==nil) {
             
         }
+        
+         [cell configCellByTradeModel:nil];
+        cell.img1.image=[UIImage imageNamed:@"789.jpg"];
+        cell.img2.image=[UIImage imageNamed:@"789.jpg"];
+        cell.img3.image=[UIImage imageNamed:@"789.jpg"];
+        
+
+        
               return cell;
         
     }
     if (indexPath.section==2) {
-        static NSString *CellIdentifier = @"ComTwoNRTableViewCell";
-        ComTwoNRTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        static NSString *CellIdentifier = @"ComtrueTableViewCell";
+        ComtrueTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         
         if (cell==nil) {
             
@@ -158,11 +194,16 @@
           NSLog(@"%f",height2);
         
         
-        CGFloat height=height1+height2+30;
+        CGFloat height=height1+height2;
         NSLog(@"%f",height);
         
         return height;
         
+        
+    }
+    if (indexPath.section==1) {
+        
+        return 1320;
         
     }
     
@@ -209,6 +250,10 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 0.5;
     
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 4;
 }
 
 //错误网址

@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+#import "ComNRModel.h"
 @interface ComTwoNRTableViewCell : UITableViewCell
+@property(strong,nonatomic)UIImageView *img1;
+
+@property(strong,nonatomic)UIImageView *img2;
+
+@property(strong,nonatomic)UIImageView *img3;
+
+- (void)configCellByTradeModel:(ComNRModel  *)trade;
 
 @end

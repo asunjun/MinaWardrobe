@@ -28,7 +28,8 @@
     
     [self.contentView setBackgroundColor:lightgray];
     
-   view1=[[UIView alloc]initWithFrame:CGRectZero];
+  // view1=[[UIView alloc]initWithFrame:CGRectZero];
+    view1.frame=CGRectZero;
     
     view1.layer.cornerRadius=5;
     
@@ -43,35 +44,19 @@
     }
     
     
-    for (int i=0; i<trade.imageurl.count; i++) {
-        NSString *imageurls=[trade.imageurl objectAtIndex:i];
-      
-        
-        if (i==0) {
-            self.img1=[[UIImageView alloc]initWithFrame:CGRectZero];
-            [self.img1 sd_setImageWithURL:[NSURL URLWithString:imageurls]];
-            
-            
-            
-        }
-        if (i==1) {
-            self.img2=[[UIImageView alloc]initWithFrame:CGRectZero];
-             [self.img2 sd_setImageWithURL:[NSURL URLWithString:imageurls]];
-            
-        }
-        if (i==2) {
-            self.img3=[[UIImageView alloc]initWithFrame:CGRectZero];
-             [self.img3 sd_setImageWithURL:[NSURL URLWithString:imageurls]];
-
-            
-        }
-        
-        
-    }
+      self.img1.frame=CGRectZero;
+     self.img2.frame=CGRectZero;
     
-    [self.contentView addSubview:view1];
+    self.img3.frame=CGRectZero;
 
-    self.title=[[UILabel alloc]initWithFrame:CGRectMake(8, 5, WIDTH-16, 60)];
+  self.img1.layer.masksToBounds = YES;
+    self.img1.layer.cornerRadius=3;
+    self.img2.layer.masksToBounds = YES;
+    self.img2.layer.cornerRadius=3;
+    self.img3.layer.masksToBounds = YES;
+    self.img3.layer.cornerRadius=3;
+
+    self.title.frame=CGRectZero;
     self.title.numberOfLines=2;
     self.title.lineBreakMode=NSLineBreakByCharWrapping;
     self.title.text=trade.fabutitle;
@@ -79,22 +64,23 @@
     self.title.backgroundColor=[UIColor clearColor];
     [view1 addSubview:self.title];
 
-    self.img4=[[UIImageView alloc]initWithFrame:CGRectZero];
+    self.img4.frame=CGRectZero;
 
     
      self.img4.image=[UIImage imageNamed:@"789.jpg"];
     
-    self.name=[[UILabel alloc]initWithFrame:CGRectZero];
+    self.name.frame=CGRectZero;
     
-    self.time=[[UILabel alloc]initWithFrame:CGRectZero];
     
-    self.shoucang=[[UILabel alloc]initWithFrame:CGRectZero];
+    self.time.frame=CGRectZero;
     
-    self.pinglun=[[UILabel alloc]initWithFrame:CGRectZero];
+  
     
-    self.shouchangshu=[[UILabel alloc]initWithFrame:CGRectZero];
+    self.pinglun.frame=CGRectZero;
     
-    self.pinglunshu=[[UILabel alloc]initWithFrame:CGRectZero];
+    self.shouchangshu.frame=CGRectZero;
+    
+    self.pinglunshu.frame=CGRectZero;
     
    self.name.text=trade.fabuname;
     self.name.font=[UIFont boldSystemFontOfSize:12];
@@ -115,17 +101,7 @@
      self.time.font=[UIFont boldSystemFontOfSize:10];
     self.time.textColor=lightgray;
     
-    [view1 addSubview:self.img1];
-    [view1 addSubview:self.img2];
-    [view1 addSubview:self.img3];
-    [view1 addSubview:self.img4];
-    [view1 addSubview:self.name];
-    [view1 addSubview:self.time];
-    [view1 addSubview:self.shouchangshu];
-    [view1 addSubview:self.shoucang];
-    [view1 addSubview:self.pinglunshu];
-    [view1 addSubview:self.pinglun];
- 
+  
     
 }
 
@@ -138,8 +114,8 @@
 
     if (ishidder==YES) {
         self.img1.frame=CGRectMake(8, self.title.bottom, 80, 80);
-        self.img2.frame=CGRectMake(WIDTH/3-8, self.title.bottom, 80, 80);
-        self.img3.frame=CGRectMake(WIDTH/3*2-16, self.title.bottom, 80, 80);
+        self.img2.frame=CGRectMake(100, self.title.bottom, 80, 80);
+        self.img3.frame=CGRectMake(192, self.title.bottom, 80, 80);
         
         self.img4.frame=CGRectMake(8, self.title.bottom+85, 20, 20);
         self.name.frame=CGRectMake(33, self.title.bottom+85, 100, 10);

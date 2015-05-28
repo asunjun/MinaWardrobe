@@ -9,34 +9,33 @@
 #import <UIKit/UIKit.h>
 @class SQmainlist;
 @interface CommunityTableViewCell : UITableViewCell
-@property(strong,nonatomic)UIView *view1;
+
+@property (weak, nonatomic) IBOutlet UILabel *title;
+
+@property (weak, nonatomic) IBOutlet UILabel *name;
+
+@property (weak, nonatomic) IBOutlet UILabel *time;
+
+@property (weak, nonatomic) IBOutlet UILabel *message;
+
+@property (weak, nonatomic) IBOutlet UILabel *shouchangshu;
+
+@property (weak, nonatomic) IBOutlet UILabel *pinglunshu;
+
+@property (weak, nonatomic) IBOutlet UIImageView *img1;
+
+@property (weak, nonatomic) IBOutlet UIImageView *img2;
+
+@property (weak, nonatomic) IBOutlet UIImageView *img3;
 
 
-@property(strong,nonatomic)UILabel *title;
+@property (weak, nonatomic) IBOutlet UIImageView *img4;
 
-@property(strong,nonatomic)UILabel *name;
+@property (weak, nonatomic) IBOutlet UIImageView *shouchang;
 
-@property(strong,nonatomic)UILabel *time;
+@property (weak, nonatomic) IBOutlet UIImageView *pinglun;
 
-@property(strong,nonatomic)UILabel *message;
-
-@property(strong,nonatomic)UIImageView *img1;
-
-@property(strong,nonatomic)UIImageView *img2;
-
-@property(strong,nonatomic)UIImageView *img3;
-
-@property(strong,nonatomic)UILabel *shoucang;
-
-@property(strong,nonatomic)UILabel *shouchangshu;
-
-@property(strong,nonatomic)UILabel *pinglun;
-
-@property(strong,nonatomic)UILabel *pinglunshu;
-
-@property(strong,nonatomic)UIImageView *img4;
-
-
+@property (weak, nonatomic) IBOutlet UIView *view1;
 
 @property(assign,nonatomic)BOOL ishidder;
 

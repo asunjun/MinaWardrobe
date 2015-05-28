@@ -25,7 +25,7 @@
     NSString *st2=@"正文：";
     NSString *st3=@"底的策略飞机饿哦喷雾剂佛锕陪我减肥我发觉锕我非常呢无法内侧为 i 哦腐女次额外付出哪哦我能否次饿哦无法内侧晚饭吃呢哦我吃饭呢哦我 i 吃饭呢哦 win 服从额外 i 付出";
     self.lab1=[[UILabel alloc]initWithFrame:CGRectZero];
-    self.lab1.text=st1;
+     self.lab1.text=st1;
     self.lab1.font=[UIFont boldSystemFontOfSize:15];
     
     self.lab1.numberOfLines=2;
