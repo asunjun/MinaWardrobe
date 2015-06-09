@@ -10,8 +10,4 @@
 
 @interface PostingTextTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) UITextView *textView;
-
-@property (nonatomic, strong) UIButton *addButton;
-
 @end

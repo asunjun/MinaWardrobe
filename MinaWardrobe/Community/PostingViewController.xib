@@ -84,12 +84,12 @@
                         </mask>
                         <mask key="constraints">
                             <exclude reference="WYZ-0v-PmT"/>
-                            <exclude reference="UH9-vp-1wi"/>
-                            <exclude reference="Wjq-te-Bar"/>
-                            <exclude reference="cdA-mD-hSs"/>
                             <exclude reference="0Ki-yU-UBo"/>
                             <exclude reference="9VM-oq-JBi"/>
                             <exclude reference="lZR-MB-Jyo"/>
+                            <exclude reference="UH9-vp-1wi"/>
+                            <exclude reference="Wjq-te-Bar"/>
+                            <exclude reference="cdA-mD-hSs"/>
                         </mask>
                     </variation>
                     <variation key="heightClass=regular-widthClass=compact">
@@ -99,18 +99,18 @@
                         </mask>
                         <mask key="constraints">
                             <include reference="WYZ-0v-PmT"/>
-                            <include reference="UH9-vp-1wi"/>
-                            <include reference="Wjq-te-Bar"/>
-                            <include reference="cdA-mD-hSs"/>
                             <include reference="0Ki-yU-UBo"/>
                             <include reference="9VM-oq-JBi"/>
                             <include reference="lZR-MB-Jyo"/>
+                            <include reference="UH9-vp-1wi"/>
+                            <include reference="Wjq-te-Bar"/>
+                            <include reference="cdA-mD-hSs"/>
                         </mask>
                     </variation>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="ob1-U7-XbE">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="nzr-BR-wsP"/>
                         <outlet property="delegate" destination="-1" id="WLp-Bj-CEg"/>
