@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "RegisterViewController.h"
 
-@interface DLViewController : UIViewController<ASIHTTPRequestDelegate>
+@interface DLViewController : UIViewController<ASIHTTPRequestDelegate, UITextFieldDelegate>
 
 /*
 //底层
@@ -33,14 +33,17 @@
 
 @property (nonatomic, strong) UIImageView *logoImage;
 
-@property (nonatomic, strong) UIView *loginView;
-@property (nonatomic, strong) UITextField *userNameText;
-@property (nonatomic, strong) UITextField *passwdText;
-@property (nonatomic, strong) UIImageView *lineImage;
+@property (nonatomic, strong) UIImageView *loginView;
+//@property (nonatomic, strong) UITextField *userNameText;
+//@property (nonatomic, strong) UITextField *passwdText;
+@property (strong, nonatomic) IBOutlet UITextField *userNameText;
+@property (strong, nonatomic) IBOutlet UITextField *passwdText;
 
 @property (nonatomic, strong) UIButton *loginButton;
 @property (nonatomic, strong) UIButton *forgetButton;
 @property (nonatomic, strong) UIButton *registerButton;
+
+@property (nonatomic, strong) UIButton *testButton;
 
 
 

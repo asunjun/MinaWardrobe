@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		184BBE971B1806230032015D /* ELCAlbumPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184BBE811B1806230032015D /* ELCAlbumPickerController.m */; };
+		184BBE981B1806230032015D /* ELCAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 184BBE831B1806230032015D /* ELCAsset.m */; };
+		184BBE991B1806230032015D /* ELCAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 184BBE851B1806230032015D /* ELCAssetCell.m */; };
+		184BBE9A1B1806230032015D /* ELCAssetTablePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 184BBE891B1806230032015D /* ELCAssetTablePicker.m */; };
+		184BBE9B1B1806230032015D /* ELCConsole.m in Sources */ = {isa = PBXBuildFile; fileRef = 184BBE8B1B1806230032015D /* ELCConsole.m */; };
+		184BBE9C1B1806230032015D /* ELCImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184BBE8D1B1806230032015D /* ELCImagePickerController.m */; };
+		184BBE9D1B1806230032015D /* ELCOverlayImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 184BBE901B1806230032015D /* ELCOverlayImageView.m */; };
+		184BBE9E1B1806230032015D /* ELCAlbumPickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184BBE921B1806230032015D /* ELCAlbumPickerController.xib */; };
+		184BBE9F1B1806230032015D /* ELCAssetPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184BBE931B1806230032015D /* ELCAssetPicker.xib */; };
+		184BBEA01B1806230032015D /* ELCAssetTablePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184BBE941B1806230032015D /* ELCAssetTablePicker.xib */; };
+		184BBEA11B1806230032015D /* Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 184BBE951B1806230032015D /* Overlay.png */; };
+		184BBEA21B1806230032015D /* Overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 184BBE961B1806230032015D /* Overlay@2x.png */; };
+		1852006F1B2672AB008DB9C6 /* qq登陆.png in Resources */ = {isa = PBXBuildFile; fileRef = 185200691B2672AB008DB9C6 /* qq登陆.png */; };
+		185200701B2672AB008DB9C6 /* 微信登陆.png in Resources */ = {isa = PBXBuildFile; fileRef = 1852006A1B2672AB008DB9C6 /* 微信登陆.png */; };
+		185200711B2672AB008DB9C6 /* LoginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 1852006B1B2672AB008DB9C6 /* LoginButton.png */; };
+		185200721B2672AB008DB9C6 /* LoginLOGO.png in Resources */ = {isa = PBXBuildFile; fileRef = 1852006C1B2672AB008DB9C6 /* LoginLOGO.png */; };
+		185200731B2672AB008DB9C6 /* UserPass.png in Resources */ = {isa = PBXBuildFile; fileRef = 1852006D1B2672AB008DB9C6 /* UserPass.png */; };
+		185200741B2672AB008DB9C6 /* BaseImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 1852006E1B2672AB008DB9C6 /* BaseImage.png */; };
 		186020471B15AA8200470D8D /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186020451B15AA8200470D8D /* RegisterViewController.m */; };
 		186020481B15AA8200470D8D /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186020461B15AA8200470D8D /* RegisterViewController.xib */; };
 		18639C1C1B04493C00072AF3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18639C1B1B04493C00072AF3 /* main.m */; };
@@ -126,6 +144,34 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		184BBE801B1806230032015D /* ELCAlbumPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAlbumPickerController.h; sourceTree = "<group>"; };
+		184BBE811B1806230032015D /* ELCAlbumPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAlbumPickerController.m; sourceTree = "<group>"; };
+		184BBE821B1806230032015D /* ELCAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAsset.h; sourceTree = "<group>"; };
+		184BBE831B1806230032015D /* ELCAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAsset.m; sourceTree = "<group>"; };
+		184BBE841B1806230032015D /* ELCAssetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAssetCell.h; sourceTree = "<group>"; };
+		184BBE851B1806230032015D /* ELCAssetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAssetCell.m; sourceTree = "<group>"; };
+		184BBE861B1806230032015D /* ELCAssetPickerFilterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAssetPickerFilterDelegate.h; sourceTree = "<group>"; };
+		184BBE871B1806230032015D /* ELCAssetSelectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAssetSelectionDelegate.h; sourceTree = "<group>"; };
+		184BBE881B1806230032015D /* ELCAssetTablePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAssetTablePicker.h; sourceTree = "<group>"; };
+		184BBE891B1806230032015D /* ELCAssetTablePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAssetTablePicker.m; sourceTree = "<group>"; };
+		184BBE8A1B1806230032015D /* ELCConsole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCConsole.h; sourceTree = "<group>"; };
+		184BBE8B1B1806230032015D /* ELCConsole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCConsole.m; sourceTree = "<group>"; };
+		184BBE8C1B1806230032015D /* ELCImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCImagePickerController.h; sourceTree = "<group>"; };
+		184BBE8D1B1806230032015D /* ELCImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCImagePickerController.m; sourceTree = "<group>"; };
+		184BBE8E1B1806230032015D /* ELCImagePickerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCImagePickerHeader.h; sourceTree = "<group>"; };
+		184BBE8F1B1806230032015D /* ELCOverlayImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCOverlayImageView.h; sourceTree = "<group>"; };
+		184BBE901B1806230032015D /* ELCOverlayImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCOverlayImageView.m; sourceTree = "<group>"; };
+		184BBE921B1806230032015D /* ELCAlbumPickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ELCAlbumPickerController.xib; sourceTree = "<group>"; };
+		184BBE931B1806230032015D /* ELCAssetPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ELCAssetPicker.xib; sourceTree = "<group>"; };
+		184BBE941B1806230032015D /* ELCAssetTablePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ELCAssetTablePicker.xib; sourceTree = "<group>"; };
+		184BBE951B1806230032015D /* Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Overlay.png; sourceTree = "<group>"; };
+		184BBE961B1806230032015D /* Overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Overlay@2x.png"; sourceTree = "<group>"; };
+		185200691B2672AB008DB9C6 /* qq登陆.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qq登陆.png"; sourceTree = "<group>"; };
+		1852006A1B2672AB008DB9C6 /* 微信登陆.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "微信登陆.png"; sourceTree = "<group>"; };
+		1852006B1B2672AB008DB9C6 /* LoginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginButton.png; sourceTree = "<group>"; };
+		1852006C1B2672AB008DB9C6 /* LoginLOGO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginLOGO.png; sourceTree = "<group>"; };
+		1852006D1B2672AB008DB9C6 /* UserPass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UserPass.png; sourceTree = "<group>"; };
+		1852006E1B2672AB008DB9C6 /* BaseImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BaseImage.png; sourceTree = "<group>"; };
 		186020441B15AA8200470D8D /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		186020451B15AA8200470D8D /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		186020461B15AA8200470D8D /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
@@ -340,6 +386,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		184BBE7F1B1806230032015D /* ELCImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				184BBE801B1806230032015D /* ELCAlbumPickerController.h */,
+				184BBE811B1806230032015D /* ELCAlbumPickerController.m */,
+				184BBE821B1806230032015D /* ELCAsset.h */,
+				184BBE831B1806230032015D /* ELCAsset.m */,
+				184BBE841B1806230032015D /* ELCAssetCell.h */,
+				184BBE851B1806230032015D /* ELCAssetCell.m */,
+				184BBE861B1806230032015D /* ELCAssetPickerFilterDelegate.h */,
+				184BBE871B1806230032015D /* ELCAssetSelectionDelegate.h */,
+				184BBE881B1806230032015D /* ELCAssetTablePicker.h */,
+				184BBE891B1806230032015D /* ELCAssetTablePicker.m */,
+				184BBE8A1B1806230032015D /* ELCConsole.h */,
+				184BBE8B1B1806230032015D /* ELCConsole.m */,
+				184BBE8C1B1806230032015D /* ELCImagePickerController.h */,
+				184BBE8D1B1806230032015D /* ELCImagePickerController.m */,
+				184BBE8E1B1806230032015D /* ELCImagePickerHeader.h */,
+				184BBE8F1B1806230032015D /* ELCOverlayImageView.h */,
+				184BBE901B1806230032015D /* ELCOverlayImageView.m */,
+				184BBE911B1806230032015D /* Resources */,
+			);
+			path = ELCImagePicker;
+			sourceTree = "<group>";
+		};
+		184BBE911B1806230032015D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				184BBE921B1806230032015D /* ELCAlbumPickerController.xib */,
+				184BBE931B1806230032015D /* ELCAssetPicker.xib */,
+				184BBE941B1806230032015D /* ELCAssetTablePicker.xib */,
+				184BBE951B1806230032015D /* Overlay.png */,
+				184BBE961B1806230032015D /* Overlay@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		185200681B2672AB008DB9C6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				185200691B2672AB008DB9C6 /* qq登陆.png */,
+				1852006A1B2672AB008DB9C6 /* 微信登陆.png */,
+				1852006B1B2672AB008DB9C6 /* LoginButton.png */,
+				1852006C1B2672AB008DB9C6 /* LoginLOGO.png */,
+				1852006D1B2672AB008DB9C6 /* UserPass.png */,
+				1852006E1B2672AB008DB9C6 /* BaseImage.png */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		18639C0D1B04493C00072AF3 = {
 			isa = PBXGroup;
 			children = (
@@ -461,6 +557,7 @@
 		18639C5C1B044DC100072AF3 /* Third */ = {
 			isa = PBXGroup;
 			children = (
+				184BBE7F1B1806230032015D /* ELCImagePicker */,
 				DD46EB7F1B12FC04004D01FF /* 小图标 */,
 				DD91D5B21B0B053C00C3C137 /* SVProgressHUD */,
 				18639D0E1B0467E900072AF3 /* NBWaterFlowLayout.h */,
@@ -680,6 +777,7 @@
 		DD94BBB51B0C624900739E44 /* imagersoure */ = {
 			isa = PBXGroup;
 			children = (
+				185200681B2672AB008DB9C6 /* Login */,
 			);
 			name = imagersoure;
 			sourceTree = "<group>";
@@ -776,23 +874,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				184BBE9E1B1806230032015D /* ELCAlbumPickerController.xib in Resources */,
 				DD46EB8F1B12FC04004D01FF /* 衣柜2.png in Resources */,
+				184BBEA01B1806230032015D /* ELCAssetTablePicker.xib in Resources */,
 				186ACF401B16EFDD00E77570 /* PostingMapTableViewCell.xib in Resources */,
 				186020481B15AA8200470D8D /* RegisterViewController.xib in Resources */,
 				DD46EB8E1B12FC04004D01FF /* 衣柜.png in Resources */,
 				18639C561B044BCB00072AF3 /* CommunityViewController.xib in Resources */,
+				185200741B2672AB008DB9C6 /* BaseImage.png in Resources */,
 				DD91D5C21B0B3D8F00C3C137 /* CommunityTableViewCell.xib in Resources */,
 				DD856AEA1B16B88900429554 /* ComtrueTableViewCell.xib in Resources */,
+				185200731B2672AB008DB9C6 /* UserPass.png in Resources */,
 				DD46EB8B1B12FC04004D01FF /* 我的2.png in Resources */,
 				DD46EB8C1B12FC04004D01FF /* 社区.png in Resources */,
 				187F9B5A1B0C72CB002CC82C /* MainCollectionViewCell.xib in Resources */,
+				184BBE9F1B1806230032015D /* ELCAssetPicker.xib in Resources */,
 				DD46EB891B12FC04004D01FF /* 商城2.png in Resources */,
 				186ACF3B1B16C8D900E77570 /* PostingTextTableViewCell.xib in Resources */,
+				184BBEA11B1806230032015D /* Overlay.png in Resources */,
 				18B464A91B0D99EC004E8637 /* TaoKeWebViewController.xib in Resources */,
 				18639C511B044BBF00072AF3 /* StoreViewController.xib in Resources */,
 				18639C2A1B04493C00072AF3 /* LaunchScreen.xib in Resources */,
 				DD91D5BD1B0B080600C3C137 /* DLViewController.xib in Resources */,
 				186ACF361B16BDAD00E77570 /* PostingViewController.xib in Resources */,
+				185200721B2672AB008DB9C6 /* LoginLOGO.png in Resources */,
 				DD91D5B61B0B053C00C3C137 /* SVProgressHUD.bundle in Resources */,
 				18639D061B0467D500072AF3 /* MJRefresh.bundle in Resources */,
 				187F9B581B0C72CB002CC82C /* MainViewController.xib in Resources */,
@@ -802,9 +907,13 @@
 				18639C5B1B044BDA00072AF3 /* MySeetingViewController.xib in Resources */,
 				DD46EB8D1B12FC04004D01FF /* 社区2.png in Resources */,
 				DD46EB8A1B12FC04004D01FF /* 我的.png in Resources */,
+				185200711B2672AB008DB9C6 /* LoginButton.png in Resources */,
 				DD46EB9D1B13145E004D01FF /* ComNRTableViewCell.xib in Resources */,
+				1852006F1B2672AB008DB9C6 /* qq登陆.png in Resources */,
+				184BBEA21B1806230032015D /* Overlay@2x.png in Resources */,
 				DD5AE0DC1B14608000FAD355 /* ComTwoNRTableViewCell.xib in Resources */,
 				18639C271B04493C00072AF3 /* Images.xcassets in Resources */,
+				185200701B2672AB008DB9C6 /* 微信登陆.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -863,9 +972,11 @@
 				18639CCD1B044F2800072AF3 /* UIImage+MultiFormat.m in Sources */,
 				18639CC81B044F2800072AF3 /* SDWebImageDownloaderOperation.m in Sources */,
 				18639C9D1B044F1B00072AF3 /* ASINetworkQueue.m in Sources */,
+				184BBE991B1806230032015D /* ELCAssetCell.m in Sources */,
 				18639CCF1B044F2800072AF3 /* UIImageView+HighlightedWebCache.m in Sources */,
 				DD6E8DA11B049EE600D222B4 /* SJasihttp.m in Sources */,
 				18639C551B044BCB00072AF3 /* CommunityViewController.m in Sources */,
+				184BBE981B1806230032015D /* ELCAsset.m in Sources */,
 				DD91D5C11B0B3D8F00C3C137 /* CommunityTableViewCell.m in Sources */,
 				18639C9B1B044F1B00072AF3 /* ASIHTTPRequest.m in Sources */,
 				18639C981B044F1B00072AF3 /* ASIDownloadCache.m in Sources */,
@@ -879,18 +990,23 @@
 				DD5AE0DB1B14608000FAD355 /* ComTwoNRTableViewCell.m in Sources */,
 				18639D101B0467E900072AF3 /* NBWaterFlowLayout.m in Sources */,
 				18639C9C1B044F1B00072AF3 /* ASIInputStream.m in Sources */,
+				184BBE9D1B1806230032015D /* ELCOverlayImageView.m in Sources */,
+				184BBE9A1B1806230032015D /* ELCAssetTablePicker.m in Sources */,
 				18639C751B044E7B00072AF3 /* AFSecurityPolicy.m in Sources */,
 				18B464A81B0D99EC004E8637 /* TaoKeWebViewController.m in Sources */,
 				187F9B591B0C72CB002CC82C /* MainCollectionViewCell.m in Sources */,
+				184BBE971B1806230032015D /* ELCAlbumPickerController.m in Sources */,
 				DD91D5BC1B0B080600C3C137 /* DLViewController.m in Sources */,
 				DD9F3F091B20533D00C34DCF /* Comcommodel.m in Sources */,
 				18639C781B044E7B00072AF3 /* AFURLResponseSerialization.m in Sources */,
 				18639CCA1B044F2800072AF3 /* SDWebImagePrefetcher.m in Sources */,
+				184BBE9C1B1806230032015D /* ELCImagePickerController.m in Sources */,
 				18639D081B0467D500072AF3 /* MJRefreshConst.m in Sources */,
 				186ACF3F1B16EFDD00E77570 /* PostingMapTableViewCell.m in Sources */,
 				18639CC21B044F2800072AF3 /* MKAnnotationView+WebCache.m in Sources */,
 				DD7C25101B26EE68003DBDEB /* comcomwzmodel.m in Sources */,
 				18639CCC1B044F2800072AF3 /* UIImage+GIF.m in Sources */,
+				184BBE9B1B1806230032015D /* ELCConsole.m in Sources */,
 				DD46EB941B13121D004D01FF /* ComNRViewController.m in Sources */,
 				18639C711B044E7B00072AF3 /* AFHTTPRequestOperation.m in Sources */,
 			);
