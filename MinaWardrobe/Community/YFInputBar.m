@@ -8,6 +8,7 @@
 
 #import "YFInputBar.h"
 #import "AppDelegate.h"
+//#import ""
 @implementation YFInputBar
 
 
@@ -77,10 +78,18 @@
         [_zhaopian setTitle:@"照片" forState:UIControlStateNormal];
         //        [_sendBtn setBackgroundColor:[UIColor whiteColor]];
         [_zhaopian setFrame:CGRectMake(0, 10, 50, 40)];
-        [_zhaopian addTarget:self action:@selector(sendBtnPress:) forControlEvents:UIControlEventTouchUpInside];
+        [_zhaopian addTarget:self action:@selector(zhaopianxuanqu:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_zhaopian];
     }
     return _zhaopian;
+}
+
+
+-(void)zhaopianxuanqu:(UIButton *)sender{
+    
+    
+    
+    
 }
 
 #pragma mark selfDelegate method
