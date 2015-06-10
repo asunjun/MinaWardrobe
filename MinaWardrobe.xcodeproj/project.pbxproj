@@ -99,6 +99,7 @@
 		DD5AE0DB1B14608000FAD355 /* ComTwoNRTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5AE0D91B14608000FAD355 /* ComTwoNRTableViewCell.m */; };
 		DD5AE0DC1B14608000FAD355 /* ComTwoNRTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD5AE0DA1B14608000FAD355 /* ComTwoNRTableViewCell.xib */; };
 		DD6E8DA11B049EE600D222B4 /* SJasihttp.m in Sources */ = {isa = PBXBuildFile; fileRef = DD6E8DA01B049EE600D222B4 /* SJasihttp.m */; };
+		DD7C25101B26EE68003DBDEB /* comcomwzmodel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7C250F1B26EE68003DBDEB /* comcomwzmodel.m */; };
 		DD856AE91B16B88900429554 /* ComtrueTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD856AE71B16B88900429554 /* ComtrueTableViewCell.m */; };
 		DD856AEA1B16B88900429554 /* ComtrueTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD856AE81B16B88900429554 /* ComtrueTableViewCell.xib */; };
 		DD856AED1B16BABF00429554 /* YFInputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DD856AEC1B16BABF00429554 /* YFInputBar.m */; };
@@ -108,6 +109,8 @@
 		DD91D5BD1B0B080600C3C137 /* DLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD91D5BB1B0B080600C3C137 /* DLViewController.xib */; };
 		DD91D5C11B0B3D8F00C3C137 /* CommunityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD91D5BF1B0B3D8F00C3C137 /* CommunityTableViewCell.m */; };
 		DD91D5C21B0B3D8F00C3C137 /* CommunityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD91D5C01B0B3D8F00C3C137 /* CommunityTableViewCell.xib */; };
+		DD9F3F061B1FE5EA00C34DCF /* ComQuestionNRModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9F3F051B1FE5EA00C34DCF /* ComQuestionNRModel.m */; };
+		DD9F3F091B20533D00C34DCF /* Comcommodel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9F3F081B20533D00C34DCF /* Comcommodel.m */; };
 		DDD4791D1B0DC73F00B15144 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD4791C1B0DC73F00B15144 /* UIViewExt.m */; };
 		DDD820241B09C9CF00CDC191 /* SQmainlist.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD820231B09C9CF00CDC191 /* SQmainlist.m */; };
 /* End PBXBuildFile section */
@@ -287,6 +290,8 @@
 		DD5AE0DA1B14608000FAD355 /* ComTwoNRTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComTwoNRTableViewCell.xib; sourceTree = "<group>"; };
 		DD6E8D9F1B049EE600D222B4 /* SJasihttp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJasihttp.h; sourceTree = "<group>"; };
 		DD6E8DA01B049EE600D222B4 /* SJasihttp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJasihttp.m; sourceTree = "<group>"; };
+		DD7C250E1B26EE68003DBDEB /* comcomwzmodel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = comcomwzmodel.h; sourceTree = "<group>"; };
+		DD7C250F1B26EE68003DBDEB /* comcomwzmodel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = comcomwzmodel.m; sourceTree = "<group>"; };
 		DD856AE61B16B88900429554 /* ComtrueTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComtrueTableViewCell.h; sourceTree = "<group>"; };
 		DD856AE71B16B88900429554 /* ComtrueTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComtrueTableViewCell.m; sourceTree = "<group>"; };
 		DD856AE81B16B88900429554 /* ComtrueTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComtrueTableViewCell.xib; sourceTree = "<group>"; };
@@ -301,6 +306,10 @@
 		DD91D5BE1B0B3D8F00C3C137 /* CommunityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityTableViewCell.h; sourceTree = "<group>"; };
 		DD91D5BF1B0B3D8F00C3C137 /* CommunityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityTableViewCell.m; sourceTree = "<group>"; };
 		DD91D5C01B0B3D8F00C3C137 /* CommunityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunityTableViewCell.xib; sourceTree = "<group>"; };
+		DD9F3F041B1FE5EA00C34DCF /* ComQuestionNRModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComQuestionNRModel.h; sourceTree = "<group>"; };
+		DD9F3F051B1FE5EA00C34DCF /* ComQuestionNRModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComQuestionNRModel.m; sourceTree = "<group>"; };
+		DD9F3F071B20533C00C34DCF /* Comcommodel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comcommodel.h; sourceTree = "<group>"; };
+		DD9F3F081B20533D00C34DCF /* Comcommodel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comcommodel.m; sourceTree = "<group>"; };
 		DDD4791B1B0DC73F00B15144 /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
 		DDD4791C1B0DC73F00B15144 /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
 		DDD820221B09C9CF00CDC191 /* SQmainlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQmainlist.h; sourceTree = "<group>"; };
@@ -635,6 +644,12 @@
 				DD856AE61B16B88900429554 /* ComtrueTableViewCell.h */,
 				DD856AE71B16B88900429554 /* ComtrueTableViewCell.m */,
 				DD856AE81B16B88900429554 /* ComtrueTableViewCell.xib */,
+				DD9F3F041B1FE5EA00C34DCF /* ComQuestionNRModel.h */,
+				DD9F3F051B1FE5EA00C34DCF /* ComQuestionNRModel.m */,
+				DD9F3F071B20533C00C34DCF /* Comcommodel.h */,
+				DD9F3F081B20533D00C34DCF /* Comcommodel.m */,
+				DD7C250E1B26EE68003DBDEB /* comcomwzmodel.h */,
+				DD7C250F1B26EE68003DBDEB /* comcomwzmodel.m */,
 			);
 			name = "内容";
 			sourceTree = "<group>";
@@ -729,6 +744,7 @@
 				TargetAttributes = {
 					18639C151B04493C00072AF3 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = 5E66V7652X;
 					};
 					18639C2E1B04493C00072AF3 = {
 						CreatedOnToolsVersion = 6.3;
@@ -834,6 +850,7 @@
 				18639C761B044E7B00072AF3 /* AFURLConnectionOperation.m in Sources */,
 				187F9B5B1B0C72CB002CC82C /* MainModle.m in Sources */,
 				DD856AED1B16BABF00429554 /* YFInputBar.m in Sources */,
+				DD9F3F061B1FE5EA00C34DCF /* ComQuestionNRModel.m in Sources */,
 				18639CD11B044F2800072AF3 /* UIView+WebCacheOperation.m in Sources */,
 				18639C731B044E7B00072AF3 /* AFHTTPSessionManager.m in Sources */,
 				18639D0C1B0467D500072AF3 /* UIScrollView+MJRefresh.m in Sources */,
@@ -866,11 +883,13 @@
 				18B464A81B0D99EC004E8637 /* TaoKeWebViewController.m in Sources */,
 				187F9B591B0C72CB002CC82C /* MainCollectionViewCell.m in Sources */,
 				DD91D5BC1B0B080600C3C137 /* DLViewController.m in Sources */,
+				DD9F3F091B20533D00C34DCF /* Comcommodel.m in Sources */,
 				18639C781B044E7B00072AF3 /* AFURLResponseSerialization.m in Sources */,
 				18639CCA1B044F2800072AF3 /* SDWebImagePrefetcher.m in Sources */,
 				18639D081B0467D500072AF3 /* MJRefreshConst.m in Sources */,
 				186ACF3F1B16EFDD00E77570 /* PostingMapTableViewCell.m in Sources */,
 				18639CC21B044F2800072AF3 /* MKAnnotationView+WebCache.m in Sources */,
+				DD7C25101B26EE68003DBDEB /* comcomwzmodel.m in Sources */,
 				18639CCC1B044F2800072AF3 /* UIImage+GIF.m in Sources */,
 				DD46EB941B13121D004D01FF /* ComNRViewController.m in Sources */,
 				18639C711B044E7B00072AF3 /* AFHTTPRequestOperation.m in Sources */,
@@ -991,6 +1010,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MinaWardrobe/PrefixHeader.pch";
@@ -998,6 +1019,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1005,6 +1027,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MinaWardrobe/PrefixHeader.pch";
@@ -1012,6 +1036,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -9,15 +9,19 @@
 #import <UIKit/UIKit.h>
 @class ComNRModel;
 @interface ComNRTableViewCell : UITableViewCell
-@property(strong,nonatomic)UILabel *lab1;
-@property(strong,nonatomic)UILabel *lab2;
-@property(strong,nonatomic)UILabel *lab3;
-@property(strong,nonatomic)UILabel *lab4;
+//@property(strong,nonatomic)UILabel *lab1;
+//@property(strong,nonatomic)UILabel *lab2;
+//@property(strong,nonatomic)UILabel *lab3;
+//@property(strong,nonatomic)UILabel *lab4;
+
+@property (weak, nonatomic) IBOutlet UILabel *lab1;
 
 
+@property (weak, nonatomic) IBOutlet UILabel *lab2;
 
+@property (weak, nonatomic) IBOutlet UILabel *lab3;
 
+@property (weak, nonatomic) IBOutlet UILabel *lab4;
 
-
-- (void)configCellByTradeModel:(ComNRModel  *)trade;
+- (void)configCellByTradeModel:(NSString *)titile and:(NSString *)message;
 @end

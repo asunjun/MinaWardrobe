@@ -22,6 +22,8 @@
 @property(strong,nonatomic)UITextField *textField;
 @property(strong,nonatomic)UIButton *sendBtn;
 
+@property(strong,nonatomic)UIButton *zhaopian;
+
 //点击btn时候 清空textfield  默认NO
 @property(assign,nonatomic)BOOL clearInputWhenSend;
 //点击btn时候 隐藏键盘  默认NO

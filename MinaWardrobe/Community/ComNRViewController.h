@@ -12,6 +12,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *table;
 
 
--(id)initWith:(NSString *)idzhi;
+-(id)initWith:(NSString *)idzhi and:(NSArray *)images and:(NSString *)catgroup;
 
 @end

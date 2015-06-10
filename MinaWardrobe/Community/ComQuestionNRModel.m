@@ -1,14 +1,15 @@
+
 //
-//  ComNRModel.m
+//  ComQuestionNRModel.m
 //  MinaWardrobe
 //
-//  Created by 米娜 上海文星广告传媒有限公司 on 15/5/25.
+//  Created by 米娜 上海文星广告传媒有限公司 on 15/6/4.
 //  Copyright (c) 2015年 wenxing. All rights reserved.
 //
 
-#import "ComNRModel.h"
+#import "ComQuestionNRModel.h"
 #import "NSDictionary+Null.h"
-@implementation ComNRModel
+@implementation ComQuestionNRModel
 - (id)initWithDic:(NSDictionary*)dic
 {
     self = [super init];
@@ -16,33 +17,33 @@
         
         
         NSDictionary *post=[dic notNullobjectForKey:@"post"];
-        self.commons=[dic notNullobjectForKey:@"comments"];
-        NSLog(@"%ld",_commons.count);
+        self.dic2=[dic notNullobjectForKey:@"comments"];
+        NSLog(@"%ld",self.dic2.count);
         
-        self.title=[post notNullobjectForKey:@"title"];
-        NSString *mess=[post notNullobjectForKey:@"message"];
+        self.title=[post notNullobjectForKey:@"question_content"];
+        NSString *mess=[post notNullobjectForKey:@"question_detail"];
         NSLog(@"%@",mess);
-         NSLog(@"%@",self.title);
+        NSLog(@"%@",self.title);
         if([mess rangeOfString:@"##########"].location !=NSNotFound)//_roaldSearchText
         {
             NSArray *a1=[mess componentsSeparatedByString:@"##########"];
-           
-                NSLog(@"%@",[a1 objectAtIndex:0]);
-                
+            
+            NSLog(@"%@",[a1 objectAtIndex:0]);
+            
             self.message=[a1 objectAtIndex:0];
             
-                 NSLog(@"%@",[a1 objectAtIndex:1]);
+            NSLog(@"%@",[a1 objectAtIndex:1]);
             
             
             NSLog(@"yes");
         }
         else
         {
-            NSLog(@"no");
+            self.message=mess;
+            
         }
         
     }
     return self;
 }
-
 @end

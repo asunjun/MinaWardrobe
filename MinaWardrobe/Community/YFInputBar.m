@@ -18,10 +18,11 @@
         
         self.backgroundColor = [UIColor grayColor];
         
-        self.frame = CGRectMake(0, CGRectGetMinY(frame), 320, CGRectGetHeight(frame));
+        self.frame = CGRectMake(0, CGRectGetMinY(frame), WIDTH, CGRectGetHeight(frame));
         
         self.textField.tag = 10000;
         self.sendBtn.tag = 10001;
+        self.zhaopian.tag=10002;
         
         //注册键盘通知
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
@@ -37,7 +38,7 @@
 //_originalFrame的set方法  因为会调用setFrame  所以就不在此做赋值；
 -(void)setOriginalFrame:(CGRect)originalFrame
 {
-    self.frame = CGRectMake(0, CGRectGetMinY(originalFrame), 320, CGRectGetHeight(originalFrame));
+    self.frame = CGRectMake(0, CGRectGetMinY(originalFrame), WIDTH, CGRectGetHeight(originalFrame));
 }
 
 -(void)dealloc
@@ -50,7 +51,7 @@
 -(UITextField *)textField
 {
     if (!_textField) {
-        _textField = [[UITextField alloc]initWithFrame:CGRectMake(10, 10, 250, 24)];
+        _textField = [[UITextField alloc]initWithFrame:CGRectMake(50, 10, WIDTH-90, 24)];
         _textField.backgroundColor = [UIColor whiteColor];
         [self addSubview:_textField];
     }
@@ -62,12 +63,26 @@
         _sendBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_sendBtn setTitle:@"发送" forState:UIControlStateNormal];
 //        [_sendBtn setBackgroundColor:[UIColor whiteColor]];
-        [_sendBtn setFrame:CGRectMake(270, 10, 40, 24)];
+        [_sendBtn setFrame:CGRectMake(WIDTH-40, 10, 40, 24)];
         [_sendBtn addTarget:self action:@selector(sendBtnPress:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_sendBtn];
     }
     return _sendBtn;
 }
+
+-(UIButton *)zhaopian
+{
+    if (!_zhaopian) {
+        _zhaopian = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_zhaopian setTitle:@"照片" forState:UIControlStateNormal];
+        //        [_sendBtn setBackgroundColor:[UIColor whiteColor]];
+        [_zhaopian setFrame:CGRectMake(0, 10, 50, 40)];
+        [_zhaopian addTarget:self action:@selector(sendBtnPress:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:_zhaopian];
+    }
+    return _zhaopian;
+}
+
 #pragma mark selfDelegate method
 
 -(void)sendBtnPress:(UIButton*)sender
@@ -87,7 +102,7 @@
 
 - (void)keyboardWillShow:(NSNotification*)notification{
     CGRect _keyboardRect = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    NSLog(@"%f-%f-%f-%f",_keyboardRect.origin.y,_keyboardRect.size.height,[self getHeighOfWindow]-CGRectGetMaxY(self.frame),CGRectGetMinY(self.frame));
+    
     
     //如果self在键盘之下 才做偏移
     if ([self convertYToWindow:CGRectGetMaxY(self.originalFrame)]>=_keyboardRect.origin.y)
@@ -101,13 +116,12 @@
                              animations:^{
                                  self.transform = CGAffineTransformMakeTranslation(0, -_keyboardRect.size.height+[self getHeighOfWindow]-CGRectGetMaxY(self.originalFrame)-64);
                                  
-//                                NSLog(@"%f-%f-%f",-_keyboardRect.origin.y,_keyboardRect.size.height,[self getHeighOfWindow],CGRectGetMaxY(self.originalFrame));
                                  
                              } completion:nil];
         }
         else
         {
-            self.transform = CGAffineTransformMakeTranslation(0, -_keyboardRect.size.height+[self getHeighOfWindow]-(CGRectGetMaxY(self.originalFrame)-64));
+            self.transform = CGAffineTransformMakeTranslation(0, -_keyboardRect.size.height+[self getHeighOfWindow]-(CGRectGetMaxY(self.originalFrame)+64));
         }
         
     }

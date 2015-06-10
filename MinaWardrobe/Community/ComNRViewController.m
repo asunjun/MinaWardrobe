@@ -15,12 +15,25 @@
 #import "ComTwoNRTableViewCell.h"
 #import "ComtrueTableViewCell.h"
 #import "YFInputBar.h"
+#import "ComQuestionNRModel.h"
+#import "Comcommodel.h"
+#import "UIImageView+WebCache.h"
 @interface ComNRViewController ()<UITableViewDataSource,UITableViewDelegate,YFInputBarDelegate>{
   
     ComNRModel *shuju;
+    ComQuestionNRModel *questionshuju;
+    Comcommodel *quescom;
+    
+    NSString *_title;
+    NSString *_message;
+    
     NSMutableArray *_datasoure;
+    NSArray *_imageurls;
     
       NSString *_tradeid;
+    NSString *_catgrop;
+    
+    
     
 }
 
@@ -30,7 +43,7 @@
 
 
 
--(id)initWith:(NSString *)idzhi{
+-(id)initWith:(NSString *)idzhi and:(NSArray *)images and:(NSString *)catgroup{
 
     
     self=[super init];
@@ -38,11 +51,17 @@
    
     if (self) {
         _tradeid = idzhi;
+        _imageurls=images;
+        _catgrop=catgroup;
+        
     }
     return self;
     
 }
 - (void)viewDidLoad {
+    NSLog(@"%@",_imageurls);
+  //  self.view.userInteractionEnabled=NO;
+    
     [self.navigationController setNavigationBarHidden:NO];
     [super viewDidLoad];
     self.table.frame=CGRectMake(0, 0, WIDTH, HEIGHT);
@@ -85,17 +104,35 @@
 
 -(void)requstdata{
     [SVProgressHUD show];
-    NSString *URLNR=[NSString stringWithFormat:@"http://sq.mina.cn/index.php/article/%@",_tradeid];
+    
+    if ([_catgrop isEqual:@"article"]) {
+        NSString *URLNR=[NSString stringWithFormat:@"http://sq.mina.cn/?/article/%@",_tradeid];
+        NSURL *url = [NSURL URLWithString:URLNR];
+        
+        NSLog(@"%@",url);
+        
+        ASIFormDataRequest *request=[ASIFormDataRequest requestWithURL:url];
+        [request setUserAgent:@"Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36"];
+        
+        [request setDelegate:self];
+        [request startAsynchronous];
+
+    }else{
+        NSString *URLNR=[NSString stringWithFormat:@"http://sq.mina.cn/?/question/%@",_tradeid];
+        NSURL *url = [NSURL URLWithString:URLNR];
+        
+        NSLog(@"%@",url);
+        
+        ASIFormDataRequest *request=[ASIFormDataRequest requestWithURL:url];
+        [request setUserAgent:@"Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36"];
+        
+        [request setDelegate:self];
+        [request startAsynchronous];
+
+    }
     
     
-    NSURL *url = [NSURL URLWithString:URLNR];
     
-    
-    ASIFormDataRequest *request=[ASIFormDataRequest requestWithURL:url];
-    [request setUserAgent:@"Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML,                                                                                                                                                                                                                                                                                                                                                           Gecko) Chrome/41.0.2272.101 Safari/537.36"];
-    
-    [request setDelegate:self];
-    [request startAsynchronous];
     
 }
 
@@ -105,16 +142,47 @@
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+    if (_imageurls!=nil) {
+        return 3;
+    }else{
+        return 2;
+        
+    }
+    
     return 3;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    if (section==0) {
-        return 1;
+    
+    
+    if (_imageurls!=nil) {
+        if (section==0) {
+            return 1;
+        }
+        if (section==1) {
+            return 1;
+        }
+        if (section==2) {
+            if (_datasoure.count==0) {
+                return 1;
+            }
+            return _datasoure.count;
+            
+        }
+
+    }else{
+        if (section==0) {
+            return 1;
+        }
+        if (section==1) {
+            if (_datasoure.count==0) {
+                return 1;
+            }
+            return _datasoure.count;;
+        }
+        
     }
-    if (section==1) {
-        return 1;
-    }
+    
     
     
     return 10;
@@ -123,49 +191,123 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    
-    if (indexPath.section==0) {
-        static NSString *CellIdentifier = @"ComNRTableViewCell";
-        ComNRTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        
-        if (cell==nil) {
+    if (_imageurls!=nil) {
+        if (indexPath.section==0) {
+            static NSString *CellIdentifier = @"ComNRTableViewCell";
+            ComNRTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            
+            if (cell==nil) {
+                
+            }
+            
+            cell.selectionStyle=UITableViewCellSelectionStyleNone;
+               [cell configCellByTradeModel:_title and:_message];
+            return cell;
+            
             
         }
-        
-        cell.selectionStyle=UITableViewCellSelectionStyleNone;
-        
-        [cell configCellByTradeModel:nil];
-        return cell;
+        if (indexPath.section==1) {
+            static NSString *CellIdentifier = @"ComTwoNRTableViewCell";
+            ComTwoNRTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            
+            if (cell==nil) {
+                
+            }
+            
+            [cell configCellByTradeModel:nil];
+            for (int i=0; i<_imageurls.count; i++) {
+                switch (i) {
+                    case 0:
+                        
+                        
+                        [cell.img1 sd_setImageWithURL:[NSURL URLWithString:[_imageurls objectAtIndex:i]]];
+                        break;
+                    case 1:
+                        
+                        [cell.img2 sd_setImageWithURL:[NSURL URLWithString:[_imageurls objectAtIndex:i]]];
+                        
+                        
+                        break;
+                    case 2:
+                        [cell.img3 sd_setImageWithURL:[NSURL URLWithString:[_imageurls objectAtIndex:i]]];
+                        
+                        break;
+                        
+                    default:
+                        
+                        break;
+                }
+                
+
+            }
+            
+            return cell;
+            
+        }
+        if (indexPath.section==2) {
+            static NSString *CellIdentifier = @"ComtrueTableViewCell";
+            ComtrueTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            
+            if (cell==nil) {
+                
+            }
+            if (_datasoure.count==0) {
+                UILabel *lab100=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 200)];
+                lab100.text=@"暂无消息回复";
+                [cell addSubview:lab100];
+                return cell;
+                
+            }
+             Comcommodel *trade = _datasoure[indexPath.row];
+              [cell configCellByTradeModel:trade.name and:indexPath.row and:nil and:nil and:trade.huifu];
+            
+            
+            
+            return cell;
+        }
+    
+    }else{
+        if (indexPath.section==0) {
+            static NSString *CellIdentifier = @"ComNRTableViewCell";
+            ComNRTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            
+            if (cell==nil) {
+                
+            }
+            
+            cell.selectionStyle=UITableViewCellSelectionStyleNone;
+            [cell configCellByTradeModel:_title and:_message];
+            return cell;
+            
+            
+        }
 
         
-    }
-    if (indexPath.section==1) {
-        static NSString *CellIdentifier = @"ComTwoNRTableViewCell";
-        ComTwoNRTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        
-        if (cell==nil) {
+        if (indexPath.section==1) {
+            static NSString *CellIdentifier = @"ComtrueTableViewCell";
+            ComtrueTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
             
-        }
-        
-         [cell configCellByTradeModel:nil];
-        cell.img1.image=[UIImage imageNamed:@"789.jpg"];
-        cell.img2.image=[UIImage imageNamed:@"789.jpg"];
-        cell.img3.image=[UIImage imageNamed:@"789.jpg"];
-        
+            if (cell==nil) {
+                
+            }
+            NSLog(@"%ld",_datasoure.count);
+            if (_datasoure.count==0) {
+                UILabel *lab100=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 200)];
+                lab100.text=@"暂无消息回复";
+                lab100.textAlignment = NSTextAlignmentCenter;
+                [cell addSubview:lab100];
+                return cell;
+                
+            }else{
+            Comcommodel *trade = _datasoure[indexPath.row];
+            [cell configCellByTradeModel:trade.name and:indexPath.row and:nil and:nil and:trade.huifu];
+            return cell;
 
-        
-              return cell;
-        
+            }
     }
-    if (indexPath.section==2) {
-        static NSString *CellIdentifier = @"ComtrueTableViewCell";
-        ComtrueTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+       
+   
         
-        if (cell==nil) {
-            
-        }
-              return cell;
         
     }
     
@@ -184,28 +326,46 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section==0) {
         
-        NSString *st1=@"标题：啊锕锕锕锕锕锕锕锕锕锕锕锕锕锕锕锕锕锕锕锕锕锕锕锕锕锕锕锕锕锕锕锕";
-      
-        NSString *st3=@"底的策略飞机饿哦喷雾剂佛锕陪我减肥我发觉锕我非常呢无法内侧为 i 哦腐女次额外付出哪哦我能否次饿哦无法内侧晚饭吃呢哦我吃饭呢哦我 i 吃饭呢哦 win 服从额外 i 付出";
-         CGFloat height1 = [st1 boundingRectWithSize:CGSizeMake(145, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:15]} context:nil].size.height;
+   
+         CGFloat height1 = [_title boundingRectWithSize:CGSizeMake(WIDTH, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:15]} context:nil].size.height;
         
-        CGFloat height2=[st3 boundingRectWithSize:CGSizeMake(145, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:15]} context:nil].size.height;
+        CGFloat height2=[_message boundingRectWithSize:CGSizeMake(WIDTH, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:15]} context:nil].size.height;
           NSLog(@"%f",height1);
           NSLog(@"%f",height2);
         
         
-        CGFloat height=height1+height2;
+        CGFloat height=height1+height2+50;
         NSLog(@"%f",height);
         
         return height;
         
         
     }
-    if (indexPath.section==1) {
+    
+    if (_imageurls!=nil) {
         
-        return 1320;
+        if (indexPath.section==1) {
+            
+            if (_imageurls.count<4) {
+                  CGFloat height=_imageurls.count*450;
+                 return height;
+            }else{
+                return 1350;
+                
+            }
+          
+           
+            
+        }
+    }else{
+        if (indexPath.section==1) {
+            
+            return 200;
+            
+        }
         
     }
+    
     
     return 200;
     
@@ -228,23 +388,58 @@
     
     
     NSMutableArray *a1=[[NSMutableArray alloc]initWithObjects:[arrayWord objectAtIndex:0], nil];
-    
+  //   NSLog(@"%@",a1);
     NSString *a2=[a1 objectAtIndex:0];
-    NSArray *arr = [NSJSONSerialization JSONObjectWithData:[a2 dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingAllowFragments error:nil];
+    NSDictionary *arr = [NSJSONSerialization JSONObjectWithData:[a2 dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingAllowFragments error:nil];
     NSLog(@"%@",arr);
     
+    if ([_catgrop isEqualToString:@"question"]) {
+        questionshuju=[[ComQuestionNRModel alloc]initWithDic:arr];
+        
+        _title=questionshuju.title;
+        _message=questionshuju.message;
+        for (int i=1; i<questionshuju.dic2.count+1; i++) {
+            
+            NSDictionary *dic=[questionshuju.dic2 objectForKey:[NSString stringWithFormat:@"%d",i]];
+            
+            
+            quescom=[[Comcommodel alloc]initWithDic:dic];
+            [_datasoure addObject:quescom];
+            
+            
+        }
+        
+        NSLog(@"%@",quescom.name);
+       
+        
+        
+        [self.table reloadData];
+        
+        
+        
+        
+        
+        
+    }else{
+         shuju=[[ComNRModel alloc]initWithDic:arr];
+        _title=shuju.title;
+        _message=shuju.message;
+
+        
+        NSLog(@"%@",_title);
+        NSLog(@"%@",_message);
+
+        
+        
+        NSLog(@"%@",shuju.message);
+        [self.table reloadData];
+        
+    }
     
-//    for (int i=0; i<arr.count; i++) {
-//        NSDictionary *dic=[arr objectAtIndex:i];
-//        NSLog(@"%@",dic);
-//        shuju=[[ComNRModel alloc]initWithDic:dic];
-//        [_datasoure addObject:shuju];
-//        
-//    }
-//    
-//    [self.table reloadData];
     
+   
     
+
     
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -265,15 +460,5 @@
     [SVProgressHUD showErrorWithStatus:error.localizedDescription];
     
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

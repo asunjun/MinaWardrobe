@@ -33,7 +33,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];     // Do any additional setup after loading the view from its nib.
-    [self.tableview setFrame:CGRectMake(0, 50, WIDTH, HEIGHT)];
+    [self.tableview setFrame:CGRectMake(0, 50, WIDTH, HEIGHT-94)];
     
     [self.tableview registerNib:[UINib nibWithNibName:@"CommunityTableViewCell" bundle:nil] forCellReuseIdentifier:@"CommunityTableViewCell"];
     
@@ -187,7 +187,7 @@
 {
     
     SQmainlist *trade = _dataSource[indexPath.row];
-    ComNRViewController *NR=[[ComNRViewController alloc]initWith:trade.idzhi];
+    ComNRViewController *NR=[[ComNRViewController alloc]initWith:trade.idzhi and:trade.imageurl and:trade.category];
     
     
     NR.hidesBottomBarWhenPushed = YES;
@@ -253,7 +253,7 @@
     
     NSString *st1=[request responseString];
     
-    NSLog(@"%@",st1);
+   
     
     
     
@@ -275,7 +275,7 @@
 
     for (int i=0; i<arr.count; i++) {
         NSDictionary *dic=[arr objectAtIndex:i];
-          NSLog(@"%@",dic);
+        
         list=[[SQmainlist alloc]initWithDic:dic];
         [_dataSource addObject:list];
        
