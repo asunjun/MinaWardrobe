@@ -2,7 +2,7 @@
 //  PostingTextTableViewCell.m
 //  MinaWardrobe
 //
-//  Created by apple on 15/5/28.
+//  Created by apple on 15/6/10.
 //  Copyright (c) 2015年 wenxing. All rights reserved.
 //
 

@@ -25,6 +25,10 @@
 		185200721B2672AB008DB9C6 /* LoginLOGO.png in Resources */ = {isa = PBXBuildFile; fileRef = 1852006C1B2672AB008DB9C6 /* LoginLOGO.png */; };
 		185200731B2672AB008DB9C6 /* UserPass.png in Resources */ = {isa = PBXBuildFile; fileRef = 1852006D1B2672AB008DB9C6 /* UserPass.png */; };
 		185200741B2672AB008DB9C6 /* BaseImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 1852006E1B2672AB008DB9C6 /* BaseImage.png */; };
+		185431941B29284C0011A061 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 185431921B2920660011A061 /* libxml2.dylib */; };
+		185431971B292DB60011A061 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 185431961B292DB60011A061 /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		185C09E71B2832DF00BB8906 /* PostingTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 185C09E51B2832DF00BB8906 /* PostingTextTableViewCell.m */; };
+		185C09E81B2832DF00BB8906 /* PostingTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185C09E61B2832DF00BB8906 /* PostingTextTableViewCell.xib */; };
 		186020471B15AA8200470D8D /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186020451B15AA8200470D8D /* RegisterViewController.m */; };
 		186020481B15AA8200470D8D /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186020461B15AA8200470D8D /* RegisterViewController.xib */; };
 		18639C1C1B04493C00072AF3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18639C1B1B04493C00072AF3 /* main.m */; };
@@ -88,10 +92,6 @@
 		18639D101B0467E900072AF3 /* NBWaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 18639D0F1B0467E900072AF3 /* NBWaterFlowLayout.m */; };
 		186ACF351B16BDAD00E77570 /* PostingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186ACF331B16BDAD00E77570 /* PostingViewController.m */; };
 		186ACF361B16BDAD00E77570 /* PostingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186ACF341B16BDAD00E77570 /* PostingViewController.xib */; };
-		186ACF3A1B16C8D900E77570 /* PostingTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 186ACF381B16C8D800E77570 /* PostingTextTableViewCell.m */; };
-		186ACF3B1B16C8D900E77570 /* PostingTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186ACF391B16C8D800E77570 /* PostingTextTableViewCell.xib */; };
-		186ACF3F1B16EFDD00E77570 /* PostingMapTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 186ACF3D1B16EFDD00E77570 /* PostingMapTableViewCell.m */; };
-		186ACF401B16EFDD00E77570 /* PostingMapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186ACF3E1B16EFDD00E77570 /* PostingMapTableViewCell.xib */; };
 		187F9B571B0C72CB002CC82C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187F9B501B0C72CB002CC82C /* MainViewController.m */; };
 		187F9B581B0C72CB002CC82C /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187F9B511B0C72CB002CC82C /* MainViewController.xib */; };
 		187F9B591B0C72CB002CC82C /* MainCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 187F9B531B0C72CB002CC82C /* MainCollectionViewCell.m */; };
@@ -172,6 +172,12 @@
 		1852006C1B2672AB008DB9C6 /* LoginLOGO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginLOGO.png; sourceTree = "<group>"; };
 		1852006D1B2672AB008DB9C6 /* UserPass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UserPass.png; sourceTree = "<group>"; };
 		1852006E1B2672AB008DB9C6 /* BaseImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BaseImage.png; sourceTree = "<group>"; };
+		185431921B2920660011A061 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		185431951B292DB60011A061 /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
+		185431961B292DB60011A061 /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
+		185C09E41B2832DF00BB8906 /* PostingTextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostingTextTableViewCell.h; sourceTree = "<group>"; };
+		185C09E51B2832DF00BB8906 /* PostingTextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostingTextTableViewCell.m; sourceTree = "<group>"; };
+		185C09E61B2832DF00BB8906 /* PostingTextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostingTextTableViewCell.xib; sourceTree = "<group>"; };
 		186020441B15AA8200470D8D /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		186020451B15AA8200470D8D /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		186020461B15AA8200470D8D /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
@@ -295,12 +301,6 @@
 		186ACF321B16BDAD00E77570 /* PostingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostingViewController.h; sourceTree = "<group>"; };
 		186ACF331B16BDAD00E77570 /* PostingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostingViewController.m; sourceTree = "<group>"; };
 		186ACF341B16BDAD00E77570 /* PostingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostingViewController.xib; sourceTree = "<group>"; };
-		186ACF371B16C8D800E77570 /* PostingTextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostingTextTableViewCell.h; sourceTree = "<group>"; };
-		186ACF381B16C8D800E77570 /* PostingTextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostingTextTableViewCell.m; sourceTree = "<group>"; };
-		186ACF391B16C8D800E77570 /* PostingTextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostingTextTableViewCell.xib; sourceTree = "<group>"; };
-		186ACF3C1B16EFDD00E77570 /* PostingMapTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostingMapTableViewCell.h; sourceTree = "<group>"; };
-		186ACF3D1B16EFDD00E77570 /* PostingMapTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostingMapTableViewCell.m; sourceTree = "<group>"; };
-		186ACF3E1B16EFDD00E77570 /* PostingMapTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostingMapTableViewCell.xib; sourceTree = "<group>"; };
 		187F9B4F1B0C72CB002CC82C /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		187F9B501B0C72CB002CC82C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		187F9B511B0C72CB002CC82C /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
@@ -368,6 +368,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				185431941B29284C0011A061 /* libxml2.dylib in Frameworks */,
 				18639CE41B0451CB00072AF3 /* SystemConfiguration.framework in Frameworks */,
 				18639CE21B0451C300072AF3 /* CoreGraphics.framework in Frameworks */,
 				18639CE01B0451AC00072AF3 /* libz.1.2.5.dylib in Frameworks */,
@@ -439,6 +440,7 @@
 		18639C0D1B04493C00072AF3 = {
 			isa = PBXGroup;
 			children = (
+				185431921B2920660011A061 /* libxml2.dylib */,
 				DD46EB7D1B12BD69004D01FF /* 789.jpg */,
 				DDD820291B09D25A00CDC191 /* 帮助文件 */,
 				18639CE31B0451CB00072AF3 /* SystemConfiguration.framework */,
@@ -524,12 +526,9 @@
 				186ACF321B16BDAD00E77570 /* PostingViewController.h */,
 				186ACF331B16BDAD00E77570 /* PostingViewController.m */,
 				186ACF341B16BDAD00E77570 /* PostingViewController.xib */,
-				186ACF371B16C8D800E77570 /* PostingTextTableViewCell.h */,
-				186ACF381B16C8D800E77570 /* PostingTextTableViewCell.m */,
-				186ACF391B16C8D800E77570 /* PostingTextTableViewCell.xib */,
-				186ACF3C1B16EFDD00E77570 /* PostingMapTableViewCell.h */,
-				186ACF3D1B16EFDD00E77570 /* PostingMapTableViewCell.m */,
-				186ACF3E1B16EFDD00E77570 /* PostingMapTableViewCell.xib */,
+				185C09E41B2832DF00BB8906 /* PostingTextTableViewCell.h */,
+				185C09E51B2832DF00BB8906 /* PostingTextTableViewCell.m */,
+				185C09E61B2832DF00BB8906 /* PostingTextTableViewCell.xib */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -557,6 +556,8 @@
 		18639C5C1B044DC100072AF3 /* Third */ = {
 			isa = PBXGroup;
 			children = (
+				185431951B292DB60011A061 /* GDataXMLNode.h */,
+				185431961B292DB60011A061 /* GDataXMLNode.m */,
 				184BBE7F1B1806230032015D /* ELCImagePicker */,
 				DD46EB7F1B12FC04004D01FF /* 小图标 */,
 				DD91D5B21B0B053C00C3C137 /* SVProgressHUD */,
@@ -877,7 +878,6 @@
 				184BBE9E1B1806230032015D /* ELCAlbumPickerController.xib in Resources */,
 				DD46EB8F1B12FC04004D01FF /* 衣柜2.png in Resources */,
 				184BBEA01B1806230032015D /* ELCAssetTablePicker.xib in Resources */,
-				186ACF401B16EFDD00E77570 /* PostingMapTableViewCell.xib in Resources */,
 				186020481B15AA8200470D8D /* RegisterViewController.xib in Resources */,
 				DD46EB8E1B12FC04004D01FF /* 衣柜.png in Resources */,
 				18639C561B044BCB00072AF3 /* CommunityViewController.xib in Resources */,
@@ -890,7 +890,6 @@
 				187F9B5A1B0C72CB002CC82C /* MainCollectionViewCell.xib in Resources */,
 				184BBE9F1B1806230032015D /* ELCAssetPicker.xib in Resources */,
 				DD46EB891B12FC04004D01FF /* 商城2.png in Resources */,
-				186ACF3B1B16C8D900E77570 /* PostingTextTableViewCell.xib in Resources */,
 				184BBEA11B1806230032015D /* Overlay.png in Resources */,
 				18B464A91B0D99EC004E8637 /* TaoKeWebViewController.xib in Resources */,
 				18639C511B044BBF00072AF3 /* StoreViewController.xib in Resources */,
@@ -909,6 +908,7 @@
 				DD46EB8A1B12FC04004D01FF /* 我的.png in Resources */,
 				185200711B2672AB008DB9C6 /* LoginButton.png in Resources */,
 				DD46EB9D1B13145E004D01FF /* ComNRTableViewCell.xib in Resources */,
+				185C09E81B2832DF00BB8906 /* PostingTextTableViewCell.xib in Resources */,
 				1852006F1B2672AB008DB9C6 /* qq登陆.png in Resources */,
 				184BBEA21B1806230032015D /* Overlay@2x.png in Resources */,
 				DD5AE0DC1B14608000FAD355 /* ComTwoNRTableViewCell.xib in Resources */,
@@ -948,6 +948,7 @@
 				18639D0B1B0467D500072AF3 /* UIScrollView+MJExtension.m in Sources */,
 				187F9B571B0C72CB002CC82C /* MainViewController.m in Sources */,
 				18639C741B044E7B00072AF3 /* AFNetworkReachabilityManager.m in Sources */,
+				185431971B292DB60011A061 /* GDataXMLNode.m in Sources */,
 				DD46EB981B131432004D01FF /* ComNRModel.m in Sources */,
 				18639D091B0467D500072AF3 /* MJRefreshFooterView.m in Sources */,
 				DD856AE91B16B88900429554 /* ComtrueTableViewCell.m in Sources */,
@@ -962,6 +963,7 @@
 				DD9F3F061B1FE5EA00C34DCF /* ComQuestionNRModel.m in Sources */,
 				18639CD11B044F2800072AF3 /* UIView+WebCacheOperation.m in Sources */,
 				18639C731B044E7B00072AF3 /* AFHTTPSessionManager.m in Sources */,
+				185C09E71B2832DF00BB8906 /* PostingTextTableViewCell.m in Sources */,
 				18639D0C1B0467D500072AF3 /* UIScrollView+MJRefresh.m in Sources */,
 				18639C771B044E7B00072AF3 /* AFURLRequestSerialization.m in Sources */,
 				18639CD01B044F2800072AF3 /* UIImageView+WebCache.m in Sources */,
@@ -986,7 +988,6 @@
 				18639C991B044F1B00072AF3 /* ASIFormDataRequest.m in Sources */,
 				18639CC61B044F2800072AF3 /* SDWebImageDecoder.m in Sources */,
 				18639C721B044E7B00072AF3 /* AFHTTPRequestOperationManager.m in Sources */,
-				186ACF3A1B16C8D900E77570 /* PostingTextTableViewCell.m in Sources */,
 				DD5AE0DB1B14608000FAD355 /* ComTwoNRTableViewCell.m in Sources */,
 				18639D101B0467E900072AF3 /* NBWaterFlowLayout.m in Sources */,
 				18639C9C1B044F1B00072AF3 /* ASIInputStream.m in Sources */,
@@ -1002,7 +1003,6 @@
 				18639CCA1B044F2800072AF3 /* SDWebImagePrefetcher.m in Sources */,
 				184BBE9C1B1806230032015D /* ELCImagePickerController.m in Sources */,
 				18639D081B0467D500072AF3 /* MJRefreshConst.m in Sources */,
-				186ACF3F1B16EFDD00E77570 /* PostingMapTableViewCell.m in Sources */,
 				18639CC21B044F2800072AF3 /* MKAnnotationView+WebCache.m in Sources */,
 				DD7C25101B26EE68003DBDEB /* comcomwzmodel.m in Sources */,
 				18639CCC1B044F2800072AF3 /* UIImage+GIF.m in Sources */,
@@ -1131,6 +1131,11 @@
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MinaWardrobe/PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = MinaWardrobe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1148,6 +1153,11 @@
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MinaWardrobe/PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = MinaWardrobe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
