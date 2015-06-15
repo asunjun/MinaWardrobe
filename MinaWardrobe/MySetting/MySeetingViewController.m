@@ -32,10 +32,13 @@
 }
 - (IBAction)postingButton:(id)sender {
     PostingViewController *postVC = [[PostingViewController alloc] init];
-//    [self.navigationController pushViewController:postVC animated:YES];
-    [self presentViewController:postVC animated:YES completion:^{
+    [self.navigationController pushViewController:postVC animated:YES];
+//    [self.navigationController presentViewController:postVC animated:YES completion:^{
+//        
+//    }];
+//    [self presentViewController:postVC animated:YES completion:^{
 //        postVC.modalPresentationStyle = UIModalPresentationPopover;
-    }];
+//    }];
 }
 
 - (void)didReceiveMemoryWarning {

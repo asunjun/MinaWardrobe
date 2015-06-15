@@ -21,8 +21,12 @@
     self.userNameText.delegate = self;
     self.passwdText.delegate = self;
     
-//    [self initSth];
-//    [self initFrame];
+    UITapGestureRecognizer *deleteKeyboard = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(deleteKeyBoardClick:)];
+    deleteKeyboard.numberOfTapsRequired = 1;
+    [self.view addGestureRecognizer:deleteKeyboard];
+    
+    //    [self initSth];
+    //    [self initFrame];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -61,17 +65,17 @@
     self.loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.loginButton.backgroundColor = [UIColor redColor];
     [self.loginButton setBackgroundImage:[UIImage imageNamed:@"LoginButton"] forState:UIControlStateNormal];
-//    [self.loginButton addTarget:self action:@selector(loginButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    //    [self.loginButton addTarget:self action:@selector(loginButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.baseImageView addSubview:self.loginButton];
     self.forgetButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.forgetButton.backgroundColor = [UIColor redColor];
     [self.forgetButton setTitle:@"忘记密码？" forState:UIControlStateNormal];
-//    [self.forgetButton addTarget:self action:@selector(forgetPasswdAction:) forControlEvents:UIControlEventTouchUpInside];
+    //    [self.forgetButton addTarget:self action:@selector(forgetPasswdAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.baseImageView addSubview:self.forgetButton];
     self.registerButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.registerButton.backgroundColor = [UIColor redColor];
     [self.registerButton setTitle:@"没有账号？点击快速注册" forState:UIControlStateNormal];
-//    [self.registerButton addTarget:self action:@selector(registerUserNameAction:) forControlEvents:UIControlEventTouchUpInside];
+    //    [self.registerButton addTarget:self action:@selector(registerUserNameAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.baseImageView addSubview:self.registerButton];
     
     
@@ -79,7 +83,7 @@
     self.testButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.testButton.backgroundColor = [UIColor blueColor];
     self.testButton.frame = CGRectMake(20, 20, 50, 50);
-//    [self.testButton addTarget:self action:@selector(testButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    //    [self.testButton addTarget:self action:@selector(testButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.baseImageView addSubview:self.testButton];
 }
 
@@ -111,7 +115,7 @@
 
 
 //- (void)forgetPasswdAction:(UIButton *)sender {
-//    
+//
 //}
 - (IBAction)forgetPasswdButtonClick:(id)sender {
     NSLog(@"忘记密码");
@@ -133,6 +137,11 @@
     return YES;
 }
 
+- (void)deleteKeyBoardClick:(UIGestureRecognizer *)sender {
+    [self.userNameText resignFirstResponder];
+    [self.passwdText resignFirstResponder];
+}
+
 #pragma mark - 网络请求
 - (void)sendLogin {
     NSURL *url = [NSURL URLWithString:@"http://sq.mina.cn/index.php/account/ajax/login_process/"];
@@ -145,9 +154,9 @@
     [request startAsynchronous];
     
     NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies];
-            for (NSHTTPCookie *cookie in cookies) {
+    for (NSHTTPCookie *cookie in cookies) {
         NSLog(@"cookie: %@", cookie);
-            }
+    }
 }
 
 - (void)testButtonAction {
