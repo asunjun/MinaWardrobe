@@ -19,7 +19,7 @@
 
 @property(copy,nonatomic)NSString *plname;
 
-@property(copy,nonatomic)NSDictionary *dic2;
+@property(copy,nonatomic)NSArray *dic2;
 
 - (id)initWithDic:(NSDictionary*)dic;
 

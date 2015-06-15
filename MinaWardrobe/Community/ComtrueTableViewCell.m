@@ -15,24 +15,23 @@
     // Initialization code
 }
 -(void)configCellByTradeModel:(NSString *)name and:(NSInteger )loushu and:(NSString *)imageurl and:(NSString *)time and:(NSString *)message{
-    self.lab1=[[UILabel alloc]initWithFrame:CGRectZero];
+    self.lab1.frame=CGRectZero;
+      self.lab2.frame=CGRectZero;
+      self.lab3.frame=CGRectZero;
+      self.lab4.frame=CGRectZero;
+      self.img1.frame=CGRectZero;
+    
+    
     self.lab1.text=name;
     
-    
-    [self addSubview:self.lab1];
-    self.lab2=[[UILabel alloc]initWithFrame:CGRectZero];
+ 
+ 
     self.lab2.text=[NSString stringWithFormat:@"%ld楼",loushu];
     
-    
-    [self addSubview:self.lab2];
-    
-    
-    self.lab3=[[UILabel alloc]initWithFrame:CGRectZero];
+
+  
     self.lab3.text=message;
-     [self addSubview:self.lab3];
-    
-    self.img1=[[UIImageView alloc]initWithFrame:CGRectZero];
-    [self addSubview:self.img1];
+    self.lab3.numberOfLines=0;
     
     
     
@@ -43,7 +42,7 @@
     CGFloat height=[self.lab3.text boundingRectWithSize:CGSizeMake(WIDTH, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:15]} context:nil].size.height;
     
     self.lab3.frame=CGRectMake(15, 35, WIDTH-20, height);
-    self.img1.frame=CGRectMake(0, 0, 30, 30);
+    self.img1.frame=CGRectMake(0, 35+height, WIDTH, 200);
     
     
     

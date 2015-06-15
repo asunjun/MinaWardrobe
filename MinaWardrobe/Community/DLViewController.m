@@ -167,6 +167,12 @@
     } else {
         NSLog(@"失败");
     }
+     NSString *localPath = [NSHomeDirectory()stringByAppendingPathComponent:@"Documents"] ;
+    NSLog(@"%@",localPath);
+    
+    
+    
+    
     NSLog(@"*******%@", st1);
 }
 

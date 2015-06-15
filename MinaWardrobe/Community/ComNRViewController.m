@@ -18,7 +18,10 @@
 #import "ComQuestionNRModel.h"
 #import "Comcommodel.h"
 #import "UIImageView+WebCache.h"
-@interface ComNRViewController ()<UITableViewDataSource,UITableViewDelegate,YFInputBarDelegate>{
+#import "ELCImagePickerController.h"
+#import "ASIHTTPRequest.h"
+#import "ASIFormDataRequest.h"
+@interface ComNRViewController ()<UITableViewDataSource,UITableViewDelegate,YFInputBarDelegate,UIActionSheetDelegate,ELCImagePickerControllerDelegate,ASIHTTPRequestDelegate>{
   
     ComNRModel *shuju;
     ComQuestionNRModel *questionshuju;
@@ -32,6 +35,8 @@
     
       NSString *_tradeid;
     NSString *_catgrop;
+    YFInputBar *inputBar;
+    
     
     
     
@@ -61,7 +66,7 @@
 - (void)viewDidLoad {
     NSLog(@"%@",_imageurls);
   //  self.view.userInteractionEnabled=NO;
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tongzhi) name:@"tongzhi" object:nil];
     [self.navigationController setNavigationBarHidden:NO];
     [super viewDidLoad];
     self.table.frame=CGRectMake(0, 0, WIDTH, HEIGHT);
@@ -73,7 +78,7 @@
     
     self.navigationController.navigationBar.translucent = NO;
     
-    YFInputBar *inputBar = [[YFInputBar alloc]initWithFrame:CGRectMake(0,CGRectGetMaxY([UIScreen mainScreen].bounds)-108, 320, 44)];
+    inputBar = [[YFInputBar alloc]initWithFrame:CGRectMake(0,CGRectGetMaxY([UIScreen mainScreen].bounds)-108, 320, 44)];
     
     inputBar.backgroundColor = [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1];
     
@@ -89,10 +94,146 @@
 
     // Do any additional setup after loading the view from its nib.
 }
+-(void)tongzhi{
+    
+    UIActionSheet *action = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍照", @"从相册选择" ,nil];
+    [action showInView:self.view];
+    
+}
 
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    switch (buttonIndex) {
+        case 0:
+            NSLog(@"第一个");
+            break;
+        case 1:
+            NSLog(@"第二个");
+            [self addzhaopian];
+            
+            break;
+        
+        default:
+            break;
+    }
+}
+-(void)addzhaopian{
+    ELCImagePickerController *elcPicker = [[ELCImagePickerController alloc] initImagePicker];
+    elcPicker.maximumImagesCount = 1; //选择图像的最大数量设置为9
+    elcPicker.returnsOriginalImage = YES; //只返回fullScreenImage,不是fullResolutionImage
+    elcPicker.returnsImage = YES; //如果是的 返回UIimage。如果没有,只返回资产位置信息
+    elcPicker.onOrder = YES; //对多个图像选择、显示和返回的顺序选择图像
+    elcPicker.mediaTypes = @[(NSString *)kUTTypeImage]; //支持图片和电影类型
+    elcPicker.imagePickerDelegate = self;
+    [self presentViewController:elcPicker animated:YES completion:nil];
+}
+- (void)elcImagePickerController:(ELCImagePickerController *)picker didFinishPickingMediaWithInfo:(NSArray *)info
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+    //    NSLog(@"**********************%@***********************", info);
+    for (NSDictionary *dict in info) {
+        if ([dict objectForKey:UIImagePickerControllerMediaType] == ALAssetTypePhoto){
+            if ([dict objectForKey:UIImagePickerControllerOriginalImage]){
+                //把图片取出来放到数组里面
+                UIImage* image=[dict objectForKey:UIImagePickerControllerOriginalImage];
+           //     NSData *fData = UIImageJPEGRepresentation(image, 0.3);
+                
+                inputBar.imagename=image;
+                [inputBar chuangjian];
+                
+                
+                
+            }
+        }else {
+            // NSLog(@"UIImagePickerControllerReferenceURL = %@", dict);
+        }
+    }
+   // [self.tView reloadData];
+}
 -(void)inputBar:(YFInputBar *)inputBar sendBtnPress:(UIButton *)sendBtn withInputString:(NSString *)str
 {
     NSLog(@"%@",str);
+    
+    NSURL *URL = [NSURL URLWithString:@"http://sq.mina.cn/?/api/upload/"];
+    ASIFormDataRequest *Request = [ASIFormDataRequest requestWithURL:URL];
+    [Request setRequestMethod:@"POST"];
+    [Request setUserAgent:@"Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML,                                                                                                                                                                                                                                                                                                                                                           Gecko) Chrome/41.0.2272.101 Safari/537.36"];
+   // [Request addRequestHeader:@"Content-Type"value:@"application/json"];
+    [Request setTimeOutSeconds:60];
+    
+    //[Request setPostValue:auth forKey:@"auth"];
+    UIImage *img =[UIImage imageNamed:@"789.jpg"];
+    [Request setData:UIImagePNGRepresentation(img)forKey:@"file"];
+    
+    [Request setDelegate:self];
+    [Request setCompletionBlock:^{
+        NSString *responseString = [Request responseString];
+        
+        NSLog(@"%@",responseString);
+        
+        //NSLog(@"Response: %@", responseString);
+//        NSDictionary *info = [responseString JSONValue];
+//        NSNumber *status = [info objectForKey:@"status"];
+//        if([status intValue]==1){
+//            HJManagedImageV* mi = (HJManagedImageV *)[self.viewviewWithTag:777];
+//            //set the URL that we want the managed image view to load
+//            [mi clear];
+//            mi.url = [NSURLURLWithString:[info objectForKey:@"filePath"]];
+//            [mi showLoadingWheel];
+//            mi.tag = 777 ;
+//            IBMEventAppDelegate *appDelegate = (IBMEventAppDelegate *)[[UIApplicationsharedApplication] delegate];
+//            //[mi setCallbackOnImageTap:self method:@selector(uploadPortrait:)];
+//            [appDelegate.objMan manage:mi];
+//            [appDelegate loadLoginInfoData];
+//            UIAlertView *av=[[[UIAlertViewalloc] initWithTitle:nilmessage:@"图片上传成功!" delegate:nilcancelButtonTitle:@"OK"otherButtonTitles:nil]autorelease];
+//            [av show];
+//            
+//        }else if([statusintValue]==-1){
+//            UIAlertView *av=[[[UIAlertViewalloc] initWithTitle:nilmessage:[info objectForKey:@"msg"]delegate:nilcancelButtonTitle:@"OK"otherButtonTitles:nil]autorelease];
+//            [av show];
+//        }else{
+//            UIAlertView *av=[[[UIAlertViewalloc] initWithTitle:nilmessage:[info objectForKey:@"msg"]delegate:nilcancelButtonTitle:@"OK"otherButtonTitles:nil]autorelease];
+//            [av show];
+//        }
+//        [MBProgressHUDhideHUDForView:self.navigationController.viewanimated:YES];
+    }];
+    [Request setFailedBlock:^{
+        NSError *error = [Request error];
+        NSLog(@"Error: %@,%@", error.localizedDescription,Request.url);
+    }];
+    [Request startSynchronous];
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+//    NSURL *url=[NSURL URLWithString:@"http://sq.mina.cn/?/api/sendComment/"];
+//    
+//    ASIFormDataRequest *request=[ASIFormDataRequest requestWithURL:url];
+//    [request setPostValue:@"3eddferfrc" forKey:@"answer"];
+//    [request setPostValue:@"45" forKey:@"question_id"];
+//    [request setName:@"post"];
+//  
+//    [request setUserAgent:@"Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML,                                                                                                                                                                                                                                                                                                                                                           Gecko) Chrome/41.0.2272.101 Safari/537.36"];
+//    
+//    [request setDelegate:self];
+//    [request startAsynchronous];
+//
+    
+   // http://sq.mina.cn/?/api/sendComment/
+    
+    
+    
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -252,9 +393,10 @@
                 
             }
             if (_datasoure.count==0) {
-                UILabel *lab100=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 200)];
-                lab100.text=@"暂无消息回复";
-                [cell addSubview:lab100];
+                cell.lab5.frame=CGRectMake(0, 0, WIDTH, 200);
+                cell.lab5.text=@"暂无消息回复";
+                cell.lab5.textAlignment = NSTextAlignmentCenter;
+                
                 return cell;
                 
             }
@@ -292,15 +434,20 @@
             }
             NSLog(@"%ld",_datasoure.count);
             if (_datasoure.count==0) {
-                UILabel *lab100=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 200)];
-                lab100.text=@"暂无消息回复";
-                lab100.textAlignment = NSTextAlignmentCenter;
-                [cell addSubview:lab100];
+               cell.lab5.frame=CGRectMake(0, 0, WIDTH, 200);
+                cell.lab5.text=@"暂无消息回复";
+                cell.lab5.textAlignment = NSTextAlignmentCenter;
+               
                 return cell;
                 
             }else{
+                cell.lab5.text=nil;
+                
             Comcommodel *trade = _datasoure[indexPath.row];
-            [cell configCellByTradeModel:trade.name and:indexPath.row and:nil and:nil and:trade.huifu];
+            [cell configCellByTradeModel:trade.name and:indexPath.row and:trade.images and:nil and:trade.huifu];
+                NSLog(@"%@",trade.images);
+                
+             [cell.img1 sd_setImageWithURL:[NSURL URLWithString:trade.images]];
             return cell;
 
             }
@@ -375,7 +522,17 @@
     [SVProgressHUD dismiss];
     
     
-    
+    if ([request.name isEqualToString:@"post"]) {
+        NSString *st1=[request responseString];
+        
+        NSLog(@"%@",st1);
+        
+        
+        
+        
+        
+        
+    }else{
     
     NSString *st1=[request responseString];
     
@@ -398,9 +555,9 @@
         
         _title=questionshuju.title;
         _message=questionshuju.message;
-        for (int i=1; i<questionshuju.dic2.count+1; i++) {
+        for (int i=0; i<questionshuju.dic2.count; i++) {
             
-            NSDictionary *dic=[questionshuju.dic2 objectForKey:[NSString stringWithFormat:@"%d",i]];
+            NSDictionary *dic=[questionshuju.dic2 objectAtIndex:i];
             
             
             quescom=[[Comcommodel alloc]initWithDic:dic];
@@ -410,6 +567,9 @@
         }
         
         NSLog(@"%@",quescom.name);
+        
+        
+        NSLog(@"%@",quescom.huifu);
        
         
         
@@ -438,7 +598,7 @@
     
     
    
-    
+    }
 
     
 }

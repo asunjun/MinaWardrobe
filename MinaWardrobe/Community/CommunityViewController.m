@@ -110,6 +110,8 @@
 
 //请求
 -(void)requstdata{
+    NSString *localPath = [NSHomeDirectory()stringByAppendingPathComponent:@"Documents"] ;
+    NSLog(@"%@",localPath);
     [SVProgressHUD show];
     
     NSString *asiurl=[NSString stringWithFormat:@"http://sq.mina.cn/?/sort_type-new__day-0__is_recommend-0__page-%ld",_beginNo];

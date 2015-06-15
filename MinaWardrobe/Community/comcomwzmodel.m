@@ -18,6 +18,7 @@
         self.name=[dic1 notNullobjectForKey:@"user_name"];
         
         self.huifu=[dic notNullobjectForKey:@"message"];
+        NSLog(@"%@",self.huifu);
         
             
         

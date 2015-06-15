@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <AssetsLibrary/AssetsLibrary.h>
 @interface ComNRViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *table;
 

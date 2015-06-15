@@ -8,7 +8,7 @@
 
 #import "YFInputBar.h"
 #import "AppDelegate.h"
-//#import ""
+#import "ELCImagePickerController.h"
 @implementation YFInputBar
 
 
@@ -24,6 +24,7 @@
         self.textField.tag = 10000;
         self.sendBtn.tag = 10001;
         self.zhaopian.tag=10002;
+        [self chuangjian];
         
         //注册键盘通知
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
@@ -68,29 +69,54 @@
         [_sendBtn addTarget:self action:@selector(sendBtnPress:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_sendBtn];
     }
+    
+   
+    
     return _sendBtn;
 }
 
--(UIButton *)zhaopian
-{
-    if (!_zhaopian) {
-        _zhaopian = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_zhaopian setTitle:@"照片" forState:UIControlStateNormal];
-        //        [_sendBtn setBackgroundColor:[UIColor whiteColor]];
-        [_zhaopian setFrame:CGRectMake(0, 10, 50, 40)];
-        [_zhaopian addTarget:self action:@selector(zhaopianxuanqu:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:_zhaopian];
+-(void)chuangjian{
+    if (!self.imagename) {
+        
+        if (!_zhaopian) {
+            _zhaopian = [UIButton buttonWithType:UIButtonTypeCustom];
+            
+            [_zhaopian setTitle:@"照片" forState:UIControlStateNormal];
+            //        [_sendBtn setBackgroundColor:[UIColor whiteColor]];
+            [_zhaopian setFrame:CGRectMake(0, 10, 50, 40)];
+            [_zhaopian addTarget:self action:@selector(zhaopianxuanqu:) forControlEvents:UIControlEventTouchUpInside];
+            [self addSubview:_zhaopian];
+        }
+    }else{
+        
+           // _zhaopian = [UIButton buttonWithType:UIButtonTypeCustom];
+            [_zhaopian setBackgroundImage:self.imagename forState:UIControlStateNormal];
+//            [_zhaopian setFrame:CGRectMake(0, 10, 50, 40)];
+//            [_zhaopian addTarget:self action:@selector(zhaopianxuanqu:) forControlEvents:UIControlEventTouchUpInside];
+//            [self addSubview:_zhaopian];
+        
+        
     }
-    return _zhaopian;
+
 }
+
+//-(UIButton *)zhaopian
+//{
+//    
+//          return _zhaopian;
+//}
 
 
 -(void)zhaopianxuanqu:(UIButton *)sender{
+    NSNotification *notification =[NSNotification notificationWithName:@"tongzhi" object:nil userInfo:nil];
     
+    //通过通知中心发送通知
     
-    
+    [[NSNotificationCenter defaultCenter] postNotification:notification];
+ 
     
 }
+
 
 #pragma mark selfDelegate method
 
