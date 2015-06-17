@@ -137,17 +137,18 @@
     
    static NSString *CellIdentifier = @"CommunityTableViewCell";
     CommunityTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-  //   CommunityTableViewCell *cell=[tableView cellForRowAtIndexPath:indexPath];
+  
     
     if (cell==nil) {
         cell=[[[NSBundle mainBundle]loadNibNamed:@"CommunityTableViewCell" owner:self options:nil] lastObject];
     }
      
     cell.selectionStyle=UITableViewCellSelectionStyleNone;
-//    cell.img1=nil;
-//    cell.img2=nil;
-//    cell.img3=nil;
+
         SQmainlist *trade = _dataSource[indexPath.row];
+    
+  //  NSLog(@"%d",trade.imageurl.count);
+    
         for (int i=0; i<trade.imageurl.count; i++) {
         NSString *imageurls=[trade.imageurl objectAtIndex:i];
         
@@ -225,14 +226,14 @@
     NSArray *a1=[self con:_dataSource[indexPath.row]];
     
  
-    if (a1==nil) {
+    if (a1.count==0) {
         // height+=20;
     }else{
        height+=80;
         
     }
     
-    height+=35;
+    height+=32;
     
     //加上“评论人”和“时间”Label的高度；
     

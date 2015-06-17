@@ -19,7 +19,7 @@
 
 @property(copy,nonatomic)NSString *fabuname;
 
-@property(copy,nonatomic)NSArray *imageurl;
+@property(strong,nonatomic)NSMutableArray *imageurl;
 //
 @property(copy,nonatomic)NSString *fabutouxiang;
 //

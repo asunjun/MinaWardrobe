@@ -88,6 +88,7 @@
                 <outlet property="pinglunshu" destination="ddn-iK-k9o" id="0V5-fe-9bi"/>
                 <outlet property="shouchang" destination="qOw-jM-RHy" id="G9R-OE-oG4"/>
                 <outlet property="shouchangshu" destination="x2n-0E-AkV" id="zyj-pW-t6L"/>
+                <outlet property="time" destination="529-rn-cVI" id="S0B-DD-ZtQ"/>
                 <outlet property="title" destination="kdj-Cq-Ed2" id="VdT-uy-TCQ"/>
                 <outlet property="view1" destination="h0G-9M-Erc" id="ERR-8g-Svr"/>
             </connections>

@@ -13,27 +13,43 @@
 {
     self = [super init];
     if (self) {
-       self.category=[dic notNullobjectForKey:@"post_type"];
+        
+        self.imageurl=[[NSMutableArray alloc]init];
+        
+        self.category=[dic notNullobjectForKey:@"post_type"];
         if ([self.category isEqualToString:@"question"]) {
             self.fabutitle=[dic notNullobjectForKey:@"question_content"];
+            NSString *detail=[dic notNullobjectForKey:@"question_detail"];
             
             
+            NSError *error = NULL;
             
+            NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"\\[img\\](.*?)\\[\\/img\\]" options:NSRegularExpressionCaseInsensitive error:&error];
             
+            //匹配出N个符合的
+            NSArray *a1=[regex matchesInString:detail options:0 range:NSMakeRange(0, [detail length])];
             
-            
+            if (a1) {
+                for (int i=0; i<a1.count; i++) {
+                    NSTextCheckingResult *result=[a1 objectAtIndex:i];
+                    NSString *st1=[detail substringWithRange:[result rangeAtIndex:1]];
+                    //[result rangeAtIndex:1];
+                    
+                    NSLog(@"%@\n",st1);
+                    [self.imageurl addObject:st1];
+                    
+                }
+           
+            }
+            self.fabupinglun=[dic notNullobjectForKey:@"answer_users"];
+            self.shouchanshu=[dic notNullobjectForKey:@""];
             
             self.idzhi=[dic notNullobjectForKey:@"question_id"];
-            
             self.fabutime=[dic notNullobjectForKey:@"add_time"];
             NSDictionary *dic1=[dic notNullobjectForKey:@"user_info"];
             self.fabuname=[dic1 notNullobjectForKey:@"user_name"];
             self.fabutouxiang=[dic1 notNullobjectForKey:@"avatar_file"];
-            
-            self.imageurl=[dic notNullobjectForKey:@"images"];
-
-            
-            
+        
         }else{
             
             self.fabutitle=[dic notNullobjectForKey:@"title"];
@@ -43,12 +59,11 @@
             NSDictionary *dic1=[dic notNullobjectForKey:@"user_info"];
             self.fabuname=[dic1 notNullobjectForKey:@"user_name"];
             self.fabutouxiang=[dic1 notNullobjectForKey:@"avatar_file"];
-            
             self.fabupinglun=[dic notNullobjectForKey:@"comment_count"];
             self.shouchanshu=[dic notNullobjectForKey:@"votes"];
             self.imageurl=[dic notNullobjectForKey:@"images"];
             
-
+            
             
         }
         

@@ -37,9 +37,8 @@
     
   
     
-    if (trade.imageurl==nil) {
-        NSLog(@"sdwedededeede");
-        ishidder=NO;
+    if (trade.imageurl.count==0) {
+               ishidder=NO;
         
     }
     
@@ -61,12 +60,14 @@
     self.title.lineBreakMode=NSLineBreakByCharWrapping;
     self.title.text=trade.fabutitle;
    
-    self.title.backgroundColor=[UIColor clearColor];
+    //self.title.backgroundColor=[UIColor clearColor];
+    self.title.textColor=kUIColorFromRGB(0x4a4a4a);
     [view1 addSubview:self.title];
 
     self.img4.frame=CGRectZero;
 
-    
+    self.img4.layer.masksToBounds = YES;
+    self.img4.layer.cornerRadius=3;
      self.img4.image=[UIImage imageNamed:@"789.jpg"];
     
     self.name.frame=CGRectZero;
@@ -87,7 +88,7 @@
     
     //调用
     
-   
+    self.name.textColor=kUIColorFromRGB(0x747475);
     NSTimeInterval time = [trade.fabutime doubleValue];
     
        NSTimeInterval _interval=time;
@@ -98,7 +99,7 @@
     
     
      self.time.font=[UIFont boldSystemFontOfSize:10];
-    self.time.textColor=lightgray;
+    self.time.textColor=kUIColorFromRGB(0xb6b6b8);
     
   
     
@@ -118,13 +119,13 @@
         
         self.img4.frame=CGRectMake(8, self.title.bottom+85, 20, 20);
         self.name.frame=CGRectMake(33, self.title.bottom+85, 100, 10);
-        self.time.frame=CGRectMake(33, self.title.bottom+95, 100, 10);
+        self.time.frame=CGRectMake(33, self.title.bottom+96, 100, 10);
         self.view1.frame=CGRectMake(8, 8, WIDTH-16,height+115-8);
         
     }else{
         self.img4.frame=CGRectMake(8, self.title.bottom, 20, 20);
         self.name.frame=CGRectMake(33, self.title.bottom, 100, 10);
-        self.time.frame=CGRectMake(33, self.title.bottom+10, 100, 10);
+        self.time.frame=CGRectMake(33, self.title.bottom+13, 100, 10);
         self.view1.frame=CGRectMake(8, 8, WIDTH-16,height+28);
         
         
@@ -176,9 +177,6 @@
     return  result;
     
 }
-
-
-
 
 - (CGFloat)heightContentBackgroundView:(NSString *)content
 {
