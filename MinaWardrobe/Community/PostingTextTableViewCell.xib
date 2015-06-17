@@ -13,27 +13,7 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="167"/>
                 <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="aRb-g9-x4Q">
-                        <rect key="frame" x="15" y="0.0" width="59" height="43"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.95108695649999997" green="0.066623543369999996" blue="0.14522520080000001" alpha="1" colorSpace="calibratedRGB"/>
-                    </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="04l-d1-vre">
-                        <rect key="frame" x="96" y="1" width="59" height="43"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="t1I-6T-bIY">
-                        <rect key="frame" x="185" y="0.0" width="59" height="43"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
-                </subviews>
             </tableViewCellContentView>
-            <connections>
-                <outlet property="image1" destination="aRb-g9-x4Q" id="gsX-Ly-ELF"/>
-                <outlet property="image2" destination="04l-d1-vre" id="uWy-0o-jgI"/>
-                <outlet property="image3" destination="t1I-6T-bIY" id="B4l-wi-BC1"/>
-            </connections>
             <point key="canvasLocation" x="807" y="574"/>
         </tableViewCell>
     </objects>

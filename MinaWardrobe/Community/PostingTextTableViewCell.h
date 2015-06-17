@@ -9,8 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface PostingTextTableViewCell : UITableViewCell
-@property (strong, nonatomic) IBOutlet UIImageView *image1;
-@property (strong, nonatomic) IBOutlet UIImageView *image2;
-@property (strong, nonatomic) IBOutlet UIImageView *image3;
 
 @end

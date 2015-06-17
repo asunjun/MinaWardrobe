@@ -10,9 +10,11 @@
 
 @interface PostingViewController ()
 
+
 @end
 
 @implementation PostingViewController
+static int i=0;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,6 +25,8 @@
     [self initOther];
     [self initArr];
     [self initIma];
+    
+    self.arrrr = [[NSMutableArray alloc] init];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -45,7 +49,7 @@
 - (void)initOther {
     self.addButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.addButton addTarget:self action:@selector(addImageButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    self.addButton.backgroundColor = [UIColor redColor];
+    self.addButton.backgroundColor = [UIColor blueColor];
 //    self.addButton.frame = CGRectMake(5, 5, 50, 50);
     
     self.classButtonView = [[UIView alloc] init];
@@ -125,11 +129,17 @@
     //ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     ASIFormDataRequest *request=[ASIFormDataRequest requestWithURL:url];
     [request setPostValue:self.titleTextField.text forKey:@"question_content"];
-    [request setPostValue:self.textView.text   forKey:@"question_detail"];
+    
+     NSString *sendStr =[NSString stringWithFormat:@"%@%@",self.textView.text,self.imageStr];
+    
+    
+    [request setPostValue:sendStr   forKey:@"question_detail"];
+    NSLog(@"%@", sendStr);
+//    [request setPostValue:self.imageStr forKey:@"question_detail"];
     [request setPostValue:self.valueStr forKey:@"category_id"];
     [request setUserAgent:@"Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML,                                                                                                                                                                                                                                                                                                                                                           Gecko) Chrome/41.0.2272.101 Safari/537.36"];
-    NSLog(@"%@", self.textView.text);
-    NSLog(@"%@", self.valueStr);
+//    NSLog(@"%@", self.textView.text);
+//    NSLog(@"%@", self.valueStr);
         //    [request setUseCookiePersistence:YES];
     [request setDelegate:self];
     [request startAsynchronous];
@@ -142,18 +152,18 @@
         NSURL *url = [NSURL URLWithString:SendImageURL];
         //ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
         ASIFormDataRequest *request=[ASIFormDataRequest requestWithURL:url];
-        NSLog(@"%@", ima);
+//        NSLog(@"%@", ima);
         [request setData:UIImagePNGRepresentation(newImage) forKey:@"file"];
         [request setName:@"Ima"];
         [request setDelegate:self];
         [request startAsynchronous];
-        NSLog(@"=======%f,%f=========", newImage.size.width, newImage.size.height);
+//        NSLog(@"=======%f,%f=========", newImage.size.width, newImage.size.height);
     }
     //    [request setUseCookiePersistence:YES];
 }
 
 -(void)requestFinished:(ASIHTTPRequest *)request{
-    NSString *str =[request responseString];
+//    NSString *str =[request responseString];
     //    NSData *data = [st1 dataUsingEncoding:NSUTF8StringEncoding];
     //    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
     //    if ([[dict objectForKey:@"errno"] intValue] == 1) {
@@ -165,21 +175,28 @@
     //    self.testView.text = self.testStr;
     self.xmlStr = [[NSString alloc]initWithData:[request responseData] encoding:NSUTF8StringEncoding];
     [self start];
-  //  NSMutableString *st2=[[NSMutableString alloc]init];
-
-    
-    NSLog(@"***************%@**************", str);
     
     if ([request.name isEqualToString:@"Ima"]) {
         NSString *str =[request responseString];
         NSString *st1=[NSString stringWithFormat:@"[img]%@[/img]",str];
-       // NSMutableString *st2=[[NSMutableString alloc]init];
-        self.imageStr = [self.imageStr stringByAppendingString:st1];
-        
-        
+        NSMutableArray *arr = [NSMutableArray arrayWithObject:st1];
+        [self.arrrr addObjectsFromArray:arr];
+        NSLog(@"%@", self.arrrr);
+        i+=1;
     }
-    NSLog(@"%@",self.imageStr);
-    
+    self.imageStr = [self.arrrr componentsJoinedByString:@""];
+    if (self.imaArray.count != 0) {
+        if (i==self.imaArray.count) {
+            NSLog(@"%ld", self.imaArray.count);
+            [self sendTitleText];
+            i=0;
+        }
+    }
+}
+
+- (void)requestFailed:(ASIHTTPRequest *)request {
+    NSString *str = [request responseString];
+    NSLog(@"%@", str);
 }
 
 #pragma mark - TableViewDelegate
@@ -293,17 +310,9 @@
                 [self.deleteBtn addTarget:self action:@selector(deleteImageButtonClick:) forControlEvents:UIControlEventTouchUpInside];
                 [self.imageArrView addSubview:self.deleteBtn];
             }
-            
-            
-            
-            
-            
-            
         } else {
             NSLog(@"滚");
         }
-        
-        
         */
         if (self.imaArray.count == 0) {
             [UIView animateWithDuration:0.3 animations:^{
@@ -364,7 +373,7 @@
         return;
     }
     
-    [self sendTitleText];
+//    [self sendTitleText];
     [self sendImage];
 }
 
@@ -640,16 +649,13 @@
     for (int i=0; i<self.notes.count; i++) {
         NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
         dict=[self.notes objectAtIndex:i];
-        //        NSLog(@"%@",dict);
         NSString *option=[dict objectForKey:@"option"];
         NSString *value = [dict objectForKey:@"value"];
-        //        NSLog(@"++++++%@+++++++", option);
         [self.listArray addObject:option];
         [self.valueArray addObject:value];
-        //        NSLog(@"=====%@======", dict);
     }
-    //    NSLog(@"********%@******", self.listArray);
-    //    NSLog(@"00000000000%@00000000", self.valueArray);
+//        NSLog(@"********%@******", self.listArray);
+//        NSLog(@"00000000000%@00000000", self.valueArray);
     [self.tView reloadData];
 }
 
