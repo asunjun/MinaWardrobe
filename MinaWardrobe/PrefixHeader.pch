@@ -21,6 +21,18 @@
 
 
 #define mybaseURL @"http://app.silcers.com/beauty/"
+//登陆注册
+#define LoginURL @"http://sq.mina.cn/index.php/account/ajax/login_process/"
+#define LoginURL2 @"http://sq.mina.cn/?/api/"
+#define RegisterURL @"http://sq.mina.cn/index.php/account/ajax/register_process/"
+//发帖分类列表
+#define ClassifyURL @"http://sq.mina.cn/?/api/getCategory/"
+//发帖（图片、文字）
+#define SendImageURL @"http://sq.mina.cn/?/api/upload/"
+#define SendTextURL @"http://sq.mina.cn/?/api/sendPost/"
+
+
+
 #define globalColor [UIColor colorWithRed:243/255.f green:104/255.f blue:149/255.f alpha:1]
 #define globalBackgroundColor [UIColor colorWithRed:253/255.f green:190/255.f blue:205/255.f alpha:1]
 #define WIDTH [UIScreen mainScreen].bounds.size.width

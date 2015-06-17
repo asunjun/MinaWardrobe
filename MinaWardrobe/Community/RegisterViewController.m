@@ -26,7 +26,7 @@
 }
 
 - (void)sendRegister {
-    NSURL *url = [NSURL URLWithString:@"http://sq.mina.cn/index.php/account/ajax/register_process/"];
+    NSURL *url = [NSURL URLWithString:RegisterURL];
     //ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     ASIFormDataRequest *request=[ASIFormDataRequest requestWithURL:url];
     [request setPostValue:self.userNameText.text forKey:@"user_name"];

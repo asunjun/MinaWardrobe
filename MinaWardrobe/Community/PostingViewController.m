@@ -50,17 +50,17 @@
     
     self.classButtonView = [[UIView alloc] init];
     self.classButtonView.frame = CGRectMake(WIDTH - 125, 85 + 190, 120, 150);
-    self.classButtonView.backgroundColor = [UIColor blueColor];
+    self.classButtonView.backgroundColor = [UIColor lightGrayColor];
     self.classButtonView.hidden = YES;
     _show = NO;
     
     self.imageArrView = [[UIView alloc] init];
-    self.imageArrView.frame = CGRectMake(5, 90 + 160, 230, 150);
-    self.imageArrView.backgroundColor = [UIColor yellowColor];
+    self.imageArrView.frame = CGRectMake(5, 85 + 160, 230, 60);
+//    self.imageArrView.backgroundColor = [UIColor yellowColor];
     
     self.listButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.listButton.frame = CGRectMake(WIDTH - 125, 85 + 160, 120, 30);
-    self.listButton.backgroundColor = [UIColor redColor];
+    self.listButton.backgroundColor = [UIColor lightGrayColor];
     [self.listButton addTarget:self action:@selector(listButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     
     self.textView = [[UITextView alloc] initWithFrame:CGRectMake(5, 5, WIDTH - 10, 240)];
@@ -111,7 +111,7 @@
 
 #pragma mark - 网络请求
 -(void)requstdata{
-    NSString *asiurl=[NSString stringWithFormat:@"http://sq.mina.cn/?/api/getCategory/"];
+    NSString *asiurl=[NSString stringWithFormat:ClassifyURL];
     NSURL *url = [NSURL URLWithString:asiurl];
     
     ASIHTTPRequest *request=[ASIHTTPRequest requestWithURL:url];
@@ -121,7 +121,7 @@
 }
 
 - (void)sendTitleText {
-    NSURL *url = [NSURL URLWithString:@"http://sq.mina.cn/?/api/sendPost/"];
+    NSURL *url = [NSURL URLWithString:SendTextURL];
     //ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     ASIFormDataRequest *request=[ASIFormDataRequest requestWithURL:url];
     [request setPostValue:self.titleTextField.text forKey:@"question_content"];
@@ -139,11 +139,12 @@
     for (int i = 0; i < self.imaArray.count; i++) {
         UIImage *ima = [self.imaArray objectAtIndex:i];
         UIImage *newImage = [self imageCompressForWidth:ima targetWidth:320];
-        NSURL *url = [NSURL URLWithString:@"http://sq.mina.cn/?/api/upload/"];
+        NSURL *url = [NSURL URLWithString:SendImageURL];
         //ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
         ASIFormDataRequest *request=[ASIFormDataRequest requestWithURL:url];
         NSLog(@"%@", ima);
         [request setData:UIImagePNGRepresentation(newImage) forKey:@"file"];
+        [request setName:@"Ima"];
         [request setDelegate:self];
         [request startAsynchronous];
         NSLog(@"=======%f,%f=========", newImage.size.width, newImage.size.height);
@@ -164,8 +165,21 @@
     //    self.testView.text = self.testStr;
     self.xmlStr = [[NSString alloc]initWithData:[request responseData] encoding:NSUTF8StringEncoding];
     [self start];
+  //  NSMutableString *st2=[[NSMutableString alloc]init];
+
     
-    NSLog(@"%@", str);
+    NSLog(@"***************%@**************", str);
+    
+    if ([request.name isEqualToString:@"Ima"]) {
+        NSString *str =[request responseString];
+        NSString *st1=[NSString stringWithFormat:@"[img]%@[/img]",str];
+       // NSMutableString *st2=[[NSMutableString alloc]init];
+        self.imageStr = [self.imageStr stringByAppendingString:st1];
+        
+        
+    }
+    NSLog(@"%@",self.imageStr);
+    
 }
 
 #pragma mark - TableViewDelegate
@@ -248,8 +262,10 @@
         for (int i = 0; i < self.listArray.count; i++) {
             self.classButton = [UIButton buttonWithType:UIButtonTypeCustom];
             self.classButton.frame = CGRectMake(0, ((30 * self.listArray.count + self.listArray.count) / self.listArray.count * i), 120, 30);
-            self.classButton.backgroundColor = [UIColor greenColor];
+            self.classButton.backgroundColor = [UIColor whiteColor];
             [self.classButton setTitle:[NSString stringWithFormat:@"%@", [self.listArray objectAtIndex:i]] forState:UIControlStateNormal];
+            [self.classButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [self.classButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateHighlighted];
             self.classButton.tag = i;
             [self.classButton addTarget:self action:@selector(classButtonClick:) forControlEvents:UIControlEventTouchUpInside];
             [cell.contentView addSubview:self.classButtonView];
@@ -440,8 +456,10 @@
                 UIImage* image=[dict objectForKey:UIImagePickerControllerOriginalImage];
                 if (self.imaArray.count < 4) {
                     [self.imaArray addObject:image];
+//                    return;
                 } else {
                     NSLog(@"111111111111");
+//                    return;
                 }
             }
         }else {

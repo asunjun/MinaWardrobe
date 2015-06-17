@@ -144,7 +144,7 @@
 
 #pragma mark - 网络请求
 - (void)sendLogin {
-    NSURL *url = [NSURL URLWithString:@"http://sq.mina.cn/index.php/account/ajax/login_process/"];
+    NSURL *url = [NSURL URLWithString:LoginURL];
     //ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     ASIFormDataRequest *request=[ASIFormDataRequest requestWithURL:url];
     [request setPostValue:self.userNameText.text forKey:@"user_name"];
@@ -160,7 +160,7 @@
 }
 
 - (void)testButtonAction {
-    NSURL *url = [NSURL URLWithString:@"http://sq.mina.cn/?/api/"];
+    NSURL *url = [NSURL URLWithString:LoginURL2];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request setDelegate:self];
     [request startAsynchronous];

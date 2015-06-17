@@ -27,6 +27,8 @@
 @property (nonatomic, strong) NSMutableArray *valueArray;
 @property (nonatomic, strong) NSString *valueStr;
 
+@property (nonatomic, strong) NSString *imageStr;
+
 @property (nonatomic, strong) UIView *imageArrView;
 @property (nonatomic, strong) NSMutableArray *imaArray;
 @property (nonatomic, strong) UIImageView *imaView;
