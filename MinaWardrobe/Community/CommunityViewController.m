@@ -114,7 +114,7 @@
     NSLog(@"%@",localPath);
     [SVProgressHUD show];
     
-    NSString *asiurl=[NSString stringWithFormat:@"http://sq.mina.cn/?/sort_type-new__day-0__is_recommend-0__page-%ld",_beginNo];
+    NSString *asiurl=[NSString stringWithFormat:@"http://sq.mina.cn/?/api/getPostList/sort_type-new__day-0__is_recommend-0__page-%ld",_beginNo];
     
     
       NSURL *url = [NSURL URLWithString:asiurl];
@@ -212,7 +212,7 @@
 //    
 //    CGSize size = [tt sizeWithFont:[UIFont systemFontOfSize:16.0f] constrainedToSize:CGSizeMake(290, 20000)];
 //    CGFloat height = size.height;
-     CGFloat height = [list.fabuname boundingRectWithSize:CGSizeMake(145, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:35]} context:nil].size.height;
+     CGFloat height = [list.fabuname boundingRectWithSize:CGSizeMake(WIDTH, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:35]} context:nil].size.height;
     
     if (height<30) //评论年内容的高度
     {
@@ -254,24 +254,14 @@
     
     
     NSString *st1=[request responseString];
-    
-   
-    
-    
-    
-//    
-    NSArray *arrayWord = [st1 componentsSeparatedByString:@"â"];
-   
-    
-    NSMutableArray *a1=[[NSMutableArray alloc]initWithObjects:[arrayWord objectAtIndex:0], nil];
-  
-    NSString *a2=[a1 objectAtIndex:0];
-    if ([a2 isEqualToString:@"false"]) {
+    NSLog(@"%@",st1);
+
+    if ([st1 isEqualToString:@"false"]) {
         return;
         
     }
     
-       NSArray *arr = [NSJSONSerialization JSONObjectWithData:[a2 dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingAllowFragments error:nil];
+       NSArray *arr = [NSJSONSerialization JSONObjectWithData:[st1 dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingAllowFragments error:nil];
     NSLog(@"%@",arr);
     
 

@@ -85,19 +85,18 @@
    self.name.text=trade.fabuname;
     self.name.font=[UIFont boldSystemFontOfSize:12];
     
-  //  self.time.text=trade.fabutime;
-   // NSLog(@"%f",trade.fabutime);
-    double unixTimeStamp = [trade.fabutime doubleValue];
-    NSTimeInterval _interval=unixTimeStamp;
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970:_interval];
-    NSDateFormatter *_formatter=[[NSDateFormatter alloc]init];
-    [_formatter setLocale:[NSLocale currentLocale]];
-    //[_formatter setDateFormat:@"dd.MM.yyyy"];
-    [_formatter setDateFormat:@"yyyy.MM.dd"];
-    NSString *_date=[_formatter stringFromDate:date];
+    //调用
     
-    NSLog(@"%@",_date);
-    self.time.text=_date;
+   
+    NSTimeInterval time = [trade.fabutime doubleValue];
+    
+       NSTimeInterval _interval=time;
+       NSDate *date = [NSDate dateWithTimeIntervalSince1970:_interval];
+     self.time.text=[self compareCurrentTime:date];
+    
+    NSLog(@"%@",[self compareCurrentTime:date]);
+    
+    
      self.time.font=[UIFont boldSystemFontOfSize:10];
     self.time.textColor=lightgray;
     
@@ -110,7 +109,7 @@
 
 -(void)layoutSubviews{
     CGFloat height = [self heightContentBackgroundView:self.title.text];
-    self.title.frame=CGRectMake(8, 0, WIDTH-18, height);
+    self.title.frame=CGRectMake(8,0, WIDTH-18, height);
 
     if (ishidder==YES) {
         self.img1.frame=CGRectMake(8, self.title.bottom, 80, 80);
@@ -136,10 +135,54 @@
     
              
 }
+-(NSString *) compareCurrentTime:(NSDate*) compareDate
+{
+    NSTimeInterval  timeInterval = [compareDate timeIntervalSinceNow];
+    timeInterval = -timeInterval;
+    long temp = 0;
+    NSString *result;
+    if (timeInterval < 60)
+    {
+        result = [NSString stringWithFormat:@"刚刚"];
+        
+    }
+    else if((temp = timeInterval/60) <60)
+    {
+        result = [NSString stringWithFormat:@"%ld分前",temp];
+        
+    }
+    else if((temp = temp/60) <24)
+    {
+        result = [NSString stringWithFormat:@"%ld小时前",temp];
+        
+    }
+    else if((temp = temp/24) <3)
+    {
+        result = [NSString stringWithFormat:@"%ld天前",temp];
+        
+    }
+    else
+    {
+        NSDateFormatter *datefor = [[NSDateFormatter alloc]init];
+        [datefor setDateFormat:@"MM/dd HH:mm"];
+        NSString *timeString = [datefor stringFromDate:compareDate];
+        //        //cell.timeLabel.text = [timeString description];
+        NSLog(@"--ttt-%@",[timeString description]);
+        
+        result = [NSString stringWithFormat:@"%@",[timeString description]];
+        
+    }
+    
+    return  result;
+    
+}
+
+
+
 
 - (CGFloat)heightContentBackgroundView:(NSString *)content
 {
-    CGFloat height = [self heigtOfLabelForFromString:content fontSizeandLabelWidth:290 andFontSize:30.0];
+    CGFloat height = [self heigtOfLabelForFromString:content fontSizeandLabelWidth:WIDTH andFontSize:30.0];
     if (height<30)
     {
         height = 30;

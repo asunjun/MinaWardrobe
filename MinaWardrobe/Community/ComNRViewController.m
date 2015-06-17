@@ -247,7 +247,7 @@
     [SVProgressHUD show];
     
     if ([_catgrop isEqual:@"article"]) {
-        NSString *URLNR=[NSString stringWithFormat:@"http://sq.mina.cn/?/article/%@",_tradeid];
+        NSString *URLNR=[NSString stringWithFormat:@"http://sq.mina.cn/?/api/getPost/?type=article&id=%@",_tradeid];
         NSURL *url = [NSURL URLWithString:URLNR];
         
         NSLog(@"%@",url);
@@ -259,7 +259,8 @@
         [request startAsynchronous];
 
     }else{
-        NSString *URLNR=[NSString stringWithFormat:@"http://sq.mina.cn/?/question/%@",_tradeid];
+      NSLog(@"%@",_tradeid);
+        NSString *URLNR=[NSString stringWithFormat:@"http://sq.mina.cn/?/api/getPost/?type=question&id=%@",_tradeid];
         NSURL *url = [NSURL URLWithString:URLNR];
         
         NSLog(@"%@",url);

@@ -19,12 +19,45 @@ static int bb;//同上
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSURL *url = [NSURL URLWithString:@"http://sq.mina.cn/index.php/account/ajax/login_process/"];
+    //ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+    ASIFormDataRequest *request=[ASIFormDataRequest requestWithURL:url];
+    [request setPostValue:@"admin" forKey:@"user_name"];
+    [request setPostValue:@"admin"   forKey:@"password"];
+    [request setUseCookiePersistence:YES];
+    [request setDelegate:self];
+    [request startAsynchronous];
+
+    
+    
+    
     // Do any additional setup after loading the view from its nib.
     
     [self initArray];
     [self initView];
     [self initScrollView];
     [self inithCollectionView];
+}
+-(void)requestFinished:(ASIHTTPRequest *)request{
+    NSString *st1=[request responseString];
+    NSData *data = [st1 dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    if ([[dict objectForKey:@"errno"] intValue] == 1) {
+        NSLog(@"登陆成功");
+        [self testButtonAction];
+    } else {
+        NSLog(@"失败");
+    }
+    
+    
+    NSLog(@"*******%@", st1);
+}
+- (void)testButtonAction {
+    NSURL *url = [NSURL URLWithString:@"http://sq.mina.cn/?/api/"];
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+    [request setDelegate:self];
+    [request startAsynchronous];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

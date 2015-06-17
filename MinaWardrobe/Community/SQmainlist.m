@@ -16,6 +16,13 @@
        self.category=[dic notNullobjectForKey:@"post_type"];
         if ([self.category isEqualToString:@"question"]) {
             self.fabutitle=[dic notNullobjectForKey:@"question_content"];
+            
+            
+            
+            
+            
+            
+            
             self.idzhi=[dic notNullobjectForKey:@"question_id"];
             
             self.fabutime=[dic notNullobjectForKey:@"add_time"];
@@ -23,8 +30,6 @@
             self.fabuname=[dic1 notNullobjectForKey:@"user_name"];
             self.fabutouxiang=[dic1 notNullobjectForKey:@"avatar_file"];
             
-//            self.fabupinglun=[dic notNullobjectForKey:@"comment_count"];
-//            self.shouchanshu=[dic notNullobjectForKey:@"votes"];
             self.imageurl=[dic notNullobjectForKey:@"images"];
 
             
