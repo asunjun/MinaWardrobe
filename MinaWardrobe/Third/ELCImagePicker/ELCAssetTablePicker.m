@@ -41,7 +41,7 @@
     _label.textColor = [UIColor whiteColor];
     self.navigationItem.titleView = _label;
     _label.text = @"相册";
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:169.0/255.0 green:184.0/255.0 blue:60.0/255.0 alpha:1];
+    self.navigationController.navigationBar.barTintColor = [UIColor purpleColor];
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 	[self.tableView setAllowsSelection:NO];
 

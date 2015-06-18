@@ -134,6 +134,7 @@ static int i=0;
     
     
     [request setPostValue:sendStr   forKey:@"question_detail"];
+    [request setName:@"Title"];
     NSLog(@"%@", sendStr);
 //    [request setPostValue:self.imageStr forKey:@"question_detail"];
     [request setPostValue:self.valueStr forKey:@"category_id"];
@@ -181,15 +182,32 @@ static int i=0;
         NSString *st1=[NSString stringWithFormat:@"[img]%@[/img]",str];
         NSMutableArray *arr = [NSMutableArray arrayWithObject:st1];
         [self.arrrr addObjectsFromArray:arr];
-        NSLog(@"%@", self.arrrr);
+//        NSLog(@"%@", str);
         i+=1;
     }
     self.imageStr = [self.arrrr componentsJoinedByString:@""];
     if (self.imaArray.count != 0) {
         if (i==self.imaArray.count) {
-            NSLog(@"%ld", self.imaArray.count);
+//            NSLog(@"%ld", self.imaArray.count);
             [self sendTitleText];
             i=0;
+            NSString *str =[request responseString];
+            NSLog(@"%@", str);
+        }
+    }
+    if ([request.name isEqualToString:@"Title"]) {
+        NSString *str =[request responseString];
+        NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
+        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        NSLog(@"%@", dict);
+        if ([[dict objectForKey:@"errno"] intValue] == -1) {
+            NSLog(@"登陆成功");
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"发送成功" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:nil, nil];
+            [alert show];
+        } else {
+            NSLog(@"失败");
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"发送失败" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:nil, nil];
+            [alert show];
         }
     }
 }
@@ -374,6 +392,10 @@ static int i=0;
     }
     
 //    [self sendTitleText];
+    
+    if (self.imaArray.count == 0) {
+        [self sendTitleText];
+    }
     [self sendImage];
 }
 

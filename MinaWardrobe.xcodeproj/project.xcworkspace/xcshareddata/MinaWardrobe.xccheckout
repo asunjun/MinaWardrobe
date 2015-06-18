@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>4CAFDD02-958E-4CD8-A19B-373037ED8B80</string>
 	<key>IDESourceControlProjectName</key>
-	<string>MinaWardrobe</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>5BE6CAE99418056C913666CE949A8EC62973AFDF</key>
 		<string>https://github.com/asunjun/MinaWardrobe.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>MinaWardrobe.xcodeproj</string>
+	<string>MinaWardrobe.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>5BE6CAE99418056C913666CE949A8EC62973AFDF</key>
