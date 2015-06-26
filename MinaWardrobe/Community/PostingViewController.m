@@ -8,8 +8,10 @@
 
 #import "PostingViewController.h"
 
-@interface PostingViewController ()
+@interface PostingViewController ()<UIScrollViewDelegate>
 
+//@property (nonatomic, strong) UIImageView *scrollImageView;
+//@property (nonatomic, strong) UIScrollView *imageScrollView;
 
 @end
 
@@ -26,10 +28,13 @@ static int i=0;
     [self initArr];
     [self initIma];
     
+//    [self registerForKeyboardNotifications];
+    
     self.arrrr = [[NSMutableArray alloc] init];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO];
 }
 
@@ -53,21 +58,21 @@ static int i=0;
 //    self.addButton.frame = CGRectMake(5, 5, 50, 50);
     
     self.classButtonView = [[UIView alloc] init];
-    self.classButtonView.frame = CGRectMake(WIDTH - 125, 85 + 190, 120, 150);
+    self.classButtonView.frame = CGRectMake(WIDTH - 125, 170, 120, 150);
     self.classButtonView.backgroundColor = [UIColor lightGrayColor];
     self.classButtonView.hidden = YES;
     _show = NO;
-    
+
     self.imageArrView = [[UIView alloc] init];
-    self.imageArrView.frame = CGRectMake(5, 85 + 160, 230, 60);
+    self.imageArrView.frame = CGRectMake(0, 145, 230, 60);
 //    self.imageArrView.backgroundColor = [UIColor yellowColor];
     
     self.listButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.listButton.frame = CGRectMake(WIDTH - 125, 85 + 160, 120, 30);
+    self.listButton.frame = CGRectMake(WIDTH - 125, 145, 120, 30);
     self.listButton.backgroundColor = [UIColor lightGrayColor];
     [self.listButton addTarget:self action:@selector(listButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     
-    self.textView = [[UITextView alloc] initWithFrame:CGRectMake(5, 5, WIDTH - 10, 240)];
+    self.textView = [[UITextView alloc] initWithFrame:CGRectMake(5, 5, WIDTH - 10, 140)];
     self.textView.font = [UIFont systemFontOfSize:20];
     self.textView.delegate = self;
     
@@ -83,14 +88,23 @@ static int i=0;
 
 - (void)initIma {
     self.ima1 = [[UIImageView alloc] init];
+    UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bigImageClick:)];
+    [self.ima1 addGestureRecognizer:tap1];
+    self.ima1.userInteractionEnabled = YES;
     self.ima1.frame = CGRectMake(5, 5, 50, 50);
     self.ima1.backgroundColor = [UIColor greenColor];
     
     self.ima2 = [[UIImageView alloc] init];
+    UITapGestureRecognizer *tap2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bigImage1Click:)];
+    [self.ima2 addGestureRecognizer:tap2];
+    self.ima2.userInteractionEnabled = YES;
     self.ima2.frame = CGRectMake(65, 5, 50, 50);
     self.ima2.backgroundColor = [UIColor greenColor];
     
     self.ima3 = [[UIImageView alloc] init];
+    UITapGestureRecognizer *tap3 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bigImage2Click:)];
+    [self.ima3 addGestureRecognizer:tap3];
+    self.ima3.userInteractionEnabled = YES;
     self.ima3.frame = CGRectMake(125, 5, 50, 50);
     self.ima3.backgroundColor = [UIColor greenColor];
     
@@ -112,6 +126,209 @@ static int i=0;
     self.dBtn3.tag = 2;
     [self.dBtn3 addTarget:self action:@selector(deleteImageButtonClick:) forControlEvents:UIControlEventTouchUpInside];
 }
+
+- (void)bigImageClick:(UITapGestureRecognizer *)sender {
+//    [self showScrollView:self.imaArray];
+    [self showScrollView:self.imaArray setValue:0];
+    NSLog(@"111");
+}
+- (void)bigImage1Click:(UITapGestureRecognizer *)sender {
+//    [self showImage:self.ima2];
+    [self showScrollView:self.imaArray setValue:1];
+    NSLog(@"111");
+}
+- (void)bigImage2Click:(UITapGestureRecognizer *)sender {
+//    [self showImage:self.ima3];
+    [self showScrollView:self.imaArray setValue:2];
+    NSLog(@"111");
+}
+
+/*
+- (void)registerForKeyboardNotifications {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasShow:) name:UIKeyboardDidShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter]  addObserver:self selector:@selector(keyboardWasHidden:) name:UIKeyboardDidHideNotification object:nil];
+}
+
+- (void) keyboardWasShow:(NSNotification *) notif
+{
+    NSDictionary *info = [notif userInfo];
+    NSValue *value = [info objectForKey:UIKeyboardFrameBeginUserInfoKey];
+    CGSize keyboardSize = [value CGRectValue].size;
+    
+    NSLog(@"keyBoard:%f", keyboardSize.height);  //216
+    NSLog(@"%ld", self.imaArray.count);
+    ///keyboardWasShown = YES;
+    
+    self.imageArrView.frame = CGRectMake(5, keyboardSize.height, 230, 56);
+    
+}
+- (void) keyboardWasHidden:(NSNotification *) notif
+{
+    NSDictionary *info = [notif userInfo];
+    
+    NSValue *value = [info objectForKey:UIKeyboardFrameBeginUserInfoKey];
+    CGSize keyboardSize = [value CGRectValue].size;
+    NSLog(@"keyboardWasHidden keyBoard:%f", keyboardSize.height);
+    // keyboardWasShown = NO;
+    
+    self.imageArrView.frame = CGRectMake(5, 85 + 160, 230, 60);
+}
+*/
+
+
+#pragma mark - 图片点击放大
+- (void)showScrollView:(NSMutableArray *)bigImage setValue:(NSInteger)value {
+    UIWindow *window=[UIApplication sharedApplication].keyWindow;
+    UIView *backgroundView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT)];
+    //    oldframe=[avatarImageView convertRect:avatarImageView.bounds toView:window];
+    backgroundView.backgroundColor=[UIColor blackColor];
+    backgroundView.alpha=1;
+    
+    UILabel *imageNum = [[UILabel alloc] initWithFrame:CGRectMake(0, HEIGHT - 40, WIDTH, 30)];
+    imageNum.backgroundColor = [UIColor darkGrayColor];
+    imageNum.textColor = [UIColor whiteColor];
+    imageNum.text = [NSString stringWithFormat:@"%ld/%ld", value, bigImage.count];
+    [backgroundView addSubview:imageNum];
+    
+    UIScrollView *bigScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT)];
+    bigScrollView.backgroundColor = [UIColor clearColor];
+    bigScrollView.delegate = self;
+    bigScrollView.contentSize = CGSizeMake(WIDTH * bigImage.count, HEIGHT);
+    bigScrollView.pagingEnabled = YES;
+    bigScrollView.contentOffset = CGPointMake(WIDTH * value, 0);
+    
+    UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hideScrollView:)];
+    [backgroundView addGestureRecognizer:tap];
+    [window addSubview:backgroundView];
+    
+    for (int i = 0; i < bigImage.count; i++) {
+        CGRect frame = CGRectMake(WIDTH * i, 0, WIDTH, HEIGHT);
+        UIScrollView *smallScrollView = [[UIScrollView alloc] initWithFrame:frame];
+        smallScrollView.delegate = self;
+        smallScrollView.tag = 200 + i;
+        smallScrollView.backgroundColor = [UIColor clearColor];
+        
+        UIImage *image = [[UIImage alloc] init];
+        image = bigImage[i];
+        NSLog(@"%@", image);
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+        imageView.tag = 100 + i;
+        imageView.userInteractionEnabled = YES;
+        CGFloat height = image.size.height * WIDTH / image.size.width;
+        imageView.frame = CGRectMake(0, (HEIGHT - height) / 2, WIDTH, height);
+        smallScrollView.minimumZoomScale = 1;
+        smallScrollView.maximumZoomScale = 2;
+        smallScrollView.zoomScale = 1;
+        smallScrollView.bouncesZoom = YES;
+        
+        [smallScrollView addSubview:imageView];
+        [bigScrollView addSubview:smallScrollView];
+    }
+    [backgroundView addSubview:bigScrollView];
+}
+
+-(void)hideScrollView:(UITapGestureRecognizer*)tap{
+    UIView *backgroundView=tap.view;
+    UIImageView *imageView=(UIImageView*)[tap.view viewWithTag:1];
+    [UIView animateWithDuration:0.3 animations:^{
+        imageView.frame=CGRectMake(0, 0, 0, 0);
+        backgroundView.alpha=0;
+    } completion:^(BOOL finished) {
+        [backgroundView removeFromSuperview];
+    }];
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return [scrollView viewWithTag:scrollView.tag - 100];
+}
+
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale
+{
+    [scrollView setZoomScale:scale animated:NO];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    CGPoint offset = scrollView.contentOffset;
+    int currentIndex = offset.x / scrollView.bounds.size.width;
+    //移动后改回原来大小
+    ((UIScrollView *)[scrollView viewWithTag:200 + currentIndex + 1]).zoomScale = 1;
+    ((UIScrollView *)[scrollView viewWithTag:200 + currentIndex - 1]).zoomScale = 1;
+}
+
+- (void)scrollViewDidZoom:(UIScrollView *)scrollView{
+    CGFloat delta_x = (scrollView.bounds.size.width > scrollView.contentSize.width) ? (scrollView.bounds.size.width - scrollView.contentSize.width) / 2 : 0.0;
+    CGFloat delta_y = (scrollView.bounds.size.height > scrollView.contentSize.height) ? (scrollView.bounds.size.height - scrollView.contentSize.height) / 2 : 0.0;
+    [scrollView viewWithTag:scrollView.tag - 100].center = CGPointMake(scrollView.contentSize.width / 2 + delta_x, scrollView.contentSize.height / 2 + delta_y);
+}
+
+
+/*
+
+- (void)showScrollView:(UIImageView *)bigImage {
+    self.scrollImage = [[UIImage alloc] init];
+    self.scrollImageView = [[UIImageView alloc] init];
+    
+    self.imageScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT)];
+    self.imageScrollView.backgroundColor = [UIColor blackColor];
+    self.imageScrollView.delegate = self;
+    self.imageScrollView.contentSize = CGSizeMake(WIDTH * self.imaArray.count, HEIGHT);
+    self.imageScrollView.pagingEnabled = YES;
+    UIImage *imaaaaaaa = [[UIImage alloc] init];
+    
+    for (int i = 0; i < self.imaArray.count; i++) {
+       
+        CGFloat height = self.scrollImage.size.height * WIDTH / self.scrollImage.size.width;
+        self.scrollImageView=[[UIImageView alloc]initWithFrame:CGRectMake(WIDTH * i, 0, WIDTH, HEIGHT)];
+         self.scrollImage = self.imaArray[i];
+        self.scrollImageView.image=self.scrollImage;
+        
+        NSLog(@"%@", self.scrollImageView);
+        self.scrollImageView.tag=1;
+        [self.imageScrollView addSubview:self.scrollImageView];
+    }
+    
+//    UIImage *image=self.scrollImage;
+    UIWindow *window=[UIApplication sharedApplication].keyWindow;
+//    UIImageView *imageView=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, WIDTH * self.imaArray.count, HEIGHT)];
+//    imageView.image=self.scrollImage;
+//    NSLog(@"%@", imageView);
+//    imageView.tag=1;
+    
+    
+    
+    [window addSubview:self.imageScrollView];
+
+    
+    UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hideImage:)];
+    [self.imageScrollView addGestureRecognizer: tap];
+    
+    
+    [UIView animateWithDuration:0.3 animations:^{
+//        CGFloat height = self.scrollImage.size.height * WIDTH / self.scrollImage.size.width;
+//        self.scrollImageView.frame=CGRectMake(WIDTH * self.imaArray.count, 0, WIDTH, height);
+        self.imageScrollView.alpha=1;
+    } completion:^(BOOL finished) {
+    
+    }];
+}
+
+-(void)hideScrollView:(UITapGestureRecognizer*)tap{
+    UIView *backgroundView=tap.view;
+    UIImageView *imageView=(UIImageView*)[tap.view viewWithTag:1];
+    [UIView animateWithDuration:0.3 animations:^{
+        imageView.frame=CGRectMake(0, 0, 0, 0);
+        backgroundView.alpha=0;
+    } completion:^(BOOL finished) {
+        [backgroundView removeFromSuperview];
+    }];
+}
+*/
+
+
 
 #pragma mark - 网络请求
 -(void)requstdata{
@@ -164,16 +381,6 @@ static int i=0;
 }
 
 -(void)requestFinished:(ASIHTTPRequest *)request{
-//    NSString *str =[request responseString];
-    //    NSData *data = [st1 dataUsingEncoding:NSUTF8StringEncoding];
-    //    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-    //    if ([[dict objectForKey:@"errno"] intValue] == 1) {
-    //        NSLog(@"登陆成功");
-    //    } else {
-    //        NSLog(@"失败");
-    //    }
-    //    NSLog(@"*******%@", self.testStr);
-    //    self.testView.text = self.testStr;
     self.xmlStr = [[NSString alloc]initWithData:[request responseData] encoding:NSUTF8StringEncoding];
     [self start];
     
@@ -182,13 +389,11 @@ static int i=0;
         NSString *st1=[NSString stringWithFormat:@"[img]%@[/img]",str];
         NSMutableArray *arr = [NSMutableArray arrayWithObject:st1];
         [self.arrrr addObjectsFromArray:arr];
-//        NSLog(@"%@", str);
         i+=1;
     }
     self.imageStr = [self.arrrr componentsJoinedByString:@""];
     if (self.imaArray.count != 0) {
         if (i==self.imaArray.count) {
-//            NSLog(@"%ld", self.imaArray.count);
             [self sendTitleText];
             i=0;
             NSString *str =[request responseString];
@@ -487,10 +692,6 @@ static int i=0;
                 UIImage* image=[dict objectForKey:UIImagePickerControllerOriginalImage];
                 if (self.imaArray.count < 4) {
                     [self.imaArray addObject:image];
-//                    return;
-                } else {
-                    NSLog(@"111111111111");
-//                    return;
                 }
             }
         }else {
@@ -510,7 +711,7 @@ static int i=0;
     
     if (self.titleTextField)
     {
-        if ([toBeString length] > 20) {
+        if ([toBeString length] > 200) {
             self.titleTextField.text = [toBeString substringToIndex:6];
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"超过最大字数不能输入了" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
             [alert show];
