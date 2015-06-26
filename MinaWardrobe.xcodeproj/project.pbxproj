@@ -114,6 +114,8 @@
 		DD46EB981B131432004D01FF /* ComNRModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD46EB971B131432004D01FF /* ComNRModel.m */; };
 		DD46EB9C1B13145E004D01FF /* ComNRTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD46EB9A1B13145E004D01FF /* ComNRTableViewCell.m */; };
 		DD46EB9D1B13145E004D01FF /* ComNRTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD46EB9B1B13145E004D01FF /* ComNRTableViewCell.xib */; };
+		DD58CCBE1B33FD0700A9C91F /* 阅读(zi).png in Resources */ = {isa = PBXBuildFile; fileRef = DD58CCBC1B33FD0700A9C91F /* 阅读(zi).png */; };
+		DD58CCBF1B33FD0700A9C91F /* 阅读评论(zi).png in Resources */ = {isa = PBXBuildFile; fileRef = DD58CCBD1B33FD0700A9C91F /* 阅读评论(zi).png */; };
 		DD5AE0DB1B14608000FAD355 /* ComTwoNRTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5AE0D91B14608000FAD355 /* ComTwoNRTableViewCell.m */; };
 		DD5AE0DC1B14608000FAD355 /* ComTwoNRTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD5AE0DA1B14608000FAD355 /* ComTwoNRTableViewCell.xib */; };
 		DD6E8DA11B049EE600D222B4 /* SJasihttp.m in Sources */ = {isa = PBXBuildFile; fileRef = DD6E8DA01B049EE600D222B4 /* SJasihttp.m */; };
@@ -331,6 +333,8 @@
 		DD46EB991B13145E004D01FF /* ComNRTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComNRTableViewCell.h; sourceTree = "<group>"; };
 		DD46EB9A1B13145E004D01FF /* ComNRTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComNRTableViewCell.m; sourceTree = "<group>"; };
 		DD46EB9B1B13145E004D01FF /* ComNRTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComNRTableViewCell.xib; sourceTree = "<group>"; };
+		DD58CCBC1B33FD0700A9C91F /* 阅读(zi).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "阅读(zi).png"; sourceTree = "<group>"; };
+		DD58CCBD1B33FD0700A9C91F /* 阅读评论(zi).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "阅读评论(zi).png"; sourceTree = "<group>"; };
 		DD5AE0D81B14608000FAD355 /* ComTwoNRTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComTwoNRTableViewCell.h; sourceTree = "<group>"; };
 		DD5AE0D91B14608000FAD355 /* ComTwoNRTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComTwoNRTableViewCell.m; sourceTree = "<group>"; };
 		DD5AE0DA1B14608000FAD355 /* ComTwoNRTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComTwoNRTableViewCell.xib; sourceTree = "<group>"; };
@@ -778,6 +782,8 @@
 		DD94BBB51B0C624900739E44 /* imagersoure */ = {
 			isa = PBXGroup;
 			children = (
+				DD58CCBC1B33FD0700A9C91F /* 阅读(zi).png */,
+				DD58CCBD1B33FD0700A9C91F /* 阅读评论(zi).png */,
 				185200681B2672AB008DB9C6 /* Login */,
 			);
 			name = imagersoure;
@@ -884,6 +890,7 @@
 				185200741B2672AB008DB9C6 /* BaseImage.png in Resources */,
 				DD91D5C21B0B3D8F00C3C137 /* CommunityTableViewCell.xib in Resources */,
 				DD856AEA1B16B88900429554 /* ComtrueTableViewCell.xib in Resources */,
+				DD58CCBE1B33FD0700A9C91F /* 阅读(zi).png in Resources */,
 				185200731B2672AB008DB9C6 /* UserPass.png in Resources */,
 				DD46EB8B1B12FC04004D01FF /* 我的2.png in Resources */,
 				DD46EB8C1B12FC04004D01FF /* 社区.png in Resources */,
@@ -902,6 +909,7 @@
 				187F9B581B0C72CB002CC82C /* MainViewController.xib in Resources */,
 				DD46EB7E1B12BD6A004D01FF /* 789.jpg in Resources */,
 				DD46EB951B13121D004D01FF /* ComNRViewController.xib in Resources */,
+				DD58CCBF1B33FD0700A9C91F /* 阅读评论(zi).png in Resources */,
 				DD46EB881B12FC04004D01FF /* 商城.png in Resources */,
 				18639C5B1B044BDA00072AF3 /* MySeetingViewController.xib in Resources */,
 				DD46EB8D1B12FC04004D01FF /* 社区2.png in Resources */,

@@ -72,6 +72,24 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="snH-wr-1DW">
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a8Y-lD-rrt">
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bmW-Pn-4Sa">
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                     </view>
                 </subviews>
@@ -85,14 +103,15 @@
                 <outlet property="message" destination="FzQ-UC-BcQ" id="Hao-8r-yju"/>
                 <outlet property="name" destination="Isq-JP-NoA" id="z08-3H-bz7"/>
                 <outlet property="pinglun" destination="ddn-iK-k9o" id="zDS-zp-wVU"/>
-                <outlet property="pinglunshu" destination="ddn-iK-k9o" id="0V5-fe-9bi"/>
+                <outlet property="pinglunshu" destination="a8Y-lD-rrt" id="BMJ-D8-DrY"/>
                 <outlet property="shouchang" destination="qOw-jM-RHy" id="G9R-OE-oG4"/>
                 <outlet property="shouchangshu" destination="x2n-0E-AkV" id="zyj-pW-t6L"/>
                 <outlet property="time" destination="529-rn-cVI" id="S0B-DD-ZtQ"/>
                 <outlet property="title" destination="kdj-Cq-Ed2" id="VdT-uy-TCQ"/>
                 <outlet property="view1" destination="h0G-9M-Erc" id="ERR-8g-Svr"/>
+                <outlet property="xiantiao" destination="snH-wr-1DW" id="Njz-kv-XO0"/>
             </connections>
-            <point key="canvasLocation" x="368" y="347.5"/>
+            <point key="canvasLocation" x="372" y="341.5"/>
         </tableViewCell>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

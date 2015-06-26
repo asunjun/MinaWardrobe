@@ -23,6 +23,21 @@
         
         NSLog(@"%@",zhongmessage);
         
+        NSArray *a2=[dic notNullobjectForKey:@"img"];
+        
+        NSLog(@"%@",a2);
+        if (a2.count!=0) {
+           NSDictionary *dic2=[a2 objectAtIndex:0];
+             NSLog(@"%@",dic2);
+            self.imagesheight=[dic2 objectForKey:@"1"];
+            
+        }else{
+             self.imagesheight=@"0";
+            
+        }
+       
+        
+        
         if([zhongmessage rangeOfString:@"[img]"].location !=NSNotFound)
             {
                 NSArray *h1=[zhongmessage componentsSeparatedByString:@"[img]"];

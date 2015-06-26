@@ -82,29 +82,20 @@
             _zhaopian = [UIButton buttonWithType:UIButtonTypeCustom];
             
             [_zhaopian setTitle:@"照片" forState:UIControlStateNormal];
-            //        [_sendBtn setBackgroundColor:[UIColor whiteColor]];
-            [_zhaopian setFrame:CGRectMake(0, 10, 50, 40)];
+            [_zhaopian setFrame:CGRectMake(5, 10, 35, 24)];
             [_zhaopian addTarget:self action:@selector(zhaopianxuanqu:) forControlEvents:UIControlEventTouchUpInside];
+            _zhaopian.titleLabel.font=[UIFont boldSystemFontOfSize:15];
+            
             [self addSubview:_zhaopian];
         }
     }else{
         
-           // _zhaopian = [UIButton buttonWithType:UIButtonTypeCustom];
-            [_zhaopian setBackgroundImage:self.imagename forState:UIControlStateNormal];
-//            [_zhaopian setFrame:CGRectMake(0, 10, 50, 40)];
-//            [_zhaopian addTarget:self action:@selector(zhaopianxuanqu:) forControlEvents:UIControlEventTouchUpInside];
-//            [self addSubview:_zhaopian];
+        [_zhaopian setImage:self.imagename forState:UIControlStateNormal];
         
         
     }
 
 }
-
-//-(UIButton *)zhaopian
-//{
-//    
-//          return _zhaopian;
-//}
 
 
 -(void)zhaopianxuanqu:(UIButton *)sender{

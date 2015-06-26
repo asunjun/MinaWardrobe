@@ -33,19 +33,11 @@
     self.lab1.text=[NSString stringWithFormat:@"标题:%@",titile];
     
     self.lab1.numberOfLines=2;
-   // self.lab2=[[UILabel alloc]initWithFrame:CGRectZero];
-   // self.lab3=[[UILabel alloc]initWithFrame:CGRectZero];
-   // self.lab4=[[UILabel alloc] initWithFrame:CGRectZero];
-    
-    self.lab2.text=st2;
+     self.lab2.text=st2;
     self.lab3.text=message;
     
       self.lab3.numberOfLines=0;
      self.lab3.font=[UIFont boldSystemFontOfSize:15];
-//    [self addSubview:self.lab1];
-//    [self addSubview:self.lab2];
-//    [self addSubview:self.lab3];
-//    [self addSubview:self.lab4];
 
     
 }

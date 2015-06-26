@@ -41,8 +41,8 @@
                ishidder=NO;
         
     }
-    
-    
+    self.xiantiao.frame=CGRectZero;
+     [self.xiantiao setBackgroundColor:lightgray];
       self.img1.frame=CGRectZero;
      self.img2.frame=CGRectZero;
     
@@ -75,13 +75,34 @@
     
     self.time.frame=CGRectZero;
     
-  
-    
+     self.message.frame=CGRectZero;
+    self.message.text=trade.message;
+     self.message.font=[UIFont boldSystemFontOfSize:12];
+    self.message.textColor=kUIColorFromRGB(0x747475);
+    self.message.numberOfLines=2;
+    self.message.lineBreakMode=NSLineBreakByCharWrapping;
+
     self.pinglun.frame=CGRectZero;
     
     self.shouchangshu.frame=CGRectZero;
+    self.shouchang.frame=CGRectZero;
+    self.pinglun.frame=CGRectZero;
+    
+    self.shouchang.image=[UIImage imageNamed:@"阅读(zi).png"];
+    self.pinglun.image=[UIImage imageNamed:@"阅读评论(zi).png"];
     
     self.pinglunshu.frame=CGRectZero;
+    NSLog(@"%@,%@",trade.shouchanshu,trade.fabupinglun);
+    
+    NSLog(@"%@,%@",trade.shouchanshu,trade.fabupinglun);
+    self.shouchangshu.text=[NSString stringWithFormat:@"%@",trade.shouchanshu];
+    
+    self.pinglunshu.text=[NSString stringWithFormat:@"%@",trade.fabupinglun];
+    self.shouchangshu.textColor=kUIColorFromRGB(0x747475);
+    self.pinglunshu.textColor=kUIColorFromRGB(0x747475);
+    
+    self.shouchangshu.font=[UIFont boldSystemFontOfSize:12];
+    self.pinglunshu.font=[UIFont boldSystemFontOfSize:12];
     
    self.name.text=trade.fabuname;
     self.name.font=[UIFont boldSystemFontOfSize:12];
@@ -109,27 +130,64 @@
 
 
 -(void)layoutSubviews{
-    CGFloat height = [self heightContentBackgroundView:self.title.text];
-    self.title.frame=CGRectMake(8,0, WIDTH-18, height);
+   // CGFloat height = [self heightContentBackgroundView:self.title.text];
+     CGFloat height = [self.title.text boundingRectWithSize:CGSizeMake(WIDTH-28, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:16]} context:nil].size.height;
+   
 
-    if (ishidder==YES) {
-        self.img1.frame=CGRectMake(8, self.title.bottom, 80, 80);
-        self.img2.frame=CGRectMake(100, self.title.bottom, 80, 80);
-        self.img3.frame=CGRectMake(192, self.title.bottom, 80, 80);
-        
-        self.img4.frame=CGRectMake(8, self.title.bottom+85, 20, 20);
-        self.name.frame=CGRectMake(33, self.title.bottom+85, 100, 10);
-        self.time.frame=CGRectMake(33, self.title.bottom+96, 100, 10);
-        self.view1.frame=CGRectMake(8, 8, WIDTH-16,height+115-8);
+    
+    CGFloat height1 = [self.message.text boundingRectWithSize:CGSizeMake(WIDTH-28, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:12]} context:nil].size.height;
+
+    
+
+    
+    NSLog(@"%f",height);
+    NSLog(@"%f",height1);
+    
+    
+    if (height>20) {
+        height=42;
         
     }else{
-        self.img4.frame=CGRectMake(8, self.title.bottom, 20, 20);
-        self.name.frame=CGRectMake(33, self.title.bottom, 100, 10);
-        self.time.frame=CGRectMake(33, self.title.bottom+13, 100, 10);
-        self.view1.frame=CGRectMake(8, 8, WIDTH-16,height+28);
+        height=20;
         
+    }
+    if (height1>20) {
+       // height+=20;
+        height1=30;
         
+    }
+     self.title.frame=CGRectMake(8,0, WIDTH-28, height);
+    self.message.frame=CGRectMake(8, height+5, WIDTH-28, height1);
+    
+         if (ishidder==YES) {
+        self.img1.frame=CGRectMake(8, height+height1+12, 80, 80);
+        self.img2.frame=CGRectMake(100, height+height1+12, 80, 80);
+        self.img3.frame=CGRectMake(192, height+height1+12, 80, 80);
         
+        self.img4.frame=CGRectMake(8, height+90+height1+16, 20, 20);
+        self.name.frame=CGRectMake(33, height+90+height1+16, 100, 10);
+        self.time.frame=CGRectMake(33, height+101+height1+16, 100, 10);
+        self.xiantiao.frame=CGRectMake(8, height+87+height1+12, WIDTH-32, 1);
+        self.shouchang.frame=CGRectMake(WIDTH-120, height+90+height1+16, 20, 20);
+        self.pinglun.frame=CGRectMake(WIDTH-70, height+90+height1+16, 20, 20);
+        self.shouchangshu.frame=CGRectMake(WIDTH-95, height+90+height1+16, 30, 20);
+        self.pinglunshu.frame=CGRectMake(WIDTH-50, height+90+height1+16, 30, 20);
+        self.view1.frame=CGRectMake(8, 8, WIDTH-16,height+80+height1+55);
+             
+             NSLog(@"%f",height+80+height1+45);
+             
+        
+    }else{
+        self.img4.frame=CGRectMake(8, height+height1+26, 20, 20);
+        self.pinglun.frame=CGRectMake(WIDTH-70,  height+height1+26, 20, 20);
+        self.shouchangshu.frame=CGRectMake(WIDTH-95, height+height1+26, 30, 20);
+        self.pinglunshu.frame=CGRectMake(WIDTH-50, height+height1+26, 30, 20);
+
+        self.name.frame=CGRectMake(33, height+height1+26, 100, 10);
+        self.time.frame=CGRectMake(33, height+13+height1+26, 100, 10);
+        self.view1.frame=CGRectMake(8, 8, WIDTH-16,height+43+height1+12);
+        self.xiantiao.frame=CGRectMake(8, height+height1+18, WIDTH-32, 1);
+        self.shouchang.frame=CGRectMake(WIDTH-120,  height+height1+26, 20, 20);
     }
     
    
@@ -168,7 +226,7 @@
         [datefor setDateFormat:@"MM/dd HH:mm"];
         NSString *timeString = [datefor stringFromDate:compareDate];
         //        //cell.timeLabel.text = [timeString description];
-        NSLog(@"--ttt-%@",[timeString description]);
+       // NSLog(@"--ttt-%@",[timeString description]);
         
         result = [NSString stringWithFormat:@"%@",[timeString description]];
         
@@ -176,28 +234,6 @@
     
     return  result;
     
-}
-
-- (CGFloat)heightContentBackgroundView:(NSString *)content
-{
-    CGFloat height = [self heigtOfLabelForFromString:content fontSizeandLabelWidth:WIDTH andFontSize:30.0];
-    if (height<30)
-    {
-        height = 30;
-    }else {
-    height =60;
-    }
-    
-    return height;
-}
-
-- (CGFloat)heigtOfLabelForFromString:(NSString *)text fontSizeandLabelWidth:(CGFloat)width andFontSize:(CGFloat)fontSize
-{
-   
-    
-    
-    CGSize size = [text sizeWithFont:[UIFont systemFontOfSize:fontSize] constrainedToSize:CGSizeMake(width, 20000)];
-    return size.height;
 }
 
 

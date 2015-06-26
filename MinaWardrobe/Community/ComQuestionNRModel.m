@@ -24,9 +24,9 @@
         NSString *mess=[post notNullobjectForKey:@"question_detail"];
         NSLog(@"%@",mess);
         NSLog(@"%@",self.title);
-        if([mess rangeOfString:@"##########"].location !=NSNotFound)//_roaldSearchText
+        if([mess rangeOfString:@"[img]"].location !=NSNotFound)//_roaldSearchText
         {
-            NSArray *a1=[mess componentsSeparatedByString:@"##########"];
+            NSArray *a1=[mess componentsSeparatedByString:@"[img]"];
             
             NSLog(@"%@",[a1 objectAtIndex:0]);
             

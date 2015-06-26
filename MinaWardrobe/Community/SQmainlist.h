@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface SQmainlist : NSObject
+@property(copy,nonatomic)NSString *message;
+
 @property(copy,nonatomic)NSString *category;
 
 @property(copy,nonatomic)NSString *idzhi;

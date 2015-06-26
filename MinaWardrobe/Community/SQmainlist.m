@@ -21,7 +21,25 @@
             self.fabutitle=[dic notNullobjectForKey:@"question_content"];
             NSString *detail=[dic notNullobjectForKey:@"question_detail"];
             
-            
+            if([detail rangeOfString:@"[img]"].location !=NSNotFound)//_roaldSearchText
+            {
+                NSArray *a1=[detail componentsSeparatedByString:@"[img]"];
+                
+                NSLog(@"%@",[a1 objectAtIndex:0]);
+                
+                self.message=[a1 objectAtIndex:0];
+                
+                
+                
+                NSLog(@"yes");
+            }
+            else
+            {
+                self.message=detail;
+                
+                NSLog(@"no");
+            }
+
             NSError *error = NULL;
             
             NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"\\[img\\](.*?)\\[\\/img\\]" options:NSRegularExpressionCaseInsensitive error:&error];
@@ -41,9 +59,9 @@
                 }
            
             }
-            self.fabupinglun=[dic notNullobjectForKey:@"answer_users"];
-            self.shouchanshu=[dic notNullobjectForKey:@""];
+            self.shouchanshu=[dic objectForKey:@"view_count"];
             
+            self.fabupinglun=[dic notNullobjectForKey:@"answer_count"];
             self.idzhi=[dic notNullobjectForKey:@"question_id"];
             self.fabutime=[dic notNullobjectForKey:@"add_time"];
             NSDictionary *dic1=[dic notNullobjectForKey:@"user_info"];

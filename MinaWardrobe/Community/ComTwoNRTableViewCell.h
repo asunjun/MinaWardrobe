@@ -16,6 +16,6 @@
 
 @property(strong,nonatomic)UIImageView *img3;
 
-- (void)configCellByTradeModel:(ComNRModel  *)trade;
+- (void)configCellByTradeModel:(NSArray *)trade;
 
 @end

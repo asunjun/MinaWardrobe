@@ -9,13 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ComtrueTableViewCell : UITableViewCell
-//@property(strong,nonatomic)UILabel *lab1;
-//
-//@property(strong,nonatomic)UILabel *lab2;
-//
-//@property(strong,nonatomic)UILabel *lab3;
-//
-//@property(strong,nonatomic)UIImageView *img1;
 
 @property (weak, nonatomic) IBOutlet UILabel *lab1;
 
@@ -26,11 +19,14 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *lab4;
 
+@property (weak, nonatomic) IBOutlet UILabel *lab6;
 
 @property (weak, nonatomic) IBOutlet UIImageView *img1;
 
 @property (weak, nonatomic) IBOutlet UILabel *lab5;
-- (void)configCellByTradeModel:(NSString *)name and:(NSInteger)loushu and:(NSString *)imageurl and:(NSString *)time and:(NSString *)message;
+
+@property(strong,nonatomic)NSString *imgheight;
+- (void)configCellByTradeModel:(NSString *)name and:(NSInteger)loushu and:(NSString *)imageurl and:(NSString *)time and:(NSString *)message and:(NSString *)height;
 
 
 @end

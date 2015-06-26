@@ -10,6 +10,7 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 @interface ComNRViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *table;
+@property(strong,nonatomic)NSMutableArray *hufuimages;
 
 
 -(id)initWith:(NSString *)idzhi and:(NSArray *)images and:(NSString *)catgroup;

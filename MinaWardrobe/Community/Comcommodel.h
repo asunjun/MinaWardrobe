@@ -16,6 +16,9 @@
 
 @property(copy,nonatomic)NSString *images;
 
+@property(copy,nonatomic)NSString *imagesheight;
+
+
 - (id)initWithDic:(NSDictionary*)dic;
 
 

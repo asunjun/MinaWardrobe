@@ -29,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *img3;
 
 
+@property (weak, nonatomic) IBOutlet UILabel *xiantiao;
 @property (weak, nonatomic) IBOutlet UIImageView *img4;
 
 @property (weak, nonatomic) IBOutlet UIImageView *shouchang;
