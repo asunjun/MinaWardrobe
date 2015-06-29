@@ -68,7 +68,8 @@
 
     self.img4.layer.masksToBounds = YES;
     self.img4.layer.cornerRadius=3;
-     self.img4.image=[UIImage imageNamed:@"789.jpg"];
+    [self.img4 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://sq.mina.cn/uploads/avatar/%@",trade.fabutouxiang]]];
+    // self.img4.image=[UIImage imageNamed:@"789.jpg"];
     
     self.name.frame=CGRectZero;
     

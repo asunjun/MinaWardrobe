@@ -233,11 +233,7 @@
     {
         NSLog(@"no");
     }
-    
-    
-    
-    
-    
+
     
     return st1;
     
