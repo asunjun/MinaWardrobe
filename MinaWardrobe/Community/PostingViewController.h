@@ -14,7 +14,7 @@
 #import <MobileCoreServices/UTCoreTypes.h>
 #import "GDataXMLNode.h"
 
-@interface PostingViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ELCImagePickerControllerDelegate, UITextFieldDelegate, UITextViewDelegate, NSXMLParserDelegate, ASIHTTPRequestDelegate>
+@interface PostingViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ELCImagePickerControllerDelegate, UITextFieldDelegate, UITextViewDelegate, NSXMLParserDelegate, ASIHTTPRequestDelegate, UIActionSheetDelegate, UIGestureRecognizerDelegate>
 
 
 @property (strong, nonatomic) IBOutlet UITableView *tView;
