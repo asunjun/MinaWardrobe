@@ -808,7 +808,7 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return 4;
+    return 0.5;
 }
 
 //错误网址

@@ -57,11 +57,11 @@
 
     self.title.frame=CGRectZero;
     self.title.numberOfLines=2;
-    self.title.lineBreakMode=NSLineBreakByCharWrapping;
+    self.title.lineBreakMode=NSLineBreakByTruncatingTail;
     self.title.text=trade.fabutitle;
-   
+   [self.title setFont:[UIFont fontWithName:@"Helvetica-Bold" size:16]];
     //self.title.backgroundColor=[UIColor clearColor];
-    self.title.textColor=kUIColorFromRGB(0x4a4a4a);
+    self.title.textColor=kUIColorFromRGB(0x000000);
     [view1 addSubview:self.title];
 
     self.img4.frame=CGRectZero;
@@ -78,10 +78,11 @@
     
      self.message.frame=CGRectZero;
     self.message.text=trade.message;
-     self.message.font=[UIFont boldSystemFontOfSize:12];
-    self.message.textColor=kUIColorFromRGB(0x747475);
+    // self.message.font=[UIFont boldSystemFontOfSize:12];
+    self.message.textColor=kUIColorFromRGB(0x2c2c2c);
     self.message.numberOfLines=2;
-    self.message.lineBreakMode=NSLineBreakByCharWrapping;
+     [self.message setFont:[UIFont fontWithName:@"Helvetica" size:12]];
+    self.message.lineBreakMode=NSLineBreakByTruncatingTail;
 
     self.pinglun.frame=CGRectZero;
     
