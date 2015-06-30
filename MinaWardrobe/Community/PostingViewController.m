@@ -10,7 +10,7 @@
 
 @interface PostingViewController ()<UIScrollViewDelegate>
 
-//@property (nonatomic, strong) UIImageView *scrollImageView;
+@property (nonatomic, strong) UIImageView *imageView;
 //@property (nonatomic, strong) UIScrollView *imageScrollView;
 
 @end
@@ -185,12 +185,6 @@ static int i=0;
     backgroundView.backgroundColor=[UIColor blackColor];
     backgroundView.alpha=1;
     
-    UILabel *imageNum = [[UILabel alloc] initWithFrame:CGRectMake(0, HEIGHT - 40, WIDTH, 30)];
-    imageNum.backgroundColor = [UIColor darkGrayColor];
-    imageNum.textColor = [UIColor whiteColor];
-    imageNum.text = [NSString stringWithFormat:@"%ld/%ld", value, bigImage.count];
-    [backgroundView addSubview:imageNum];
-    
     UIScrollView *bigScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT)];
     bigScrollView.backgroundColor = [UIColor clearColor];
     bigScrollView.delegate = self;
@@ -209,6 +203,7 @@ static int i=0;
         smallScrollView.tag = 200 + i;
         smallScrollView.backgroundColor = [UIColor clearColor];
         
+     
         UIImage *image = [[UIImage alloc] init];
         image = bigImage[i];
         NSLog(@"%@", image);
@@ -217,6 +212,7 @@ static int i=0;
         imageView.userInteractionEnabled = YES;
         CGFloat height = image.size.height * WIDTH / image.size.width;
         imageView.frame = CGRectMake(0, (HEIGHT - height) / 2, WIDTH, height);
+        
         smallScrollView.minimumZoomScale = 1;
         smallScrollView.maximumZoomScale = 2;
         smallScrollView.zoomScale = 1;
@@ -238,6 +234,10 @@ static int i=0;
         [backgroundView removeFromSuperview];
     }];
 }
+
+
+
+
 
 #pragma mark - UIScrollViewDelegate
 
