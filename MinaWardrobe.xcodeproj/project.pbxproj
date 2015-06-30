@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181087EA1B41271E003BD064 /* Mag.m in Sources */ = {isa = PBXBuildFile; fileRef = 181087E81B41271E003BD064 /* Mag.m */; };
 		184BBE971B1806230032015D /* ELCAlbumPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184BBE811B1806230032015D /* ELCAlbumPickerController.m */; };
 		184BBE981B1806230032015D /* ELCAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 184BBE831B1806230032015D /* ELCAsset.m */; };
 		184BBE991B1806230032015D /* ELCAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 184BBE851B1806230032015D /* ELCAssetCell.m */; };
@@ -146,6 +147,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		181087E81B41271E003BD064 /* Mag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mag.m; sourceTree = "<group>"; };
+		181087E91B41271E003BD064 /* Mag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mag.h; sourceTree = "<group>"; };
 		184BBE801B1806230032015D /* ELCAlbumPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAlbumPickerController.h; sourceTree = "<group>"; };
 		184BBE811B1806230032015D /* ELCAlbumPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAlbumPickerController.m; sourceTree = "<group>"; };
 		184BBE821B1806230032015D /* ELCAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAsset.h; sourceTree = "<group>"; };
@@ -560,6 +563,8 @@
 		18639C5C1B044DC100072AF3 /* Third */ = {
 			isa = PBXGroup;
 			children = (
+				181087E81B41271E003BD064 /* Mag.m */,
+				181087E91B41271E003BD064 /* Mag.h */,
 				185431951B292DB60011A061 /* GDataXMLNode.h */,
 				185431961B292DB60011A061 /* GDataXMLNode.m */,
 				184BBE7F1B1806230032015D /* ELCImagePicker */,
@@ -849,6 +854,7 @@
 				TargetAttributes = {
 					18639C151B04493C00072AF3 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = 5E66V7652X;
 						DevelopmentTeam = A6ZH33JE77;
 					};
 					18639C2E1B04493C00072AF3 = {
@@ -992,6 +998,7 @@
 				18639C981B044F1B00072AF3 /* ASIDownloadCache.m in Sources */,
 				18639CC31B044F2800072AF3 /* NSData+ImageContentType.m in Sources */,
 				18639C961B044F1B00072AF3 /* ASIDataCompressor.m in Sources */,
+				181087EA1B41271E003BD064 /* Mag.m in Sources */,
 				18639C1C1B04493C00072AF3 /* main.m in Sources */,
 				18639C991B044F1B00072AF3 /* ASIFormDataRequest.m in Sources */,
 				18639CC61B044F2800072AF3 /* SDWebImageDecoder.m in Sources */,

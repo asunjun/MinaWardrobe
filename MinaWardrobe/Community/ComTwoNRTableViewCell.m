@@ -14,7 +14,6 @@
     // Initialization code
 }
 - (void)configCellByTradeModel:(NSArray *)trade{
-#warning 添加
     self.img1 = [[UIImageView alloc] init];
     self.img1.userInteractionEnabled = YES;
     UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bigImageClick1:)];
@@ -59,7 +58,9 @@
     [self addSubview:self.img2];
     [self addSubview:self.img3];
     
-    self.imageArr = [NSMutableArray arrayWithObjects:self.img1, self.img2, self.img3, nil];
+//    self.imageArr = [NSMutableArray arrayWithObjects:self.img1, self.img2, self.img3, nil];
+    self.imageArr = [Mag shard].imageArrrr;
+    NSLog(@"%@", self.imageArr);
     
 }
 
@@ -67,10 +68,10 @@
     [self showScrollView:self.imageArr setValue:0];
 }
 - (void)bigImageClick2:(UITapGestureRecognizer *)sender {
-    [self showScrollView:self.imageArr setValue:0];
+    [self showScrollView:self.imageArr setValue:1];
 }
 - (void)bigImageClick3:(UITapGestureRecognizer *)sender {
-    [self showScrollView:self.imageArr setValue:0];
+    [self showScrollView:self.imageArr setValue:2];
 }
 
 #pragma mark - 图片点击放大
@@ -79,6 +80,8 @@
     UIView *backgroundView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT)];
     backgroundView.backgroundColor=[UIColor blackColor];
     backgroundView.alpha=1;
+    
+    
     
     UIScrollView *bigScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT)];
     bigScrollView.backgroundColor = [UIColor clearColor];
@@ -98,20 +101,33 @@
         smallScrollView.tag = 200 + i;
         smallScrollView.backgroundColor = [UIColor clearColor];
         
+        UIButton *saveBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        saveBtn.frame = CGRectMake(WIDTH - 120, HEIGHT - 40, 80, 20);
+        saveBtn.tag = 800 + i;
+        [saveBtn setTitle:@"下载图片" forState:UIControlStateNormal];
+        [saveBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [saveBtn addTarget:self action:@selector(saveButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+        saveBtn.backgroundColor = [UIColor greenColor];
+        [smallScrollView addSubview:saveBtn];
+        
 //        UIImage *image = [[UIImage alloc] init];
 //        image = bigImage[i];
 //        NSLog(@"%@", image);
         UIImageView *imageView = [[UIImageView alloc] init];
-        imageView = bigImage[i];
+        [imageView sd_setImageWithURL:bigImage[i]];
         NSLog(@"%@", imageView);
         imageView.tag = 100 + i;
         imageView.userInteractionEnabled = NO;
-        CGFloat height = imageView.image.size.height * WIDTH / imageView.image.size.width;
+        CGFloat height = [[[Mag shard].imageHeightArrrrr objectAtIndex:i] intValue] * WIDTH / WIDTH - 16;
+        NSLog(@"%f", imageView.image.size.width);
+        NSLog(@"%f", height);
+        NSLog(@"%f", HEIGHT);
+        NSLog(@"%f", imageView.image.size.height);
+        NSLog(@"%f", (HEIGHT - height) / 2);
         imageView.frame = CGRectMake(0, (HEIGHT - height) / 2, WIDTH, height);
         
-        UILongPressGestureRecognizer *longTap = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressClick:)];
-        [imageView addGestureRecognizer:longTap];
-//        [imageView addGestureRecognizer:tap];
+//        UILongPressGestureRecognizer *longTap = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressClick:)];
+//        [imageView addGestureRecognizer:longTap];
         
         smallScrollView.minimumZoomScale = 1;
         smallScrollView.maximumZoomScale = 2;
@@ -171,6 +187,27 @@
 
 
 
+- (void)saveButtonClick:(UIButton *)sender {
+    UIImageView *imageView = [[UIImageView alloc] init];
+    [imageView sd_setImageWithURL:self.imageArr[0]];
+    UIImageView *imageView1 = [[UIImageView alloc] init];
+    [imageView1 sd_setImageWithURL:self.imageArr[1]];
+    UIImageView *imageView2 = [[UIImageView alloc] init];
+    [imageView2 sd_setImageWithURL:self.imageArr[2]];
+    switch (sender.tag) {
+        case 800:
+            NSLog(@"1");
+            [self saveImageToPhotos:imageView.image];
+            break;
+        case 801:
+            NSLog(@"2");
+            [self saveImageToPhotos:imageView1.image];
+            break;
+        case 802:
+            NSLog(@"3");
+            [self saveImageToPhotos:imageView2.image];
+    }
+}
 - (void)longPressClick:(UILongPressGestureRecognizer *)sender {
 
     if(sender.state == UIGestureRecognizerStateBegan)
@@ -192,8 +229,6 @@
             break;
     }
 }
-
-
 
 - (void)saveImageToPhotos:(UIImage*)savedImage
 {

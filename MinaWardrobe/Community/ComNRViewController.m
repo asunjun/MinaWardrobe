@@ -31,7 +31,7 @@
     NSString *_message;
     
     NSMutableArray *_datasoure;
-    NSArray *_imageurls;
+    NSMutableArray *_imageurls;
     
       NSString *_tradeid;
     NSString *_catgrop;
@@ -53,7 +53,7 @@
 
 
 
--(id)initWith:(NSString *)idzhi and:(NSArray *)images and:(NSString *)catgroup{
+-(id)initWith:(NSString *)idzhi and:(NSMutableArray *)images and:(NSString *)catgroup{
 
     
     self=[super init];
@@ -70,7 +70,7 @@
 }
 - (void)viewDidLoad {
     NSLog(@"%@",_imageurls);
-    
+    [Mag shard].imageArrrr=_imageurls;
     heights=[[NSMutableArray alloc]init];
     huifuheights=[[NSMutableArray alloc]init];
     _hufuimages=[[NSMutableArray alloc]init];
@@ -788,8 +788,7 @@
         [heights addObject:st3];
         
         [self.table reloadData];
-        
-        
+        [Mag shard].imageHeightArrrrr = heights;
     }
     if ([request.name isEqual:@"huifuimageheight"]) {
          NSString *st2=[request responseString];
@@ -798,7 +797,7 @@
         
         
     }
-
+    
     
 }
 
