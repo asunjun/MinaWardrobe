@@ -407,7 +407,7 @@
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    if (_imageurls!=nil) {
+    if (_imageurls.count!=0) {
         return 3;
     }else{
         return 2;
@@ -420,7 +420,7 @@
     
     
     
-    if (_imageurls!=nil) {
+    if (_imageurls.count!=0) {
         if (section==0) {
             return 1;
         }
@@ -456,7 +456,10 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (_imageurls!=nil) {
+    if (_imageurls.count!=0) {
+        
+        NSLog(@"%@",_imageurls);
+        
         if (indexPath.section==0) {
             static NSString *CellIdentifier = @"ComNRTableViewCell";
             ComNRTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -520,6 +523,7 @@
                 cell.lab5.frame=CGRectMake(0, 0, WIDTH, 200);
                 cell.lab5.text=@"暂无消息回复";
                 cell.lab5.textAlignment = NSTextAlignmentCenter;
+              
                 
                 return cell;
                 
@@ -527,8 +531,9 @@
                 cell.lab5.text=nil;
 
              Comcommodel *trade = _datasoure[indexPath.row];
-              [cell configCellByTradeModel:trade.name and:indexPath.row and:nil and:nil and:trade.huifu and:trade.imagesheight];
+              [cell configCellByTradeModel:trade.name and:indexPath.row and:nil and:trade.time and:trade.huifu and:trade.imagesheight];
             [cell.img1 sd_setImageWithURL:[NSURL URLWithString:trade.images]];
+                [cell.touxiang sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://sq.mina.cn/uploads/avatar/%@",trade.touxiang]]];
             
             
             return cell;
@@ -564,14 +569,14 @@
                cell.lab5.frame=CGRectMake(0, 0, WIDTH, 200);
                 cell.lab5.text=@"暂无消息回复";
                 cell.lab5.textAlignment = NSTextAlignmentCenter;
-               
+                
                 return cell;
                 
             }else{
                 cell.lab5.text=nil;
                 
             Comcommodel *trade = _datasoure[indexPath.row];
-             [cell configCellByTradeModel:trade.name and:indexPath.row and:nil and:nil and:trade.huifu and:trade.imagesheight];
+             [cell configCellByTradeModel:trade.name and:indexPath.row and:nil and:trade.time and:trade.huifu and:trade.imagesheight];
                 NSLog(@"%@",trade.images);
                 
              [cell.img1 sd_setImageWithURL:[NSURL URLWithString:trade.images]];
@@ -649,7 +654,7 @@
                 
                 NSLog(@"%f",height1);
                 
-            zhongde=height1+60+[trade.imagesheight intValue];
+            zhongde=height1+62+[trade.imagesheight intValue];
             
             
             return zhongde;
@@ -668,7 +673,7 @@
                 
                 CGFloat height1 = [trade.huifu boundingRectWithSize:CGSizeMake(WIDTH, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:15]} context:nil].size.height;
                 
-                zhongde=height1+60+[trade.imagesheight intValue];
+                zhongde=height1+62+[trade.imagesheight intValue];
                 
                 
                 return zhongde;

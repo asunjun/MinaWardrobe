@@ -18,6 +18,11 @@
 
 @property(copy,nonatomic)NSString *imagesheight;
 
+@property(copy,nonatomic)NSString *touxiang;
+
+@property(copy,nonatomic)NSString *time;
+
+
 
 - (id)initWithDic:(NSDictionary*)dic;
 

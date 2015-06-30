@@ -68,7 +68,8 @@
 
     self.img4.layer.masksToBounds = YES;
     self.img4.layer.cornerRadius=3;
-     self.img4.image=[UIImage imageNamed:@"789.jpg"];
+    [self.img4 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://sq.mina.cn/uploads/avatar/%@",trade.fabutouxiang]]];
+    // self.img4.image=[UIImage imageNamed:@"789.jpg"];
     
     self.name.frame=CGRectZero;
     
@@ -156,8 +157,8 @@
         height1=30;
         
     }
-     self.title.frame=CGRectMake(8,0, WIDTH-28, height);
-    self.message.frame=CGRectMake(8, height+5, WIDTH-28, height1);
+     self.title.frame=CGRectMake(8,0, WIDTH-40, height);
+    self.message.frame=CGRectMake(8, height+5, WIDTH-40, height1);
     
          if (ishidder==YES) {
         self.img1.frame=CGRectMake(8, height+height1+12, 80, 80);

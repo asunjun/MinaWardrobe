@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *img1;
 
 @property (weak, nonatomic) IBOutlet UILabel *lab5;
+@property (weak, nonatomic) IBOutlet UIImageView *touxiang;
 
 @property(strong,nonatomic)NSString *imgheight;
 - (void)configCellByTradeModel:(NSString *)name and:(NSInteger)loushu and:(NSString *)imageurl and:(NSString *)time and:(NSString *)message and:(NSString *)height;

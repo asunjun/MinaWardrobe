@@ -151,6 +151,7 @@
     }];
 }
 
+
 #pragma mark - UIScrollViewDelegate
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
@@ -176,6 +177,7 @@
     CGFloat delta_y = (scrollView.bounds.size.height > scrollView.contentSize.height) ? (scrollView.bounds.size.height - scrollView.contentSize.height) / 2 : 0.0;
     [scrollView viewWithTag:scrollView.tag - 100].center = CGPointMake(scrollView.contentSize.width / 2 + delta_x, scrollView.contentSize.height / 2 + delta_y);
 }
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
@@ -204,6 +206,24 @@
         case 802:
             NSLog(@"3");
             [self saveImageToPhotos:imageView2.image];
+    }
+}
+- (void)longPressClick:(UILongPressGestureRecognizer *)sender {
+
+    if(sender.state == UIGestureRecognizerStateBegan)
+    {
+        UIActionSheet *action = [[UIActionSheet alloc] initWithTitle:@"诶我擦" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"第一个", nil];
+        [action showInView:self.contentView];
+        //add your code here
+    }
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    switch (buttonIndex) {
+        case 0:
+            NSLog(@"第一个");
+            
+            
             break;
         default:
             break;

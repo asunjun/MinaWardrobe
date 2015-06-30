@@ -44,6 +44,7 @@
     
     [self.footview addSubview:bt2];
     
+    [self.footview setFrame:CGRectMake(0, 0, WIDTH, 50)];
     
     [self.tableview setFrame:CGRectMake(0, 50, WIDTH, HEIGHT-94)];
     
@@ -233,11 +234,7 @@
     {
         NSLog(@"no");
     }
-    
-    
-    
-    
-    
+
     
     return st1;
     

@@ -18,7 +18,8 @@
        
         
         self.name=[dic1 notNullobjectForKey:@"user_name"];
-        
+        self.touxiang=[dic1 notNullobjectForKey:@"avatar_file"];
+        self.time=[dic notNullobjectForKey:@"add_time"];
        NSString *zhongmessage=[dic notNullobjectForKey:@"answer_content"];
         
         NSLog(@"%@",zhongmessage);
@@ -72,28 +73,7 @@
         
         
         
-//        if([self.huifu rangeOfString:@"[img]"].location !=NSNotFound)//_roaldSearchText
-//        {
-//            NSArray *a1=[self.huifu componentsSeparatedByString:@"[img]"];
-//            
-//            NSLog(@"%@",[a1 objectAtIndex:0]);
-//            
-//          //  self.huifu=[a1 objectAtIndex:0];
-//            
-//            NSLog(@"%@",[a1 objectAtIndex:1]);
-//            
-//            if([self.huifu rangeOfString:@"[/img]"].location !=NSNotFound)//_roaldSearchText
-//            {
-//                
-//            }
-//            
-//            NSLog(@"yes");
-//        }
-//        else
-//        {
-//            NSLog(@"no");
-//        }
-        
+
         
     }
     
