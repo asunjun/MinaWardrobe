@@ -19,6 +19,12 @@
         NSDictionary *post=[dic notNullobjectForKey:@"post"];
         self.dic2=[dic notNullobjectForKey:@"comments"];
         NSLog(@"%ld",self.dic2.count);
+        self.time=[post notNullobjectForKey:@"add_time"];
+        
+       NSDictionary *info =[post notNullobjectForKey:@"user_info"];
+        self.img=[info notNullobjectForKey:@"avatar_file"];
+        self.plname=[info notNullobjectForKey:@"user_name"];
+        
         
         self.title=[post notNullobjectForKey:@"question_content"];
         NSString *mess=[post notNullobjectForKey:@"question_detail"];

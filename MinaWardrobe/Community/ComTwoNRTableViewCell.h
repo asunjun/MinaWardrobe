@@ -16,6 +16,9 @@
 
 @property(strong,nonatomic)UIImageView *img3;
 
+@property(strong,nonatomic)UILabel *lab1;
+
+
 - (void)configCellByTradeModel:(NSArray *)trade;
 
 @property (nonatomic, strong) NSMutableArray *imageArr;

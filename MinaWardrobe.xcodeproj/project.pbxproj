@@ -130,8 +130,19 @@
 		DD91D5BD1B0B080600C3C137 /* DLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD91D5BB1B0B080600C3C137 /* DLViewController.xib */; };
 		DD91D5C11B0B3D8F00C3C137 /* CommunityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD91D5BF1B0B3D8F00C3C137 /* CommunityTableViewCell.m */; };
 		DD91D5C21B0B3D8F00C3C137 /* CommunityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD91D5C01B0B3D8F00C3C137 /* CommunityTableViewCell.xib */; };
+		DD96C0C21B43D783007793F6 /* 举报.png in Resources */ = {isa = PBXBuildFile; fileRef = DD96C0BC1B43D783007793F6 /* 举报.png */; };
+		DD96C0C31B43D783007793F6 /* 倒序查看.png in Resources */ = {isa = PBXBuildFile; fileRef = DD96C0BD1B43D783007793F6 /* 倒序查看.png */; };
+		DD96C0C41B43D783007793F6 /* 分享.png in Resources */ = {isa = PBXBuildFile; fileRef = DD96C0BE1B43D783007793F6 /* 分享.png */; };
+		DD96C0C51B43D783007793F6 /* 加载.png in Resources */ = {isa = PBXBuildFile; fileRef = DD96C0BF1B43D783007793F6 /* 加载.png */; };
+		DD96C0C61B43D783007793F6 /* 收藏.png in Resources */ = {isa = PBXBuildFile; fileRef = DD96C0C01B43D783007793F6 /* 收藏.png */; };
+		DD96C0C71B43D783007793F6 /* 跳页.png in Resources */ = {isa = PBXBuildFile; fileRef = DD96C0C11B43D783007793F6 /* 跳页.png */; };
 		DD9F3F061B1FE5EA00C34DCF /* ComQuestionNRModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9F3F051B1FE5EA00C34DCF /* ComQuestionNRModel.m */; };
 		DD9F3F091B20533D00C34DCF /* Comcommodel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9F3F081B20533D00C34DCF /* Comcommodel.m */; };
+		DDA8AF0D1B42946E00424D47 /* MCProgressBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA8AF0C1B42946E00424D47 /* MCProgressBarView.m */; };
+		DDA8AF121B42948700424D47 /* progress-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = DDA8AF0E1B42948700424D47 /* progress-bg.png */; };
+		DDA8AF131B42948700424D47 /* progress-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDA8AF0F1B42948700424D47 /* progress-bg@2x.png */; };
+		DDA8AF141B42948700424D47 /* progress-fg.png in Resources */ = {isa = PBXBuildFile; fileRef = DDA8AF101B42948700424D47 /* progress-fg.png */; };
+		DDA8AF151B42948700424D47 /* progress-fg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDA8AF111B42948700424D47 /* progress-fg@2x.png */; };
 		DDD4791D1B0DC73F00B15144 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD4791C1B0DC73F00B15144 /* UIViewExt.m */; };
 		DDD820241B09C9CF00CDC191 /* SQmainlist.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD820231B09C9CF00CDC191 /* SQmainlist.m */; };
 /* End PBXBuildFile section */
@@ -359,10 +370,22 @@
 		DD91D5BE1B0B3D8F00C3C137 /* CommunityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityTableViewCell.h; sourceTree = "<group>"; };
 		DD91D5BF1B0B3D8F00C3C137 /* CommunityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityTableViewCell.m; sourceTree = "<group>"; };
 		DD91D5C01B0B3D8F00C3C137 /* CommunityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunityTableViewCell.xib; sourceTree = "<group>"; };
+		DD96C0BC1B43D783007793F6 /* 举报.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "举报.png"; sourceTree = "<group>"; };
+		DD96C0BD1B43D783007793F6 /* 倒序查看.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "倒序查看.png"; sourceTree = "<group>"; };
+		DD96C0BE1B43D783007793F6 /* 分享.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分享.png"; sourceTree = "<group>"; };
+		DD96C0BF1B43D783007793F6 /* 加载.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "加载.png"; sourceTree = "<group>"; };
+		DD96C0C01B43D783007793F6 /* 收藏.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "收藏.png"; sourceTree = "<group>"; };
+		DD96C0C11B43D783007793F6 /* 跳页.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "跳页.png"; sourceTree = "<group>"; };
 		DD9F3F041B1FE5EA00C34DCF /* ComQuestionNRModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComQuestionNRModel.h; sourceTree = "<group>"; };
 		DD9F3F051B1FE5EA00C34DCF /* ComQuestionNRModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComQuestionNRModel.m; sourceTree = "<group>"; };
 		DD9F3F071B20533C00C34DCF /* Comcommodel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comcommodel.h; sourceTree = "<group>"; };
 		DD9F3F081B20533D00C34DCF /* Comcommodel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comcommodel.m; sourceTree = "<group>"; };
+		DDA8AF0B1B42946E00424D47 /* MCProgressBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCProgressBarView.h; sourceTree = SOURCE_ROOT; };
+		DDA8AF0C1B42946E00424D47 /* MCProgressBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCProgressBarView.m; sourceTree = SOURCE_ROOT; };
+		DDA8AF0E1B42948700424D47 /* progress-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "progress-bg.png"; sourceTree = SOURCE_ROOT; };
+		DDA8AF0F1B42948700424D47 /* progress-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "progress-bg@2x.png"; sourceTree = SOURCE_ROOT; };
+		DDA8AF101B42948700424D47 /* progress-fg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "progress-fg.png"; sourceTree = SOURCE_ROOT; };
+		DDA8AF111B42948700424D47 /* progress-fg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "progress-fg@2x.png"; sourceTree = SOURCE_ROOT; };
 		DDD4791B1B0DC73F00B15144 /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
 		DDD4791C1B0DC73F00B15144 /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
 		DDD820221B09C9CF00CDC191 /* SQmainlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQmainlist.h; sourceTree = "<group>"; };
@@ -447,6 +470,7 @@
 		18639C0D1B04493C00072AF3 = {
 			isa = PBXGroup;
 			children = (
+				DD96C0BB1B43D783007793F6 /* 收藏等图标 */,
 				185431921B2920660011A061 /* libxml2.dylib */,
 				DD46EB7D1B12BD69004D01FF /* 789.jpg */,
 				DDD820291B09D25A00CDC191 /* 帮助文件 */,
@@ -563,6 +587,7 @@
 		18639C5C1B044DC100072AF3 /* Third */ = {
 			isa = PBXGroup;
 			children = (
+				DDA8AF0A1B42941100424D47 /* 进度条 */,
 				181087E81B41271E003BD064 /* Mag.m */,
 				181087E91B41271E003BD064 /* Mag.h */,
 				185431951B292DB60011A061 /* GDataXMLNode.h */,
@@ -720,6 +745,10 @@
 		DD46EB7F1B12FC04004D01FF /* 小图标 */ = {
 			isa = PBXGroup;
 			children = (
+				DDA8AF0E1B42948700424D47 /* progress-bg.png */,
+				DDA8AF0F1B42948700424D47 /* progress-bg@2x.png */,
+				DDA8AF101B42948700424D47 /* progress-fg.png */,
+				DDA8AF111B42948700424D47 /* progress-fg@2x.png */,
 				DD46EB801B12FC04004D01FF /* 商城.png */,
 				DD46EB811B12FC04004D01FF /* 商城2.png */,
 				DD46EB821B12FC04004D01FF /* 我的.png */,
@@ -794,6 +823,28 @@
 			name = imagersoure;
 			sourceTree = "<group>";
 		};
+		DD96C0BB1B43D783007793F6 /* 收藏等图标 */ = {
+			isa = PBXGroup;
+			children = (
+				DD96C0BC1B43D783007793F6 /* 举报.png */,
+				DD96C0BD1B43D783007793F6 /* 倒序查看.png */,
+				DD96C0BE1B43D783007793F6 /* 分享.png */,
+				DD96C0BF1B43D783007793F6 /* 加载.png */,
+				DD96C0C01B43D783007793F6 /* 收藏.png */,
+				DD96C0C11B43D783007793F6 /* 跳页.png */,
+			);
+			path = "收藏等图标";
+			sourceTree = "<group>";
+		};
+		DDA8AF0A1B42941100424D47 /* 进度条 */ = {
+			isa = PBXGroup;
+			children = (
+				DDA8AF0B1B42946E00424D47 /* MCProgressBarView.h */,
+				DDA8AF0C1B42946E00424D47 /* MCProgressBarView.m */,
+			);
+			name = "进度条";
+			sourceTree = "<group>";
+		};
 		DDD820291B09D25A00CDC191 /* 帮助文件 */ = {
 			isa = PBXGroup;
 			children = (
@@ -854,7 +905,6 @@
 				TargetAttributes = {
 					18639C151B04493C00072AF3 = {
 						CreatedOnToolsVersion = 6.3;
-						DevelopmentTeam = 5E66V7652X;
 						DevelopmentTeam = A6ZH33JE77;
 					};
 					18639C2E1B04493C00072AF3 = {
@@ -894,18 +944,25 @@
 				DD46EB8E1B12FC04004D01FF /* 衣柜.png in Resources */,
 				18639C561B044BCB00072AF3 /* CommunityViewController.xib in Resources */,
 				185200741B2672AB008DB9C6 /* BaseImage.png in Resources */,
+				DD96C0C71B43D783007793F6 /* 跳页.png in Resources */,
 				DD91D5C21B0B3D8F00C3C137 /* CommunityTableViewCell.xib in Resources */,
 				DD856AEA1B16B88900429554 /* ComtrueTableViewCell.xib in Resources */,
+				DDA8AF141B42948700424D47 /* progress-fg.png in Resources */,
+				DDA8AF151B42948700424D47 /* progress-fg@2x.png in Resources */,
 				DD58CCBE1B33FD0700A9C91F /* 阅读(zi).png in Resources */,
 				185200731B2672AB008DB9C6 /* UserPass.png in Resources */,
+				DD96C0C51B43D783007793F6 /* 加载.png in Resources */,
+				DDA8AF131B42948700424D47 /* progress-bg@2x.png in Resources */,
 				DD46EB8B1B12FC04004D01FF /* 我的2.png in Resources */,
 				DD46EB8C1B12FC04004D01FF /* 社区.png in Resources */,
 				187F9B5A1B0C72CB002CC82C /* MainCollectionViewCell.xib in Resources */,
 				184BBE9F1B1806230032015D /* ELCAssetPicker.xib in Resources */,
 				DD46EB891B12FC04004D01FF /* 商城2.png in Resources */,
 				184BBEA11B1806230032015D /* Overlay.png in Resources */,
+				DD96C0C21B43D783007793F6 /* 举报.png in Resources */,
 				18B464A91B0D99EC004E8637 /* TaoKeWebViewController.xib in Resources */,
 				18639C511B044BBF00072AF3 /* StoreViewController.xib in Resources */,
+				DDA8AF121B42948700424D47 /* progress-bg.png in Resources */,
 				18639C2A1B04493C00072AF3 /* LaunchScreen.xib in Resources */,
 				DD91D5BD1B0B080600C3C137 /* DLViewController.xib in Resources */,
 				186ACF361B16BDAD00E77570 /* PostingViewController.xib in Resources */,
@@ -921,11 +978,14 @@
 				DD46EB8D1B12FC04004D01FF /* 社区2.png in Resources */,
 				DD46EB8A1B12FC04004D01FF /* 我的.png in Resources */,
 				185200711B2672AB008DB9C6 /* LoginButton.png in Resources */,
+				DD96C0C61B43D783007793F6 /* 收藏.png in Resources */,
 				DD46EB9D1B13145E004D01FF /* ComNRTableViewCell.xib in Resources */,
 				185C09E81B2832DF00BB8906 /* PostingTextTableViewCell.xib in Resources */,
 				1852006F1B2672AB008DB9C6 /* qq登陆.png in Resources */,
+				DD96C0C41B43D783007793F6 /* 分享.png in Resources */,
 				184BBEA21B1806230032015D /* Overlay@2x.png in Resources */,
 				DD5AE0DC1B14608000FAD355 /* ComTwoNRTableViewCell.xib in Resources */,
+				DD96C0C31B43D783007793F6 /* 倒序查看.png in Resources */,
 				18639C271B04493C00072AF3 /* Images.xcassets in Resources */,
 				185200701B2672AB008DB9C6 /* 微信登陆.png in Resources */,
 			);
@@ -964,6 +1024,7 @@
 				18639C741B044E7B00072AF3 /* AFNetworkReachabilityManager.m in Sources */,
 				185431971B292DB60011A061 /* GDataXMLNode.m in Sources */,
 				DD46EB981B131432004D01FF /* ComNRModel.m in Sources */,
+				DDA8AF0D1B42946E00424D47 /* MCProgressBarView.m in Sources */,
 				18639D091B0467D500072AF3 /* MJRefreshFooterView.m in Sources */,
 				DD856AE91B16B88900429554 /* ComtrueTableViewCell.m in Sources */,
 				18639CC51B044F2800072AF3 /* SDWebImageCompat.m in Sources */,

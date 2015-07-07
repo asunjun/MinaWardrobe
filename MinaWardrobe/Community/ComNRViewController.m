@@ -21,6 +21,7 @@
 #import "ELCImagePickerController.h"
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
+#import "MCProgressBarView.h"
 @interface ComNRViewController ()<UITableViewDataSource,UITableViewDelegate,YFInputBarDelegate,UIActionSheetDelegate,ELCImagePickerControllerDelegate,ASIHTTPRequestDelegate,UIImagePickerControllerDelegate>{
   
     ComNRModel *shuju;
@@ -42,7 +43,10 @@
     NSMutableArray *huifuheights;
     NSString *imagsurl;
     NSString *fasongstring;
+    NSMutableArray *neirong;
     
+    
+   // MCProgressBarView *_progressBarView;
     
     
 }
@@ -74,7 +78,8 @@
     heights=[[NSMutableArray alloc]init];
     huifuheights=[[NSMutableArray alloc]init];
     _hufuimages=[[NSMutableArray alloc]init];
-  //  self.view.userInteractionEnabled=NO;
+    neirong=[[NSMutableArray alloc]init];
+     //  self.view.userInteractionEnabled=NO;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tongzhi) name:@"tongzhi" object:nil];
     [self.navigationController setNavigationBarHidden:NO];
     [super viewDidLoad];
@@ -89,7 +94,8 @@
     
     inputBar = [[YFInputBar alloc]initWithFrame:CGRectMake(0,CGRectGetMaxY([UIScreen mainScreen].bounds)-108, 320, 44)];
     
-    inputBar.backgroundColor = [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1];
+    inputBar.backgroundColor =kUIColorFromRGB(0xe9e9e9);
+    
     
     
     inputBar.delegate = self;
@@ -256,7 +262,7 @@
                 [inputBar chuangjian];
                 
                 
-                
+            
             }
         }else {
             // NSLog(@"UIImagePickerControllerReferenceURL = %@", dict);
@@ -467,9 +473,9 @@
             if (cell==nil) {
                 
             }
-            
+          
             cell.selectionStyle=UITableViewCellSelectionStyleNone;
-               [cell configCellByTradeModel:_title and:_message];
+               [cell configCellByTradeModel:questionshuju];
             return cell;
             
             
@@ -484,30 +490,67 @@
             
             [cell configCellByTradeModel:heights];
             for (int i=0; i<_imageurls.count; i++) {
-                switch (i) {
-                    case 0:
-                        
-                        
-                        [cell.img1 sd_setImageWithURL:[NSURL URLWithString:[_imageurls objectAtIndex:i]]];
-                        break;
-                    case 1:
-                        
-                        [cell.img2 sd_setImageWithURL:[NSURL URLWithString:[_imageurls objectAtIndex:i]]];
-                        
-                        
-                        break;
-                    case 2:
-                        [cell.img3 sd_setImageWithURL:[NSURL URLWithString:[_imageurls objectAtIndex:i]]];
-                        
-                        break;
-                        
-                    default:
-                        
-                        break;
-                }
                 
+                if (i==0) {
+                   UIActivityIndicatorView * activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake((WIDTH-16)/2-30, cell.img1.frame.size.height/2-30, 60, 60)];
+                    
+                    [cell.img1 addSubview:activityIndicator];
+                    
+                    activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+                    
+                    [activityIndicator startAnimating];
+                    
+                  //  [cell.img1 addSubview:_progressBarView];
+                    cell.lab1.frame=CGRectMake(0,cell.img1.frame.size.height+15, WIDTH, 6);
+                    
+                    [cell.img1 sd_setImageWithURL:[NSURL URLWithString:[_imageurls objectAtIndex:i]] placeholderImage:nil options:SDWebImageRefreshCached progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                        
+                        
+                                                } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                                    [activityIndicator removeFromSuperview];
+                                                    
+                                                    
+                                                }];
+                }
+                if (i==1) {
+                    UIActivityIndicatorView * activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake((WIDTH-16)/2-30, cell.img2.frame.size.height/2-30, 60, 60)];
+                    cell.lab1.frame=CGRectMake(0,cell.img1.frame.size.height+30+cell.img2.frame.size.height, WIDTH, 6);
+                    [cell.img2 addSubview:activityIndicator];
+                    
+                    activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+                    
+                    [activityIndicator startAnimating];
+                    
+                    [cell.img2 sd_setImageWithURL:[NSURL URLWithString:[_imageurls objectAtIndex:i]] placeholderImage:nil options:SDWebImageRefreshCached progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                        
+                        
+                    } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                        [activityIndicator removeFromSuperview];
+                        
+                        
+                    }];
+                }
+                if (i==2) {
+                     cell.lab1.frame=CGRectMake(0,cell.img1.frame.size.height+45+cell.img2.frame.size.height+cell.img3.frame.size.height, WIDTH, 6);
+                    UIActivityIndicatorView * activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake((WIDTH-16)/2-30, cell.img3.frame.size.height/2-30, 60, 60)];
+                    
+                    [cell.img3 addSubview:activityIndicator];
+                    
+                    activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+                    
+                    [activityIndicator startAnimating];
+                    
+                    [cell.img3 sd_setImageWithURL:[NSURL URLWithString:[_imageurls objectAtIndex:i]] placeholderImage:nil options:SDWebImageRefreshCached progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                      
+                        
+                    } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                        [activityIndicator removeFromSuperview];
+                        
+                        
+                    }];
+                }
 
-            }
+           }
             
             return cell;
             
@@ -532,9 +575,22 @@
 
              Comcommodel *trade = _datasoure[indexPath.row];
               [cell configCellByTradeModel:trade.name and:indexPath.row and:nil and:trade.time and:trade.huifu and:trade.imagesheight];
-            [cell.img1 sd_setImageWithURL:[NSURL URLWithString:trade.images]];
+                UIActivityIndicatorView * activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake((WIDTH-16)/2-30, cell.img1.frame.size.height/2-30, 60, 60)];
+                
+                [cell.img1 addSubview:activityIndicator];
+
+                
+                // [cell.img1 sd_setImageWithURL:[NSURL URLWithString:trade.images]];
                 [cell.touxiang sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://sq.mina.cn/uploads/avatar/%@",trade.touxiang]]];
-            
+                [cell.img1 sd_setImageWithURL:[NSURL URLWithString:trade.images] placeholderImage:nil options:SDWebImageRefreshCached progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                    
+                    
+                } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                    [activityIndicator removeFromSuperview];
+                    
+                    
+                }];
+
             
             return cell;
             }
@@ -549,8 +605,10 @@
                 
             }
             
+          
             cell.selectionStyle=UITableViewCellSelectionStyleNone;
-            [cell configCellByTradeModel:_title and:_message];
+            [cell configCellByTradeModel:questionshuju];
+
             return cell;
             
             
@@ -578,8 +636,19 @@
             Comcommodel *trade = _datasoure[indexPath.row];
              [cell configCellByTradeModel:trade.name and:indexPath.row and:nil and:trade.time and:trade.huifu and:trade.imagesheight];
                 NSLog(@"%@",trade.images);
+                UIActivityIndicatorView * activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake((WIDTH-16)/2-30, cell.img1.frame.size.height/2-30, 60, 60)];
                 
-             [cell.img1 sd_setImageWithURL:[NSURL URLWithString:trade.images]];
+                [cell.img1 addSubview:activityIndicator];
+
+                [cell.img1 sd_setImageWithURL:[NSURL URLWithString:trade.images] placeholderImage:nil options:SDWebImageRefreshCached progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                    
+                    
+                } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                    [activityIndicator removeFromSuperview];
+                    
+                    
+                }];
+
             return cell;
 
             }
@@ -607,9 +676,9 @@
     if (indexPath.section==0) {
         
    
-         CGFloat height1 = [_title boundingRectWithSize:CGSizeMake(WIDTH, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:15]} context:nil].size.height;
+         CGFloat height1 = [questionshuju.title boundingRectWithSize:CGSizeMake(WIDTH, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:15]} context:nil].size.height;
         
-        CGFloat height2=[_message boundingRectWithSize:CGSizeMake(WIDTH, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:15]} context:nil].size.height;
+        CGFloat height2=[questionshuju.message boundingRectWithSize:CGSizeMake(WIDTH, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:15]} context:nil].size.height;
         
         CGFloat height=height1+height2+50;
         
@@ -728,9 +797,8 @@
         
     if ([_catgrop isEqualToString:@"question"]) {
         questionshuju=[[ComQuestionNRModel alloc]initWithDic:arr];
-       
-        _title=questionshuju.title;
-        _message=questionshuju.message;
+        [neirong addObject:questionshuju];
+        
         for (int i=0; i<questionshuju.dic2.count; i++) {
             
             NSDictionary *dic=[questionshuju.dic2 objectAtIndex:i];
@@ -802,12 +870,12 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 0.5;
+    return 0.1;
     
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return 0.5;
+    return 0.1;
 }
 
 //错误网址

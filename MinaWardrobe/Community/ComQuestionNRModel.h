@@ -21,6 +21,12 @@
 
 @property(copy,nonatomic)NSArray *dic2;
 
+@property(copy,nonatomic)NSString *time;
+
+@property(copy,nonatomic)NSString *img;
+
+
+
 - (id)initWithDic:(NSDictionary*)dic;
 
 @end

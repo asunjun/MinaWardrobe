@@ -26,11 +26,14 @@
     self.img3.userInteractionEnabled = YES;
     UITapGestureRecognizer *tap3 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bigImageClick3:)];
     [self.img3 addGestureRecognizer:tap3];
+    self.lab1=[[UILabel alloc]init];
+    
     
     for (int i=0; i<trade.count; i++) {
         switch (i) {
             case 0:
                  self.img1.frame=CGRectMake(10, 10, WIDTH-20, [[trade objectAtIndex:i] intValue]);
+                
                 
                 break;
             case 1:
@@ -49,16 +52,14 @@
     }
     
     
+  //  self.lab1.frame=CGRectMake(10, [[trade objectAtIndex:0] intValue]+[[trade objectAtIndex:1] intValue]+32, WIDTH, 6);
+    self.lab1.backgroundColor=lightgray;
+    [self addSubview:self.lab1];
     
     
-   
-//     self.img2=[[UIImageView alloc]initWithFrame:CGRectMake(10, 420, 300, 400)];
-//     self.img3=[[UIImageView alloc]initWithFrame:CGRectMake(10, 830, 300, 400)];
     [self addSubview:self.img1];
     [self addSubview:self.img2];
     [self addSubview:self.img3];
-    
-//    self.imageArr = [NSMutableArray arrayWithObjects:self.img1, self.img2, self.img3, nil];
     self.imageArr = [Mag shard].imageArrrr;
     NSLog(@"%@", self.imageArr);
     

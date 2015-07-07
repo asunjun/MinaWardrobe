@@ -33,6 +33,7 @@
     UITabBarController *tabarController = [[UITabBarController alloc]init];
     self.window.rootViewController = tabarController;
     tabarController.tabBar.barTintColor=globalBackgroundColor;
+   
 //    
 //    tabarController.tabBar.selectedImageTintColor = globalColor;
     //四个tab选项，衣橱，商城，社区，我的，

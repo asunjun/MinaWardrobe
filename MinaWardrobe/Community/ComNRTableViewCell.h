@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@class ComNRModel;
+@class ComNRModel,ComQuestionNRModel;
 @interface ComNRTableViewCell : UITableViewCell
 //@property(strong,nonatomic)UILabel *lab1;
 //@property(strong,nonatomic)UILabel *lab2;
@@ -23,5 +23,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *lab4;
 
-- (void)configCellByTradeModel:(NSString *)titile and:(NSString *)message;
+@property (weak, nonatomic) IBOutlet UIImageView *img1;
+- (void)configCellByTradeModel:(ComQuestionNRModel *)trane;
 @end

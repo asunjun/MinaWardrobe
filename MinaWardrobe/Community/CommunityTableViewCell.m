@@ -159,7 +159,7 @@
         
     }
      self.title.frame=CGRectMake(8,0, WIDTH-40, height);
-    self.message.frame=CGRectMake(8, height+5, WIDTH-40, height1);
+    self.message.frame=CGRectMake(8, height+1, WIDTH-40, height1);
     
          if (ishidder==YES) {
         self.img1.frame=CGRectMake(8, height+height1+12, 80, 80);

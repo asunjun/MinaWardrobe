@@ -53,7 +53,7 @@
 -(UITextField *)textField
 {
     if (!_textField) {
-        _textField = [[UITextField alloc]initWithFrame:CGRectMake(50, 10, WIDTH-90, 24)];
+        _textField = [[UITextField alloc]initWithFrame:CGRectMake(43, 10, WIDTH-90, 24)];
         _textField.backgroundColor = [UIColor whiteColor];
         [self addSubview:_textField];
     }
@@ -64,8 +64,11 @@
     if (!_sendBtn) {
         _sendBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_sendBtn setTitle:@"发送" forState:UIControlStateNormal];
-//        [_sendBtn setBackgroundColor:[UIColor whiteColor]];
-        [_sendBtn setFrame:CGRectMake(WIDTH-40, 10, 40, 24)];
+       // [_sendBtn setBackgroundColor:kUIColorFromRGB(0x8d8d8c)];
+        [_sendBtn setTitleColor:kUIColorFromRGB(0x8d8d8c) forState:UIControlStateNormal];
+        _sendBtn.titleLabel.font=[UIFont boldSystemFontOfSize:16];
+        
+        [_sendBtn setFrame:CGRectMake(WIDTH-45, 10, 35, 24)];
         [_sendBtn addTarget:self action:@selector(sendBtnPress:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_sendBtn];
     }
@@ -81,8 +84,8 @@
         if (!_zhaopian) {
             _zhaopian = [UIButton buttonWithType:UIButtonTypeCustom];
             
-            [_zhaopian setTitle:@"照片" forState:UIControlStateNormal];
-            [_zhaopian setFrame:CGRectMake(5, 10, 35, 24)];
+            [_zhaopian setImage:[UIImage imageNamed:@"加载.png"] forState:UIControlStateNormal];
+            [_zhaopian setFrame:CGRectMake(9, 10, 25, 24)];
             [_zhaopian addTarget:self action:@selector(zhaopianxuanqu:) forControlEvents:UIControlEventTouchUpInside];
             _zhaopian.titleLabel.font=[UIFont boldSystemFontOfSize:15];
             

@@ -16,13 +16,12 @@
 }
 -(void)configCellByTradeModel:(NSString *)name and:(NSInteger )loushu and:(NSString *)imageurl and:(NSString *)time and:(NSString *)message and:(NSString *)height{
     
-#warning 添加
     NSTimeInterval time1 = [time doubleValue];
     
     NSTimeInterval _interval=time1;
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:_interval];
     self.lab4.text=[self compareCurrentTime:date];
-    self.lab4.font=[UIFont boldSystemFontOfSize:10];
+    self.lab4.font=[UIFont boldSystemFontOfSize:12];
     self.lab4.textColor=kUIColorFromRGB(0xb6b6b8);
 
     NSLog(@"%@",[self compareCurrentTime:date]);
@@ -48,9 +47,9 @@
     self.lab1.textColor=kUIColorFromRGB(0x747475);
  
  
-    self.lab2.text=[NSString stringWithFormat:@"%ld楼",loushu+1];
+    self.lab2.text=[NSString stringWithFormat:@"第%ld楼",loushu+1];
     self.lab2.textAlignment=NSTextAlignmentCenter;
-    
+    self.lab2.font=[UIFont boldSystemFontOfSize:12];
    
   
     self.lab3.text=message;
@@ -65,15 +64,22 @@
      self.touxiang.frame=CGRectMake(8,10, 30, 30);//头像
     self.lab1.frame=CGRectMake(45,10, 60, 15);//名字
    
-    self.lab4.frame=CGRectMake(45,25, 60, 15);//时间
-    self.lab2.frame=CGRectMake(WIDTH-100, 10, 100, 30);
-    CGFloat height=[self.lab3.text boundingRectWithSize:CGSizeMake(WIDTH, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:15]} context:nil].size.height;
+   
+    CGFloat height=[self.lab3.text boundingRectWithSize:CGSizeMake(WIDTH-50, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:15]} context:nil].size.height;
     
-    self.lab3.frame=CGRectMake(15, 45, WIDTH-20, height+3);
-    self.img1.frame=CGRectMake(10, 50+height, WIDTH-20, [self.imgheight intValue]);
-    self.lab6.frame=CGRectMake(0, 56+height+[self.imgheight intValue], WIDTH,6);
+    self.lab3.frame=CGRectMake(40, 25, WIDTH-50, height+3);
+    self.img1.frame=CGRectMake(10, 30+height, WIDTH-20, [self.imgheight intValue]);
+    self.lab6.frame=CGRectMake(0, 56+height+[self.imgheight intValue], WIDTH,1);
+    
+    self.lab4.frame=CGRectMake(45,35+height+[self.imgheight intValue], 80, 15);//时间
+    
+    UIFont *font = [UIFont fontWithName:@"Arial" size:12];
+    CGSize size = CGSizeMake(WIDTH,2000);
+    CGSize labelsize = [self.lab2.text sizeWithFont:font constrainedToSize:size lineBreakMode:NSLineBreakByWordWrapping];
+   
     
     
+    self.lab2.frame=CGRectMake(WIDTH-100, 35+height+[self.imgheight intValue], labelsize.width, 15);
     
 }
 //时间的调用
